@@ -10,6 +10,7 @@ import CardsWithLeftImg from "@/components/sections/cards-with-left-img";
 import TwoColumnCards from "@/components/sections/two-column-cards";
 import DomainsSection from "@/components/sections/domains";
 import FaqSection from "@/components/sections/faq";
+import { Suspense } from "react";
 
 export default async function Home() {
   const domains = await getAllDomains();
@@ -38,7 +39,9 @@ export default async function Home() {
 
           {/* Render Homepage Form based on url param */}
 
-          <HomepageFormModal domains={domains} />
+          <Suspense>
+            <HomepageFormModal domains={domains} />
+          </Suspense>
 
           <CardsWithCenterImg />
 
