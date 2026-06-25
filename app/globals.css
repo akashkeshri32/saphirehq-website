@@ -1,26 +1,110 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /*
+    Colors
+  */
+  --color-primary: #712ede;
+  --color-dark: #16162a;
+  --color-text-secondary: #b4b4b4;
+  --color-dark-secondary: #0d0d26;
+
+  --color-white: #fefefe;
+
+  --color-white-light: #d8d8d8;
+
+  --color-surface-base: #0d0d26;
+  --color-surface-1: #0d0e18;
+  --color-surface-2: #111320;
+  --color-surface-3: #161828;
+
+  --color-surface-overlay: rgba(255, 255, 255, 0.03);
+  --color-surface-input: rgba(255, 255, 255, 0.04);
+  --color-surface-hover: rgba(255, 255, 255, 0.06);
+  --color-surface-active: rgba(255, 255, 255, 0.08);
+
+  /*
+    Borders
+  */
+  --color-border-primary: #1b1b4b;
+  --color-border-subtle: rgba(255, 255, 255, 0.06);
+  --color-border-default: rgba(255, 255, 255, 0.09);
+  --color-border-strong: rgba(255, 255, 255, 0.15);
+
+  /* Font Families*/
+
+  --font-heading: var(--font-manrope);
+
+  /*
+    SIZES
+  */
+
+  /* Fonts */
+  --text-h1: 4.125rem;
+  --text-h1--line-height: 110%;
+  --text-h1--letter-spacing: -0.02em;
+  --text-h1--font-weight: 500;
+
+  --text-h1-mobile: 2rem;
+  --text-h1-mobile--line-height: 110%;
+  --text-h1-mobile--letter-spacing: -0.02em;
+  --text-h1-mobile--font-weight: 500;
+
+  --text-h2: 3.125rem;
+  --text-h2--line-height: 110%;
+  --text-h2--letter-spacing: -0.02em;
+  --text-h2--font-weight: 500;
+
+  --text-h2-mobile: 2rem;
+  --text-h2-mobile--line-height: 110%;
+  --text-h2-mobile--letter-spacing: -0.02em;
+  --text-h2-mobile--font-weight: 500;
+
+  --text-20: 1.25rem;
+  --text-20--line-height: 140%;
+
+  --text-18: 1.125rem;
+  --text-18--line-height: 140%;
+
+  --text-16: 1rem;
+  --text-16--line-height: 120%;
+
+  --text-14: 0.875rem;
+  --text-14--line-height: 120%;
+
+  --max-width-desktop: 80rem;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ─── Scrollbar ─────────────────────────────────────────────────────────── */
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.18);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ─── Scrollbar hide utility ─────────────────────────────────────────────── */
+
+.scrollbar-none {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ─── Selection ─────────────────────────────────────────────────────────── */
+
+::selection {
+  background: rgba(124, 58, 237, 0.38);
+  color: #fff;
 }
