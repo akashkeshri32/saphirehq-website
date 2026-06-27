@@ -17,7 +17,7 @@ export default async function Home() {
         {/* Decorative gradient orbs */}
         {/* Top-right orb — deep royal blue → bright violet */}
         <div
-          className="fixed top-0 right-0 w-175 h-175 pointer-events-none z-0"
+          className="fixed top-0 right-0 w-175 h-175 pointer-events-none z-0 max-md:opacity-20"
           style={{
             background:
               "radial-gradient(ellipse at 85% 0%, rgba(20,55,255,0.14) 0%, rgba(106,46,255,0.08) 45%, transparent 65%)",
@@ -25,7 +25,7 @@ export default async function Home() {
         />
         {/* Top-left orb — neon purple → light lavender */}
         <div
-          className="fixed top-0 left-0 w-175 h-175 pointer-events-none z-0"
+          className="fixed top-0 left-0 w-175 h-175 pointer-events-none z-0 max-md:opacity-30"
           style={{
             background:
               "radial-gradient(ellipse at 15% 0%, rgba(154,45,255,0.11) 0%, rgba(201,166,255,0.06) 45%, transparent 65%)",
@@ -33,7 +33,7 @@ export default async function Home() {
         />
         {/* Mid-page center glow */}
         <div
-          className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-200 h-200 pointer-events-none z-0"
+          className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-200 h-200 pointer-events-none z-0 max-md:opacity-30"
           style={{
             background:
               "radial-gradient(ellipse, rgba(20,55,255,0.04) 0%, transparent 70%)",
