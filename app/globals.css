@@ -4,35 +4,33 @@
   /*
     Colors
   */
-  --color-primary: #712ede;
-  --color-dark: #16162a;
-  --color-text-secondary: #b4b4b4;
-  --color-dark-secondary: #0d0d26;
+  --color-primary: #1437ff;
+  --color-dark: #f4f7fe;
+  --color-text-secondary: #5b6a8e;
+  --color-dark-secondary: #ebf0ff;
 
-  --color-white: #fefefe;
+  --color-white: #0a0f2e;
+  --color-white-light: #3d4a72;
 
-  --color-white-light: #d8d8d8;
+  --color-surface-base: #ffffff;
+  --color-surface-1: #f8faff;
+  --color-surface-2: #f2f5ff;
+  --color-surface-3: #ebf0ff;
 
-  --color-surface-base: #0d0d26;
-  --color-surface-1: #0d0e18;
-  --color-surface-2: #111320;
-  --color-surface-3: #161828;
-
-  --color-surface-overlay: rgba(255, 255, 255, 0.03);
-  --color-surface-input: rgba(255, 255, 255, 0.04);
-  --color-surface-hover: rgba(255, 255, 255, 0.06);
-  --color-surface-active: rgba(255, 255, 255, 0.08);
+  --color-surface-overlay: rgba(255, 255, 255, 0.85);
+  --color-surface-input: rgba(0, 100, 255, 0.04);
+  --color-surface-hover: rgba(0, 100, 255, 0.07);
+  --color-surface-active: rgba(0, 100, 255, 0.11);
 
   /*
     Borders
   */
-  --color-border-primary: #1b1b4b;
-  --color-border-subtle: rgba(255, 255, 255, 0.06);
-  --color-border-default: rgba(255, 255, 255, 0.09);
-  --color-border-strong: rgba(255, 255, 255, 0.15);
+  --color-border-primary: #b5ccff;
+  --color-border-subtle: rgba(0, 60, 200, 0.06);
+  --color-border-default: rgba(0, 60, 200, 0.12);
+  --color-border-strong: rgba(0, 60, 200, 0.22);
 
-  /* Font Families*/
-
+  /* Font Families */
   --font-heading: var(--font-manrope);
 
   /*
@@ -75,6 +73,13 @@
   --max-width-desktop: 80rem;
 }
 
+/* ─── Base ───────────────────────────────────────────────────────────────── */
+
+body {
+  background-color: var(--color-dark);
+  color: var(--color-white);
+}
+
 /* ─── Scrollbar ─────────────────────────────────────────────────────────── */
 
 ::-webkit-scrollbar {
@@ -85,11 +90,11 @@
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 60, 200, 0.15);
   border-radius: 99px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.18);
+  background: rgba(0, 60, 200, 0.28);
 }
 
 /* ─── Scrollbar hide utility ─────────────────────────────────────────────── */
@@ -105,6 +110,6 @@
 /* ─── Selection ─────────────────────────────────────────────────────────── */
 
 ::selection {
-  background: rgba(124, 58, 237, 0.38);
-  color: #fff;
+  background: rgba(0, 123, 255, 0.2);
+  color: #0a0f2e;
 }

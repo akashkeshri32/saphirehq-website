@@ -79,7 +79,7 @@ export function CountryDropdown() {
           className={cn(
             "absolute top-full left-0 z-50 mt-1.5 w-56",
             "bg-surface-1 border border-border-default rounded-xl",
-            "shadow-2xl shadow-black/50 overflow-hidden",
+            "shadow-2xl shadow-black/10 overflow-hidden",
             "animate-fade-in",
           )}
         >

@@ -7,8 +7,6 @@ import {
   Zap,
   UsersRound,
 } from "lucide-react";
-import TopRightGradient from "@/assets/images/primary-gradient-right.svg";
-import Image from "next/image";
 
 const cards = [
   {
@@ -55,34 +53,35 @@ const cards = [
   },
 ];
 
-function ExpectCard({
-  Icon,
-  gradient,
-  title,
-  description,
-}: (typeof cards)[0]) {
+function ExpectCard({ Icon, gradient, title, description }: (typeof cards)[0]) {
   return (
-    <div className="relative group overflow-hidden rounded-2xl border border-border-default bg-linear-to-br from-#743ce596 to-#3706638a backdrop-blur-sm p-6 flex flex-col gap-4 h-full">
+    <div className="relative group overflow-hidden rounded-2xl border border-border-default bg-[#ffffff] shadow-[0_2px_20px_rgba(0,60,200,0.06)] p-6 flex flex-col gap-4 h-full">
+      {/* Gradient top accent strip */}
+      {/*<div
+        className={`absolute top-0 left-0 right-0 h-[2px] bg-linear-to-r ${gradient} opacity-15`}
+      />*/}
+
+      {/* Hover glow */}
       <div
-        className={`w-11 h-11 rounded-xl bg-linear-to-br ${gradient} flex items-center justify-center shrink-0 shadow-lg`}
+        className="absolute top-0 right-0 w-52 h-44 pointer-events-none opacity-80 "
+        style={{
+          background:
+            "radial-gradient(ellipse at right top, rgba(106,46,255,0.11) 0%, rgba(20,55,255,0.06) 55%, transparent 75%)",
+        }}
+      />
+
+      <div
+        className={`relative z-10 w-11 h-11 rounded-xl bg-linear-to-br ${gradient} flex items-center justify-center shrink-0 shadow-lg`}
       >
-        <Icon className="w-5 h-5 text-white" strokeWidth={1.5} />
+        <Icon className="w-5 h-5 text-[#fff]" strokeWidth={1.5} />
       </div>
 
-      <div>
+      <div className="relative z-10">
         <h3 className="text-white font-semibold text-20 mb-2 leading-snug font-heading">
           {title}
         </h3>
         <p className="text-text-secondary text-16">{description}</p>
       </div>
-
-      <Image
-        src={TopRightGradient}
-        alt=""
-        width={250}
-        height={190}
-        className="absolute top-0 right-0 object-contain -z-10 opacity-20 transition-opacity group-hover:opacity-50"
-      />
     </div>
   );
 }
@@ -92,9 +91,19 @@ export default function TwoColumnCards() {
     <section className="py-24">
       <Container>
         <div className="text-center max-w-3xl mx-auto mb-14">
+          <p
+            className="text-14 font-bold uppercase tracking-[0.12em] mb-4"
+            style={{
+              background: "linear-gradient(90deg, #6A2EFF 0%, #9A2DFF 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+            }}
+          >
+            Program Benefits
+          </p>
           <h2 className="text-white font-bold font-heading text-h2-mobile md:text-h2 mb-4">
-            What You Can{" "}
-            <span className="text-primary">Expect</span>
+            What You Can <span className="text-primary">Expect</span>
           </h2>
           <p className="text-text-secondary text-16 md:text-18">
             Everything you need to go from learner to industry-ready

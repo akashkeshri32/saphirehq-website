@@ -5,11 +5,22 @@ import { ButtonLink } from "@/components/ui/button/button-link";
 
 const Navbar = () => {
   return (
-    <nav className="sticky top-4 max-lg:hidden z-50">
+    <nav className="fixed left-0 w-full top-4 max-lg:hidden z-50">
       <Container>
         <div className="border border-border-primary rounded-full backdrop-blur-md bg-dark-secondary/80 p-2.5 pl-5 flex items-center justify-between">
           <figure>
-            <h3 className="text-2xl text-white">SaphireHQ</h3>
+            <h3
+              className="text-2xl font-bold font-heading"
+              style={{
+                background:
+                  "linear-gradient(135deg, #1437FF 0%, #6A2EFF 50%, #9A2DFF 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+              }}
+            >
+              SaphireHQ
+            </h3>
           </figure>
 
           <div className="list-style-none flex gap-x-4 text-text-secondary">

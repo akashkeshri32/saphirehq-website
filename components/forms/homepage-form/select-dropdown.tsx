@@ -63,8 +63,8 @@ export default function SelectDropdown({
         <div
           className={cn(
             "absolute top-full left-0 right-0 z-50 mt-1.5",
-            "bg-dark border border-border-default rounded-xl",
-            "shadow-2xl shadow-black/50 overflow-hidden animate-fade-in",
+            "bg-surface-1 border border-border-default rounded-xl",
+            "shadow-2xl shadow-black/10 overflow-hidden animate-fade-in",
           )}
         >
           <ul className="py-1">

@@ -9,7 +9,7 @@ const logos = [MotorolaLogo, PeugeotLogo, SugarLogo, XboxLogo];
 
 const LogosCarousel = () => {
   return (
-    <section className="py-28 relative z-20 ">
+    <section className="py-28 relative z-20 overflow-hidden">
       <h5 className="mb-7 text-center text-white font-semibold uppercase text-lg">
         Trusted By
       </h5>
@@ -22,7 +22,7 @@ const LogosCarousel = () => {
               key={`track1-${i}`}
               height={50}
               objectFit="contain"
-              className="invert"
+              className="opacity-70"
             />
           ))}
         </div>
@@ -35,7 +35,7 @@ const LogosCarousel = () => {
               key={`track2-${i}`}
               height={50}
               objectFit="contain"
-              className="invert"
+              className="opacity-70"
             />
           ))}
         </div>
