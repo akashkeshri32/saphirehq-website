@@ -22,8 +22,8 @@ function FaqItem({
       className={cn(
         "rounded-2xl border transition-colors duration-200",
         open
-          ? "border-primary/40 bg-primary/5"
-          : "border-border-default bg-surface-overlay",
+          ? "border-primary/40 bg-surface-overlay"
+          : "border-border-default bg-surface-overlay/50",
       )}
     >
       <button
@@ -70,7 +70,15 @@ export default function FaqSection() {
         <div className="grid grid-cols-1 md:grid-cols-[1fr_1.6fr] gap-10 items-start">
           {/* Left: sticky heading + description */}
           <div className="md:sticky md:top-24">
-            <p className="text-primary font-semibold text-14 uppercase tracking-widest mb-4">
+            <p
+              className="text-14 font-bold uppercase tracking-[0.12em] mb-4"
+              style={{
+                background: "linear-gradient(90deg, #9A2DFF 0%, #C9A6FF 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+              }}
+            >
               FAQ
             </p>
             <h2 className="text-white font-bold font-heading text-h2-mobile md:text-h2 mb-5 leading-tight">

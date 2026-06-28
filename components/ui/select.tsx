@@ -129,8 +129,8 @@ export function Select({
             role="listbox"
             className={cn(
               "absolute z-50 w-full mt-1.5 py-1 rounded-xl",
-              "bg-dark border border-border-default",
-              "shadow-lg shadow-black/30",
+              "bg-surface-1 border border-border-default",
+              "shadow-lg shadow-black/10",
               "max-h-60 overflow-y-auto",
             )}
           >

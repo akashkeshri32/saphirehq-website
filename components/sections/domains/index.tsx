@@ -17,8 +17,6 @@ import {
 import { cn } from "@/lib/utils/tailwind";
 import { ButtonLink } from "@/components/ui/button/button-link";
 import CounsellorForm from "./cousellor-form";
-import GradientRight from "@/assets/images/primary-gradient-right.svg";
-import Image from "next/image";
 
 const DOMAINS = [
   {
@@ -101,6 +99,17 @@ export default function DomainsSection() {
     <section className="py-10 md:py-24">
       <Container>
         <div className="text-center max-w-3xl mx-auto mb-14">
+          <p
+            className="text-14 font-bold uppercase tracking-[0.12em] mb-4"
+            style={{
+              background: "linear-gradient(90deg, #1437FF 0%, #6A2EFF 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+            }}
+          >
+            Choose Your Path
+          </p>
           <h2 className="text-white font-bold font-heading text-h2-mobile md:text-h2 mb-4">
             Explore Our <span className="text-primary">Domains</span>
           </h2>
@@ -131,7 +140,7 @@ export default function DomainsSection() {
                     gradient,
                   )}
                 >
-                  <Icon size={12} className="text-white" strokeWidth={1.5} />
+                  <Icon size={12} className="text-[#fff]" strokeWidth={1.5} />
                 </div>
                 <span
                   className={cn(
@@ -158,8 +167,8 @@ export default function DomainsSection() {
                   className={cn(
                     "group relative overflow-hidden flex flex-col gap-5 px-4 py-4.5 rounded-xl border text-left transition-all duration-200 cursor-pointer",
                     isActive
-                      ? "border-primary/40 bg-primary/10"
-                      : "border-border-default bg-surface-overlay hover:border-border-strong hover:bg-surface-hover",
+                      ? "border-primary/40 bg-surface-1/80"
+                      : "border-border-default bg-surface-overlay/40 hover:border-border-strong hover:bg-surface-hover",
                   )}
                 >
                   <div className="flex items-center gap-3">
@@ -171,7 +180,7 @@ export default function DomainsSection() {
                     >
                       <Icon
                         size={15}
-                        className="text-white"
+                        className="text-[#fff]"
                         strokeWidth={1.5}
                       />
                     </div>
@@ -193,29 +202,31 @@ export default function DomainsSection() {
                     )}
                   </div>
                   {isActive && (
-                    <p className="text-14 text-white">{description}</p>
+                    <p className="text-14 text-text-secondary">{description}</p>
                   )}
 
-                  <Image
-                    src={GradientRight}
-                    alt=""
-                    width={180}
-                    height={100}
-                    className={`absolute right-0 top-0 ${isActive ? "opacity-60" : "opacity-10"} `}
-                  />
+                  {isActive && (
+                    <div
+                      className="absolute right-0 top-0 w-36 h-24 pointer-events-none"
+                      style={{
+                        background:
+                          "radial-gradient(ellipse at right top, rgba(0,123,255,0.10) 0%, transparent 40%)",
+                      }}
+                    />
+                  )}
                 </button>
               );
             })}
           </div>
 
           {/* Right: detail panel */}
-          <div className="max-md:mt-5 rounded-2xl overflow-hidden border border-border-default bg-linear-to-br from-#743ce596 to-#3706638a backdrop-blur-sm max-md:px-3 p-8">
-            <Image
-              src={GradientRight}
-              alt=""
-              width={360}
-              height={250}
-              className={`absolute right-0 top-0 opacity-50 -z-10"} `}
+          <div className="max-md:mt-5 relative overflow-hidden rounded-2xl border border-border-default bg-[#ffffff] shadow-[0_2px_24px_rgba(0,60,200,0.06)] max-md:px-3 p-8">
+            <div
+              className="absolute right-0 top-0 w-80 h-64 pointer-events-none"
+              style={{
+                background:
+                  "radial-gradient(ellipse at right top, rgba(0,123,255,0.07) 0%, transparent 65%)",
+              }}
             />
             {/* Domain header */}
             <div className="flex items-center gap-4 mb-6">
@@ -227,7 +238,7 @@ export default function DomainsSection() {
               >
                 <active.Icon
                   size={24}
-                  className="text-white"
+                  className="text-[#fff]"
                   strokeWidth={1.5}
                 />
               </div>

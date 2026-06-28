@@ -60,8 +60,17 @@ export default function Footer() {
           {/* Col 1 — Brand */}
           <div className="flex flex-col gap-5">
             <div>
-              <h3 className="text-white text-2xl font-bold font-heading">
-                Sapphire<span className="text-primary">IQ</span>
+              <h3
+                className="text-2xl font-bold font-heading"
+                style={{
+                  background:
+                    "linear-gradient(135deg, #1437FF 0%, #6A2EFF 50%, #9A2DFF 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+              >
+                SaphireHQ
               </h3>
               <p className="text-text-secondary text-14 mt-3 leading-relaxed">
                 Bridging the gap between learning and employment through
