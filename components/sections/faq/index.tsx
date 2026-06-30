@@ -33,7 +33,7 @@ function FaqItem({
         <span
           className={cn(
             "font-semibold font-heading text-16 leading-snug transition-colors",
-            open ? "text-white" : "text-white/80",
+            open ? "text-ink" : "text-ink/80",
           )}
         >
           {q}
@@ -81,7 +81,7 @@ export default function FaqSection() {
             >
               FAQ
             </p>
-            <h2 className="text-white font-bold font-heading text-h2-mobile md:text-h2 mb-5 leading-tight">
+            <h2 className="text-ink font-bold font-heading text-h2-mobile md:text-h2 mb-5 leading-tight">
               Questions We Get <span className="text-primary">Asked A Lot</span>
             </h2>
             <p className="text-text-secondary text-16 md:text-18 leading-relaxed">

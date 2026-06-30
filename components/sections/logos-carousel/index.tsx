@@ -10,7 +10,7 @@ const logos = [MotorolaLogo, PeugeotLogo, SugarLogo, XboxLogo];
 const LogosCarousel = () => {
   return (
     <section className="py-28 relative z-20 overflow-hidden">
-      <h5 className="mb-7 text-center text-white font-semibold uppercase text-lg">
+      <h5 className="mb-7 text-center text-ink font-semibold uppercase text-lg">
         Trusted By
       </h5>
       <div className="marquee">

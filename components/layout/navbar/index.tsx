@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
     <nav className="fixed left-0 w-full top-4 max-lg:hidden z-50">
       <Container>
-        <div className="border border-border-primary rounded-full backdrop-blur-md bg-dark-secondary/80 p-2.5 pl-5 flex items-center justify-between">
+        <div className="border border-border-primary rounded-full backdrop-blur-md bg-canvas-tint/80 p-2.5 pl-5 flex items-center justify-between">
           <figure>
             <h3
               className="text-2xl font-bold font-heading"

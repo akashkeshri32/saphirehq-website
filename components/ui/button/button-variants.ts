@@ -8,9 +8,9 @@ export const buttonVariants = cva(
       variant: {
         default:
           "bg-linear-to-r from-[#1437FF] to-[#6A2EFF] text-[#fff] hover:opacity-90 active:opacity-80",
-        destructive: "bg-red-600 text-white hover:bg-red-700 active:bg-red-800",
+        destructive: "bg-red-600 text-[#fff] hover:bg-red-700 active:bg-red-800",
         outline:
-          "border border-primary/60  bg-transparent hover:bg-dark-secondary text-white",
+          "border border-primary/60  bg-transparent hover:bg-canvas-tint text-ink",
         secondary: "bg-gray-100 text-gray-900 hover:bg-gray-200",
         ghost: "hover:bg-gray-100 text-gray-700",
         link: "text-text-secondary underline-offset-4 hover:underline",

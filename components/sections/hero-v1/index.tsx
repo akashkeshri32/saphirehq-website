@@ -57,7 +57,7 @@ function FloatingCard({
           <Icon size={17} className="text-[#fff]" strokeWidth={1.5} />
         </div>
         <div>
-          <p className="text-white font-bold text-16 leading-none">{value}</p>
+          <p className="text-ink font-bold text-16 leading-none">{value}</p>
           <p className="text-text-secondary text-xs mt-1">{label}</p>
         </div>
       </div>
@@ -114,7 +114,7 @@ const HeroV1 = () => {
             Now Accepting Applications
           </div>
 
-          <h1 className="text-h1-mobile md:text-h1 text-white font-bold font-heading">
+          <h1 className="text-h1-mobile md:text-h1 text-ink font-bold font-heading">
             Where Future Professionals Build Real-World Experience.
           </h1>
 

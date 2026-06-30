@@ -110,7 +110,7 @@ export default function DomainsSection() {
           >
             Choose Your Path
           </p>
-          <h2 className="text-white font-bold font-heading text-h2-mobile md:text-h2 mb-4">
+          <h2 className="text-ink font-bold font-heading text-h2-mobile md:text-h2 mb-4">
             Explore Our <span className="text-primary">Domains</span>
           </h2>
           <p className="text-text-secondary text-16 md:text-18">
@@ -145,7 +145,7 @@ export default function DomainsSection() {
                 <span
                   className={cn(
                     "text-14 font-medium whitespace-nowrap",
-                    isActive ? "text-white" : "text-text-secondary",
+                    isActive ? "text-ink" : "text-text-secondary",
                   )}
                 >
                   {label}
@@ -188,8 +188,8 @@ export default function DomainsSection() {
                       className={cn(
                         "text-14 font-medium transition-colors",
                         isActive
-                          ? "text-white"
-                          : "text-text-secondary group-hover:text-white",
+                          ? "text-ink"
+                          : "text-text-secondary group-hover:text-ink",
                       )}
                     >
                       {label}
@@ -243,7 +243,7 @@ export default function DomainsSection() {
                 />
               </div>
               <div>
-                <h3 className="text-white font-bold font-heading text-20 leading-tight">
+                <h3 className="text-ink font-bold font-heading text-20 leading-tight">
                   {active.label}
                 </h3>
                 <p className="text-text-secondary text-14 mt-0.5">
@@ -275,7 +275,7 @@ export default function DomainsSection() {
             <div className="h-px bg-border-subtle my-6" />
 
             {/* Counsellor form */}
-            <h6 className="text-white font-bold font-heading text-18 mb-4">
+            <h6 className="text-ink font-bold font-heading text-18 mb-4">
               Get in touch with a counsellor
             </h6>
             <CounsellorForm domain={active.label} />

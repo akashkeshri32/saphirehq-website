@@ -13,7 +13,7 @@ export default async function Home() {
   const domains = await getAllDomains();
   return (
     <>
-      <div className="bg-dark relative overflow-x-hidden">
+      <div className="bg-canvas relative overflow-x-hidden">
         {/* Decorative gradient orbs */}
         {/* Top-right orb — deep royal blue → bright violet */}
         <div

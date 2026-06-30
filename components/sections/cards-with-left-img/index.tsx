@@ -61,7 +61,7 @@ function SolutionCard({
       </div>
 
       <div className="relative z-10">
-        <h3 className="text-white font-semibold text-20 mb-2 leading-snug font-heading">
+        <h3 className="text-ink font-semibold text-20 mb-2 leading-snug font-heading">
           {title}
         </h3>
         <p className="text-text-secondary text-16">{description}</p>
@@ -115,7 +115,7 @@ export default function CardsWithLeftImg() {
               >
                 Our Approach
               </p>
-              <h2 className="text-white font-bold font-heading text-h2-mobile md:text-h2 mb-4">
+              <h2 className="text-ink font-bold font-heading text-h2-mobile md:text-h2 mb-4">
                 How Sapphire IQ Helps You{" "}
                 <span className="text-primary">Move Forward</span>
               </h2>
