@@ -33,7 +33,7 @@ export default function HomepageFormModal({ domains }: Props) {
 
         <button
           onClick={() => router.back()}
-          className="absolute top-4 right-3 md:top-8 md:right-8 z-10 cursor-pointer text-text-secondary hover:text-white transition-colors"
+          className="absolute top-4 right-3 md:top-8 md:right-8 z-10 cursor-pointer text-text-secondary hover:text-ink transition-colors"
         >
           <X size={28} />
         </button>

@@ -5,12 +5,13 @@
     Colors
   */
   --color-primary: #1437ff;
-  --color-dark: #f4f7fe;
-  --color-text-secondary: #5b6a8e;
-  --color-dark-secondary: #ebf0ff;
+  --color-canvas: #f4f7fe;
+  --color-canvas-tint: #ebf0ff;
 
-  --color-white: #0a0f2e;
-  --color-white-light: #3d4a72;
+  --color-ink: #0a0f2e;
+  --color-ink-muted: #3d4a72;
+
+  --color-text-secondary: #5b6a8e;
 
   --color-surface-base: #ffffff;
   --color-surface-1: #f8faff;
@@ -73,11 +74,32 @@
   --max-width-desktop: 80rem;
 }
 
+/* ─── Animations ─────────────────────────────────────────────────────────── */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.55s ease both;
+}
+
 /* ─── Base ───────────────────────────────────────────────────────────────── */
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background-color: var(--color-dark);
-  color: var(--color-white);
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
 }
 
 /* ─── Scrollbar ─────────────────────────────────────────────────────────── */

@@ -33,7 +33,7 @@ export default function CounsellorForm({ domain }: { domain: string }) {
     <form
       ref={formRef}
       action={formAction}
-      className="space-y-4 text-white-light"
+      className="space-y-4 text-ink-muted"
     >
       <input type="hidden" name="domain" value={domain} />
 

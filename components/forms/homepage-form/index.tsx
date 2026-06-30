@@ -48,9 +48,9 @@ const HomepageForm = ({ domains }: { domains: Domain[] }) => {
   }, [state]);
 
   return (
-    <div className="lg:w-xl mx-auto overflow-y-auto text-white">
+    <div className="lg:w-xl mx-auto overflow-y-auto text-ink">
       {/* Gradient border wrapper */}
-      <div className="relative rounded-2xl p-px bg-linear-to-br from-dark-secondary via-transparent to-surface-overlay">
+      <div className="relative rounded-2xl p-px bg-linear-to-br from-canvas-tint via-transparent to-surface-overlay">
         <div className="rounded-2xl px-3.5 py-6 md:p-8">
           {/* Header */}
           <div className="mb-8">

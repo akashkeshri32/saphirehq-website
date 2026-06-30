@@ -41,7 +41,7 @@ function SocialLink({
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
-      className="w-9 h-9 rounded-xl border border-border-default bg-surface-overlay flex items-center justify-center text-text-secondary hover:border-primary/40 hover:text-white hover:bg-primary/10 transition-all duration-200"
+      className="w-9 h-9 rounded-xl border border-border-default bg-surface-overlay flex items-center justify-center text-text-secondary hover:border-primary/40 hover:text-ink hover:bg-primary/10 transition-all duration-200"
     >
       {children}
     </a>
@@ -120,7 +120,7 @@ export default function Footer() {
 
           {/* Col 2 — Quick Links */}
           <div>
-            <p className="text-white font-semibold font-heading text-16 mb-5">
+            <p className="text-ink font-semibold font-heading text-16 mb-5">
               Quick Links
             </p>
             <ul className="flex flex-col gap-3">
@@ -128,7 +128,7 @@ export default function Footer() {
                 <li key={label}>
                   <Link
                     href={href}
-                    className="text-text-secondary text-14 hover:text-white transition-colors duration-200 inline-flex items-center gap-1.5 group"
+                    className="text-text-secondary text-14 hover:text-ink transition-colors duration-200 inline-flex items-center gap-1.5 group"
                   >
                     {label}
                     <ArrowUpRight
@@ -143,7 +143,7 @@ export default function Footer() {
 
           {/* Col 3 — Domains */}
           <div>
-            <p className="text-white font-semibold font-heading text-16 mb-5">
+            <p className="text-ink font-semibold font-heading text-16 mb-5">
               Domains
             </p>
             <ul className="flex flex-col gap-3">
@@ -151,7 +151,7 @@ export default function Footer() {
                 <li key={label}>
                   <Link
                     href={href}
-                    className="text-text-secondary text-14 hover:text-white transition-colors duration-200"
+                    className="text-text-secondary text-14 hover:text-ink transition-colors duration-200"
                   >
                     {label}
                   </Link>
@@ -162,14 +162,14 @@ export default function Footer() {
 
           {/* Col 4 — Contact */}
           <div>
-            <p className="text-white font-semibold font-heading text-16 mb-5">
+            <p className="text-ink font-semibold font-heading text-16 mb-5">
               Get In Touch
             </p>
             <ul className="flex flex-col gap-4">
               <li>
                 <a
                   href="mailto:hello@saphirehq.com"
-                  className="flex items-center gap-3 text-text-secondary text-14 hover:text-white transition-colors duration-200 group"
+                  className="flex items-center gap-3 text-text-secondary text-14 hover:text-ink transition-colors duration-200 group"
                 >
                   <span className="w-8 h-8 rounded-lg border border-border-default bg-surface-overlay flex items-center justify-center shrink-0 group-hover:border-primary/40 transition-colors">
                     <Mail size={14} />
@@ -180,7 +180,7 @@ export default function Footer() {
               <li>
                 <a
                   href="tel:+919999999999"
-                  className="flex items-center gap-3 text-text-secondary text-14 hover:text-white transition-colors duration-200 group"
+                  className="flex items-center gap-3 text-text-secondary text-14 hover:text-ink transition-colors duration-200 group"
                 >
                   <span className="w-8 h-8 rounded-lg border border-border-default bg-surface-overlay flex items-center justify-center shrink-0 group-hover:border-primary/40 transition-colors">
                     <Phone size={14} />
@@ -211,7 +211,7 @@ export default function Footer() {
               <Link
                 key={label}
                 href={href}
-                className="text-text-secondary text-14 hover:text-white transition-colors duration-200"
+                className="text-text-secondary text-14 hover:text-ink transition-colors duration-200"
               >
                 {label}
               </Link>
