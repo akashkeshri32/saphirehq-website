@@ -9,8 +9,7 @@ import DomainsSection from "@/components/sections/domains";
 import FaqSection from "@/components/sections/faq";
 import { Suspense } from "react";
 
-export default async function Home() {
-  const domains = await getAllDomains();
+export default function Home() {
   return (
     <>
       <div className="bg-canvas relative overflow-x-hidden">
@@ -42,11 +41,6 @@ export default async function Home() {
 
         <Layout>
           <HeroV1 />
-
-          {/* Render Homepage Form based on url param */}
-          <Suspense>
-            <HomepageFormModal domains={domains} />
-          </Suspense>
 
           <CardsWithCenterImg />
 

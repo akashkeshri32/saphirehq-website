@@ -5,8 +5,13 @@ import Image from "next/image";
 
 import NavLogo from "@/assets/images/nav-logo.png";
 import Link from "next/link";
+import { Suspense } from "react";
+import HomepageFormModal from "@/components/modals/homepage-form-modal";
+import { getAllDomains } from "@/lib/db-utils/domain";
 
-const Navbar = () => {
+const Navbar = async () => {
+  const domains = await getAllDomains();
+
   return (
     <nav className="fixed left-0 w-full top-4 max-lg:hidden z-50">
       <Container>
@@ -37,6 +42,11 @@ const Navbar = () => {
           </div>
         </div>
       </Container>
+
+      {/* Render Homepage Form based on url param */}
+      <Suspense>
+        <HomepageFormModal domains={domains} />
+      </Suspense>
     </nav>
   );
 };
