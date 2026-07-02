@@ -13,6 +13,9 @@ import { Domain } from "@/lib/drizzle/schema";
 import { cn } from "@/lib/utils/tailwind";
 import { Input } from "@/components/ui/input";
 import { sendEnquiry } from "@/actions/send-enquiry";
+import Image from "next/image";
+
+import BrandLogo from "@/assets/images/logo.png";
 
 const HomepageForm = ({ domains }: { domains: Domain[] }) => {
   const initialState = {
@@ -55,8 +58,8 @@ const HomepageForm = ({ domains }: { domains: Domain[] }) => {
           {/* Header */}
           <div className="mb-8">
             <div className="flex items-center gap-2.5 mb-3">
-              <div className="w-8 h-8 rounded-lg bg-brand-600/20 border border-brand-500/25 flex items-center justify-center shrink-0">
-                <span className="text-brand-400 text-body-sm font-bold">S</span>
+              <div>
+                <Image src={BrandLogo} alt="saphireiq logo" height={35} />
               </div>
               <span className="text-caption text-brand-400 font-semibold tracking-wider uppercase">
                 SahphireHQ Internship

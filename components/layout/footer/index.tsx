@@ -1,22 +1,23 @@
 import Container from "@/components/layout/container";
-import { ButtonLink } from "@/components/ui/button/button-link";
 import { Mail, Phone, MapPin, ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
+import NavLogo from "@/assets/images/nav-logo.png";
 
 const DOMAINS = [
-  { label: "Data Analyst", href: "/domains#data-analyst" },
-  { label: "Business Analyst", href: "/domains#business-analyst" },
-  { label: "Data Science", href: "/domains#data-science" },
-  { label: "AI / ML", href: "/domains#ai-ml" },
-  { label: "UI/UX Designer", href: "/domains#ui-ux" },
-  { label: "Frontend", href: "/domains#frontend" },
-  { label: "Backend", href: "/domains#backend" },
-  { label: "Full Stack", href: "/domains#full-stack" },
+  { label: "Data Analyst", href: "/#data-analyst" },
+  { label: "Business Analyst", href: "/#business-analyst" },
+  { label: "Data Science", href: "/#data-science" },
+  { label: "AI / ML", href: "/#ai-ml" },
+  { label: "UI/UX Designer", href: "/#ui-ux" },
+  { label: "Frontend", href: "/#frontend" },
+  { label: "Backend", href: "/#backend" },
+  { label: "Full Stack", href: "/#full-stack" },
 ];
 
 const LINKS = [
-  { label: "Domains", href: "/domains" },
-  { label: "Instructors", href: "/instructors" },
+  { label: "Domains", href: "/#domains" },
+  { label: "Instructors", href: "/#instructors" },
   { label: "About Us", href: "/about" },
   { label: "Apply Now", href: "/?apply-now" },
 ];
@@ -60,18 +61,16 @@ export default function Footer() {
           {/* Col 1 — Brand */}
           <div className="flex flex-col gap-5">
             <div>
-              <h3
-                className="text-2xl font-bold font-heading"
-                style={{
-                  background:
-                    "linear-gradient(135deg, #1437FF 0%, #6A2EFF 50%, #9A2DFF 100%)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                }}
-              >
-                SaphireHQ
-              </h3>
+              <Link href={"/"}>
+                <figure>
+                  <Image
+                    src={NavLogo}
+                    alt="saphireiq logo"
+                    height={50}
+                    objectFit="contain"
+                  />
+                </figure>
+              </Link>
               <p className="text-text-secondary text-14 mt-3 leading-relaxed">
                 Bridging the gap between learning and employment through
                 real-world projects, mentorship, and industry-ready experience.

@@ -30,8 +30,8 @@ export async function sendCounsellorEnquiry(
     const { error } = await createEnquiry(enquiry);
     if (error) throw new Error(error.message);
 
-    const { error: mailError } = await sendEnquiryMail(enquiry);
-    if (mailError) throw new Error(mailError.message);
+    // const { error: mailError } = await sendEnquiryMail(enquiry);
+    // if (mailError) throw new Error(mailError.message);
 
     return { success: true, message: "Enquiry submitted" };
   } catch (error: any) {
