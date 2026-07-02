@@ -8,7 +8,16 @@ import {
   WHY_ITEMS,
   CAREER_ACCELERATOR_STEPS,
 } from "@/lib/data/domains";
-import { Clock, Download, ArrowLeft, Zap, CheckCircle2 } from "lucide-react";
+import {
+  Clock,
+  Download,
+  ArrowLeft,
+  Zap,
+  CheckCircle2,
+  FolderGit2,
+  Projector,
+} from "lucide-react";
+import Link from "next/link";
 
 /* ─── Static params ─────────────────────────────────────────────────────── */
 
@@ -59,14 +68,14 @@ export default async function DomainInnerPage({
     <div className="bg-canvas relative overflow-x-hidden min-h-screen">
       {/* Background orbs */}
       <div
-        className="fixed top-0 right-0 w-[600px] h-[600px] pointer-events-none -z-0"
+        className="fixed top-0 right-0 w-150 h-150 pointer-events-none z-0"
         style={{
           background:
             "radial-gradient(ellipse at 85% 0%, rgba(20,55,255,0.10) 0%, rgba(106,46,255,0.06) 45%, transparent 65%)",
         }}
       />
       <div
-        className="fixed top-0 left-0 w-[600px] h-[600px] pointer-events-none -z-0"
+        className="fixed top-0 left-0 w-150 h-150 pointer-events-none z-0"
         style={{
           background:
             "radial-gradient(ellipse at 15% 0%, rgba(154,45,255,0.08) 0%, rgba(201,166,255,0.04) 45%, transparent 65%)",
@@ -77,18 +86,6 @@ export default async function DomainInnerPage({
         {/* ── Hero ─────────────────────────────────────── */}
         <section className="pt-32 pb-16">
           <Container>
-            {/* Back link */}
-            <a
-              href="/domains"
-              className="inline-flex items-center gap-2 text-text-secondary text-14 font-medium mb-10 hover:text-ink transition-colors group"
-            >
-              <ArrowLeft
-                size={15}
-                className="group-hover:-translate-x-0.5 transition-transform"
-              />
-              All Domains
-            </a>
-
             <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-8 items-start">
               {/* Left — copy */}
               <div className="animate-fade-in-up">
@@ -147,11 +144,11 @@ export default async function DomainInnerPage({
                 {/* Duration + skills count */}
                 <div className="flex flex-wrap gap-4 mb-8">
                   <div className="flex items-center gap-2 text-text-secondary text-14 bg-surface-2 border border-border-subtle px-4 py-2.5 rounded-xl">
-                    <Clock
+                    <Projector
                       size={14}
                       className="text-primary opacity-80 shrink-0"
                     />
-                    <span className="font-medium">{duration}</span>
+                    <span className="font-medium">Real world projects</span>
                   </div>
                   <div className="flex items-center gap-2 text-text-secondary text-14 bg-surface-2 border border-border-subtle px-4 py-2.5 rounded-xl">
                     <CheckCircle2
@@ -166,32 +163,32 @@ export default async function DomainInnerPage({
 
                 {/* CTA buttons */}
                 <div className="flex flex-wrap gap-3">
-                  <a
+                  {/*<a
                     href={`/brochures/${id}.pdf`}
                     download
                     className="inline-flex items-center gap-2 text-14 font-semibold px-5 py-3 rounded-xl border border-border-default text-text-secondary hover:border-primary/40 hover:text-ink transition-all duration-200"
                   >
                     <Download size={14} />
                     Download Brochure
-                  </a>
-                  <a
+                  </a>*/}
+                  {/*<a
                     href="#counsellor-form"
                     className="inline-flex items-center gap-2 text-14 font-semibold px-5 py-3 rounded-xl bg-linear-to-r from-[#1437FF] to-[#6A2EFF] text-[#fff] hover:opacity-90 transition-opacity"
                   >
                     Talk to a Counsellor
-                  </a>
+                  </a>*/}
                 </div>
               </div>
 
               {/* Right — counsellor form */}
               <div
                 id="counsellor-form"
-                className="relative overflow-hidden rounded-2xl border border-border-default bg-[#ffffff] shadow-[0_4px_40px_rgba(20,55,255,0.08)] animate-fade-in-up"
+                className="relative overflow-hidden rounded-2xl border border-border-default bg-surface-base`` shadow-[0_4px_40px_rgba(20,55,255,0.08)] animate-fade-in-up"
                 style={{ animationDelay: "80ms" }}
               >
                 {/* Gradient top strip */}
                 <div
-                  className={`absolute top-0 left-0 right-0 h-[2px] bg-linear-to-r ${gradient}`}
+                  className={`absolute top-0 left-0 right-0 h-0.5 bg-linear-to-r ${gradient}`}
                 />
                 {/* Hover glow */}
                 <div
@@ -221,65 +218,97 @@ export default async function DomainInnerPage({
         {/* ── What You'll Learn + Sample Projects ──────── */}
         <section className="py-16 border-t border-border-subtle">
           <Container>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {/* Skills */}
-              <div className="relative overflow-hidden rounded-2xl border border-border-default bg-[#ffffff] shadow-[0_2px_20px_rgba(0,60,200,0.05)] p-8">
-                <div
-                  className={`absolute top-0 left-0 right-0 h-[2px] bg-linear-to-r ${gradient}`}
-                />
-                <h2 className="text-ink font-bold font-heading text-20 mb-2">
-                  What You&apos;ll Learn
-                </h2>
-                <p className="text-text-secondary text-14 mb-6">
-                  Core skills and tools you&apos;ll master in this program.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {skills.map((skill) => (
-                    <span
-                      key={skill}
-                      className="px-3 py-1.5 rounded-xl text-14 font-medium bg-surface-2 text-text-secondary border border-border-subtle"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
+            <div className="relative overflow-hidden rounded-3xl border border-border-default bg-[#ffffff] shadow-[0_4px_40px_rgba(20,55,255,0.07)]">
+              {/* Gradient top strip */}
+              <div
+                className={`absolute top-0 left-0 right-0 h-[2px] bg-linear-to-r ${gradient}`}
+              />
+              {/* Background glow */}
+              <div
+                className="absolute top-0 right-0 w-[480px] h-[360px] pointer-events-none"
+                style={{
+                  background: `radial-gradient(ellipse at right top, ${glowColor} 0%, transparent 65%)`,
+                }}
+              />
 
-              {/* Projects */}
-              <div className="relative overflow-hidden rounded-2xl border border-border-default bg-[#ffffff] shadow-[0_2px_20px_rgba(0,60,200,0.05)] p-8">
-                <div
-                  className={`absolute top-0 left-0 right-0 h-[2px] bg-linear-to-r ${gradient}`}
-                />
-                <h2 className="text-ink font-bold font-heading text-20 mb-2">
-                  Sample Projects
-                </h2>
-                <p className="text-text-secondary text-14 mb-6">
-                  Real deliverables you&apos;ll add to your portfolio.
-                </p>
-                <ul className="space-y-4">
-                  {projects.map((project, i) => (
-                    <li key={project} className="flex items-start gap-3">
-                      <div
-                        className={`shrink-0 w-7 h-7 rounded-lg bg-linear-to-br ${gradient} flex items-center justify-center text-[#fff] text-xs font-bold mt-0.5`}
+              <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-border-subtle">
+                {/* Left — Skills */}
+                <div className="p-8 md:p-10">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div
+                      className={`w-9 h-9 rounded-xl bg-linear-to-br ${gradient} flex items-center justify-center shrink-0 shadow-md`}
+                    >
+                      <CheckCircle2
+                        size={16}
+                        className="text-[#fff]"
+                        strokeWidth={2}
+                      />
+                    </div>
+                    <div>
+                      <h2 className="text-ink font-bold font-heading text-20 leading-tight">
+                        What You&apos;ll Learn
+                      </h2>
+                      <p className="text-text-secondary text-13 mt-0.5">
+                        Core skills and tools you&apos;ll master
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-wrap gap-2">
+                    {skills.map((skill) => (
+                      <span
+                        key={skill}
+                        className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-14 font-semibold bg-surface-2 text-ink border border-border-default hover:border-primary/30 hover:bg-canvas-tint transition-colors"
                       >
-                        {i + 1}
-                      </div>
-                      <div>
-                        <p className="text-ink font-semibold text-16">
+                        <span
+                          className={`w-1.5 h-1.5 rounded-full bg-linear-to-br ${gradient} shrink-0`}
+                        />
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Right — Projects */}
+                <div className="p-8 md:p-10">
+                  <div className="flex items-center gap-3 mb-6">
+                    <div
+                      className={`w-9 h-9 rounded-xl bg-linear-to-br ${gradient} flex items-center justify-center shrink-0 shadow-md`}
+                    >
+                      <FolderGit2
+                        size={16}
+                        className="text-[#fff]"
+                        strokeWidth={2}
+                      />
+                    </div>
+                    <div>
+                      <h2 className="text-ink font-bold font-heading text-20 leading-tight">
+                        Sample Projects
+                      </h2>
+                      <p className="text-text-secondary text-13 mt-0.5">
+                        Real deliverables for your portfolio
+                      </p>
+                    </div>
+                  </div>
+
+                  <ul className="space-y-3">
+                    {projects.map((project, i) => (
+                      <li
+                        key={project}
+                        className="flex items-center gap-4 p-4 rounded-2xl bg-surface-1 border border-border-subtle hover:border-border-default hover:bg-surface-2 transition-colors"
+                      >
+                        <div
+                          className={`shrink-0 w-8 h-8 rounded-xl bg-linear-to-br ${gradient} flex items-center justify-center text-[#fff] text-xs font-bold shadow-sm`}
+                        >
+                          {i + 1}
+                        </div>
+                        <p className="text-ink font-semibold text-15 leading-snug">
                           {project}
                         </p>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-                <a
-                  href={`/brochures/${id}.pdf`}
-                  download
-                  className="mt-6 inline-flex items-center gap-2 text-14 font-semibold text-text-secondary hover:text-ink transition-colors"
-                >
-                  <Download size={13} className="text-primary opacity-70" />
-                  Full syllabus in brochure
-                </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
           </Container>
@@ -310,12 +339,12 @@ export default async function DomainInnerPage({
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 sm:grid-rows-4 sm:grid-flow-col gap-5">
               {CAREER_ACCELERATOR_STEPS.map(
                 ({ step, Icon: StepIcon, title, description: stepDesc }, i) => (
                   <div
                     key={step}
-                    className="group relative overflow-hidden rounded-2xl border border-border-default bg-[#ffffff] shadow-[0_2px_16px_rgba(0,60,200,0.05)] p-6 flex gap-5 items-start animate-fade-in-up"
+                    className="group relative overflow-hidden rounded-2xl border border-border-default bg-surface-base shadow-[0_2px_16px_rgba(0,60,200,0.05)] p-6 flex gap-5 items-start animate-fade-in-up"
                     style={{ animationDelay: `${i * 60}ms` }}
                   >
                     {/* Hover glow */}
@@ -330,11 +359,11 @@ export default async function DomainInnerPage({
                     {/* Step number + icon */}
                     <div className="relative z-10 shrink-0">
                       <div
-                        className={`w-12 h-12 rounded-2xl bg-linear-to-br ${gradient} flex items-center justify-center shadow-md`}
+                        className={`w-12 h-12 rounded-2xl bg-linear-to-br from-[#6A2EFF] to-[#9A2DFF] flex items-center justify-center shadow-md`}
                       >
                         <StepIcon
                           size={20}
-                          className="text-[#fff]"
+                          className="text-white"
                           strokeWidth={1.5}
                         />
                       </div>
@@ -342,7 +371,7 @@ export default async function DomainInnerPage({
                         className="absolute -top-2 -right-2 w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold text-[#fff]"
                         style={{
                           background:
-                            "linear-gradient(135deg, #1437FF 0%, #6A2EFF 100%)",
+                            "linear-gradient(135deg, #6A2EFF 0%, #6A2EFF 100%)",
                         }}
                       >
                         {step}
@@ -426,7 +455,7 @@ export default async function DomainInnerPage({
         {/* ── CTA ───────────────────────────────────────── */}
         <section className="py-20">
           <Container>
-            <div className="relative overflow-hidden rounded-3xl border border-border-default bg-[#ffffff] shadow-[0_4px_48px_rgba(20,55,255,0.07)] px-8 py-14 md:p-16 text-center">
+            <div className="relative overflow-hidden rounded-3xl border border-border-default bg-surface-base shadow-[0_4px_48px_rgba(20,55,255,0.07)] px-8 py-14 md:p-16 text-center">
               <div
                 className="absolute inset-0 pointer-events-none"
                 style={{
@@ -435,7 +464,7 @@ export default async function DomainInnerPage({
                 }}
               />
               <div
-                className="absolute top-0 left-0 right-0 h-[2px]"
+                className="absolute top-0 left-0 right-0 h-0.5"
                 style={{
                   background:
                     "linear-gradient(90deg, transparent 0%, rgba(20,55,255,0.5) 30%, rgba(154,45,255,0.5) 70%, transparent 100%)",
@@ -464,20 +493,12 @@ export default async function DomainInnerPage({
                   curriculum, projects, and placement support.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                  <a
+                  <Link
                     href="#counsellor-form"
                     className="inline-flex items-center justify-center gap-2 font-semibold px-6 py-3 rounded-xl bg-linear-to-r from-[#1437FF] to-[#6A2EFF] text-[#fff] hover:opacity-90 transition-opacity"
                   >
                     Talk to a Counsellor
-                  </a>
-                  <a
-                    href={`/brochures/${id}.pdf`}
-                    download
-                    className="inline-flex items-center justify-center gap-2 font-semibold px-6 py-3 rounded-xl border border-primary/60 text-ink hover:bg-canvas-tint transition-colors"
-                  >
-                    <Download size={15} />
-                    Download Brochure
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

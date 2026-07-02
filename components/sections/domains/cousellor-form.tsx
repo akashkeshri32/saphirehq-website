@@ -2,17 +2,20 @@
 
 import { sendCounsellorEnquiry } from "@/actions/send-counsellor-enquiry";
 import { CountryDropdown } from "@/components/forms/homepage-form/country-dropdown";
+import SuccessMessage from "@/components/forms/homepage-form/success-message";
 import { Input } from "@/components/ui";
 import { Button } from "@/components/ui/button/button";
 import { cn } from "@/lib/utils/tailwind";
 import { Mail, Phone, User } from "lucide-react";
-import { useActionState, useEffect, useRef } from "react";
+import { useActionState, useEffect, useRef, useState } from "react";
 import { useFormStatus } from "react-dom";
 import toast from "react-hot-toast";
 
 const initialState = { success: false, message: "" };
 
 export default function CounsellorForm({ domain }: { domain: string }) {
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+
   const [state, formAction] = useActionState(
     sendCounsellorEnquiry,
     initialState,
@@ -20,16 +23,28 @@ export default function CounsellorForm({ domain }: { domain: string }) {
   const formRef = useRef<HTMLFormElement>(null);
 
   useEffect(() => {
+    let timeoutId: NodeJS.Timeout;
+
     if (!state.message) return;
     if (!state.success) {
       toast.error(state.message);
-    } else {
-      formRef.current?.reset();
-      toast.success("We'll be in touch soon!");
+    }
+
+    if (state.success) {
+      // @ts-ignore
+      clearTimeout(timeoutId);
+      // eslint-disable-next-line
+      setShowSuccessMessage(true);
+      timeoutId = setTimeout(() => {
+        formRef.current?.reset();
+        setShowSuccessMessage(false);
+      }, 10000);
     }
   }, [state]);
 
-  return (
+  return showSuccessMessage ? (
+    <SuccessMessage />
+  ) : (
     <form
       ref={formRef}
       action={formAction}

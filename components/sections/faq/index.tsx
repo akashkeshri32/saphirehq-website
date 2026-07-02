@@ -65,7 +65,7 @@ export default function FaqSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-10 md:py-24">
+    <section id="faqs" className="py-10 md:py-24">
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-[1fr_1.6fr] gap-10 items-start">
           {/* Left: sticky heading + description */}

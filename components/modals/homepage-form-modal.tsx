@@ -3,7 +3,6 @@
 import { Domain } from "@/lib/drizzle/schema";
 import { useRouter, useSearchParams } from "next/navigation";
 import HomepageForm from "../forms/homepage-form";
-import { Button } from "../ui/button/button";
 import { X } from "lucide-react";
 
 type Props = {
@@ -18,7 +17,7 @@ export default function HomepageFormModal({ domains }: Props) {
 
   if (!showModal) return;
   return (
-    <div className="fixed top-0 w-full h-screen z-20 flex justify-center items-center px-4">
+    <div className="fixed top-0 w-full h-screen z-50 flex justify-center items-center px-4">
       <div className="bg-black/50 backdrop-blur-sm absolute inset-0 w-full h-full z-20" />
 
       <div className="bg-surface-1 relative z-30 rounded-2xl overflow-hidden shadow-2xl border border-border-default">

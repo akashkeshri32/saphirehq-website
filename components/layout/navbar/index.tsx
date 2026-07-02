@@ -1,37 +1,39 @@
 // import Image from "next/image";
 import Container from "../container";
-import { Button } from "@/components/ui/button/button";
 import { ButtonLink } from "@/components/ui/button/button-link";
+import Image from "next/image";
+
+import NavLogo from "@/assets/images/nav-logo.png";
+import Link from "next/link";
 
 const Navbar = () => {
   return (
     <nav className="fixed left-0 w-full top-4 max-lg:hidden z-50">
       <Container>
         <div className="border border-border-primary rounded-full backdrop-blur-md bg-canvas-tint/80 p-2.5 pl-5 flex items-center justify-between">
-          <figure>
-            <h3
-              className="text-2xl font-bold font-heading"
-              style={{
-                background:
-                  "linear-gradient(135deg, #1437FF 0%, #6A2EFF 50%, #9A2DFF 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
-            >
-              SaphireHQ
-            </h3>
-          </figure>
+          <Link href={"/"}>
+            <figure>
+              <Image
+                src={NavLogo}
+                alt="saphireiq logo"
+                height={45}
+                objectFit="contain"
+              />
+            </figure>
+          </Link>
 
           <div className="list-style-none flex gap-x-4 text-text-secondary">
-            <NavItem title="Domains" href="/domains" />
-            <NavItem title="Instructors" href="/instructors" />
+            <NavItem title="Domains" href="/#domains" />
+            <NavItem title="Instructors" href="/#instructors" />
+            <NavItem title="Success stories" href="/#success-stories" />
+            <NavItem title="FAQs" href="/#faqs" />
+
             <NavItem title="About Us" href="/about" />
           </div>
           <div>
-            <Button size={"sm"} className="rounded-full">
-              Enroll Now
-            </Button>
+            <ButtonLink href="?apply-now" size={"sm"} className="rounded-full">
+              Apply Now
+            </ButtonLink>
           </div>
         </div>
       </Container>
