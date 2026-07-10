@@ -23,8 +23,10 @@ const LINKS = [
 ];
 
 const LEGAL = [
-  { label: "Privacy Policy", href: "/privacy" },
-  { label: "Terms of Service", href: "/terms" },
+  { label: "Privacy Policy", href: "/privacy-policy" },
+  { label: "Terms & Conditions", href: "/terms-and-conditions" },
+  { label: "Refund & Cancellation Policy", href: "/refund-and-cancellation-policy" },
+  { label: "Code of Conduct", href: "/code-of-conduct" },
 ];
 
 function SocialLink({
@@ -205,7 +207,7 @@ export default function Footer() {
           <p className="text-text-secondary text-14">
             © {new Date().getFullYear()} SaphireHQ. All rights reserved.
           </p>
-          <div className="flex items-center gap-5">
+          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
             {LEGAL.map(({ label, href }) => (
               <Link
                 key={label}
