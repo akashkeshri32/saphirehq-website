@@ -1,11 +1,28 @@
 import type { Metadata } from "next";
-import { Manrope } from "next/font/google";
+import { Poppins, JetBrains_Mono, Inter } from "next/font/google";
+import Layout from "@/components/layout/layout";
 import "./globals.css";
 
-const fontManrope = Manrope({
-  variable: "--font-manrope",
+const fontPoppins = Poppins({
+  variable: "--font-poppins",
   subsets: ["latin"],
+  weight : ["300", "400", "500", "600", "700"]
 });
+
+const fontJetbrains = JetBrains_Mono({
+  variable: "--font-jetbrains",
+  subsets: ["latin"],
+  weight : ["300", "400", "500", "600", "700"]
+});
+
+const fontInter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+  weight : ["300", "400", "500", "600", "700"]
+});
+
+
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,8 +35,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${fontManrope.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="en" className={`${fontPoppins.variable} ${fontJetbrains.variable} ${fontInter.variable} h-full antialiased`}>
+      <body className="min-h-full flex flex-col font-inter text-black!">
+        <Layout>{children}</Layout>
+      </body>
     </html>
   );
 }

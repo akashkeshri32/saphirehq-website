@@ -4,74 +4,129 @@
   /*
     Colors
   */
-  --color-primary: #1437ff;
-  --color-canvas: #f4f7fe;
-  --color-canvas-tint: #ebf0ff;
 
-  --color-ink: #0a0f2e;
-  --color-ink-muted: #3d4a72;
+  --color-black : #071B2D;
+  --color-black-secondary : #071B2D;
+  --color-text-gray : #64748B;
+  --color-text-gray-secondary : #1E3049;
+  --color-text-gray-secondary-light : #1E3049BF;
 
-  --color-text-secondary: #5b6a8e;
+  --color-text-white-secondary : #FFFFFFD1;
 
-  --color-surface-base: #ffffff;
-  --color-surface-1: #f8faff;
-  --color-surface-2: #f2f5ff;
-  --color-surface-3: #ebf0ff;
+  --color-white-two : #CBD5E1;
 
-  --color-surface-overlay: rgba(255, 255, 255, 0.85);
-  --color-surface-input: rgba(0, 100, 255, 0.04);
-  --color-surface-hover: rgba(0, 100, 255, 0.07);
-  --color-surface-active: rgba(0, 100, 255, 0.11);
-
-  /*
-    Borders
-  */
-  --color-border-primary: #b5ccff;
-  --color-border-subtle: rgba(0, 60, 200, 0.06);
-  --color-border-default: rgba(0, 60, 200, 0.12);
-  --color-border-strong: rgba(0, 60, 200, 0.22);
+  --color-blue-primary : #1437FF;
+  --color-blue-secondary : #00B7FF;
+  --color-brown-light: #FFD166;
+  --color-brown-dark : #4A3300;
+  --color-green : #00A88A;
+  --color-blue-light: #E9EEFF;
+  --color-purple : #6A2EFF;
+  --color-gray-two : #8E9BAC;
+  --color-bg-light : #F1F5F9;
 
   /* Font Families */
-  --font-heading: var(--font-manrope);
+  --font-heading: var(--font-poppins);
+
+  --font-jetbrains: var(--font-jetbrains);
+  --font-inter: var(--font-inter);
+
+
+  --color-border-stroke : #E3E9F2;
+
 
   /*
     SIZES
   */
 
   /* Fonts */
-  --text-h1: 4.125rem;
+  --text-h1: 4.25rem; /* 68px */
   --text-h1--line-height: 110%;
-  --text-h1--letter-spacing: -0.02em;
+  --text-h1--letter-spacing: -0.04em;
   --text-h1--font-weight: 500;
 
-  --text-h1-mobile: 2rem;
+  --text-h1-mobile: 2.75rem;
   --text-h1-mobile--line-height: 110%;
   --text-h1-mobile--letter-spacing: -0.02em;
   --text-h1-mobile--font-weight: 500;
 
-  --text-h2: 3.125rem;
+
+  --text-h2: 2.625rem;  /* 42px */
   --text-h2--line-height: 110%;
   --text-h2--letter-spacing: -0.02em;
   --text-h2--font-weight: 500;
 
-  --text-h2-mobile: 2rem;
+  --text-h2-mobile: 1.875rem;
   --text-h2-mobile--line-height: 110%;
-  --text-h2-mobile--letter-spacing: -0.02em;
+  --text-h2-mobile--letter-spacing: -0.03em;
   --text-h2-mobile--font-weight: 500;
 
-  --text-20: 1.25rem;
+  --text-h3 : 2.125rem; /* 34px */
+  --text-h3-mobile--line-height: 110%;
+  --text-h3-mobile--letter-spacing: -0.03em;
+  --text-h3-mobile--font-weight: 600;
+
+
+  --text-h3-mobile : 1.75rem;
+  --text-h3-mobile--line-height: 110%;
+  --text-h3-mobile--letter-spacing: -0.03em;
+  --text-h3-mobile--font-weight: 600;
+
+  --text-20: 1.25rem; /* 20px */
   --text-20--line-height: 140%;
 
-  --text-18: 1.125rem;
-  --text-18--line-height: 140%;
+  --text-18: 1.125rem; /* 18px */
+  --text-18--line-height: 160%;
+
+
+  --text-17: 1.063rem;
+  --text-17--line-height: 140%;
 
   --text-16: 1rem;
   --text-16--line-height: 120%;
 
+  --text-15: 1rem;
+  --text-15--line-height: 140%;
+
   --text-14: 0.875rem;
   --text-14--line-height: 120%;
 
+  --text-13: 0.813rem;
+  --text-13--line-height: 120%;
+
+  --text-12: 0.75rem;
+  --text-12--line-height: 120%;
+
   --max-width-desktop: 80rem;
+
+
+  /**
+    Spacing
+  **/
+
+  --spacing-8 : 0.5rem;
+  --spacing-16 : 1rem;
+  --spacing-24 : 1.5rem;
+  --spacing-32 : 2rem;
+  --spacing-40 : 2.5rem;
+  --spacing-56 : 3.5rem;
+  --spacing-72 : 4.5rem;
+  --spacing-80 : 5rem;
+  --spacing-96 : 6rem;
+  --spacing-120 : 7.5rem;
+
+}
+
+
+.primary-gradient {
+  background: linear-gradient(104.86deg, #1437FF 0%, #6A2EFF 100%);
+}
+.gradient-text {
+  background: linear-gradient(90deg, #00B7FF 0%, #1437FF 38%, #6A2EFF 70%, #9A2DFF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
 }
 
 /* ─── Animations ─────────────────────────────────────────────────────────── */
@@ -89,6 +144,19 @@
 
 .animate-fade-in-up {
   animation: fadeInUp 0.55s ease both;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
 }
 
 /* ─── Base ───────────────────────────────────────────────────────────────── */

@@ -1,0 +1,10 @@
+<svg width="480" height="340" viewBox="0 0 480 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="480" height="340" fill="#FDFCF7"/>
+  <rect x="16" y="16" width="448" height="308" fill="none" stroke="#C9A45C" stroke-width="4"/>
+  <rect x="26" y="26" width="428" height="288" fill="none" stroke="#C9A45C" stroke-width="1"/>
+  <circle cx="240" cy="120" r="30" fill="none" stroke="#C9A45C" stroke-width="3"/>
+  <path d="M228 120L237 129L254 109" stroke="#C9A45C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="240" y="185" font-family="Georgia, serif" font-size="20" fill="#4A3300" text-anchor="middle">Certificate of Completion</text>
+  <text x="240" y="215" font-family="Arial, sans-serif" font-size="12" fill="#8E9BAC" text-anchor="middle">Replace with certificate image</text>
+  <line x1="160" y1="250" x2="320" y2="250" stroke="#C9A45C" stroke-width="1"/>
+</svg>

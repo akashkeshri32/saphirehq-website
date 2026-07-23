@@ -1,54 +1,28 @@
 import LinkedinIcon from "@/components/icons/linkedin";
-import {
-  BarChart3,
-  Brain,
-  Boxes,
-  Bot,
-  Palette,
-  Globe,
-  Server,
-  Layers,
-  FolderGit2,
-  Award,
-  Users,
-  Video,
-  FileText,
-  MessageSquare,
-  Zap,
-  Building2,
-  BookOpen,
-} from "lucide-react";
+
+import BarGraphIcon from "@/assets/icons/bar-graph.svg";
+import GraphIcon from "@/assets/icons/graph-purple.svg";
+import SunIcon from "@/assets/icons/sun.svg";
+import DashboardIcon from "@/assets/icons/dashboard.svg";
+import PasteIcon from "@/assets/icons/paste-purple.svg";
+import CodeIcon from "@/assets/icons/code.svg";
+import BackendIcon from "@/assets/icons/backend.svg";
+import FullstackIcon from "@/assets/icons/fullstack.svg";
+
+
+
+
 
 /* ─── Domain tracks ─────────────────────────────────────────────────────── */
 
 export const DOMAINS = [
-  {
-    id: "data-analyst",
-    label: "Data Analyst",
-    Icon: BarChart3,
-    gradient: "from-[#1437FF] to-[#00b7ff]",
-    glowColor: "rgba(20,55,255,0.12)",
-    tagline: "Turn data into decisions",
-    description:
-      "Master the art of transforming raw data into actionable insights. You'll work with real business datasets, build interactive dashboards, and present findings the way analysts do at high-growth companies — not just learn the theory.",
-    skills: ["SQL", "Python", "Power BI", "Tableau", "Excel", "Statistics"],
-    projects: [
-      "Sales performance dashboard",
-      "Customer segmentation analysis",
-      "KPI tracking & reporting system",
-    ],
-    duration: "8–12 weeks",
-    popular: false,
-  },
-  {
+    {
     id: "business-analyst",
     label: "Business Analyst",
-    Icon: Boxes,
-    gradient: "from-[#6A2EFF] to-[#9A2DFF]",
-    glowColor: "rgba(106,46,255,0.12)",
-    tagline: "Bridge business and technology",
+    Icon: BarGraphIcon,
+    tagline: "Turn business problems into data-backed decisions and strategy.",
     description:
-      "Learn to identify business challenges, gather requirements, and design solutions that align technical capabilities with strategic goals. Practice stakeholder communication, process mapping, and agile delivery on real scenarios.",
+      "Turn business problems into data-backed decisions and strategy.",
     skills: [
       "Requirements Analysis",
       "Agile",
@@ -65,13 +39,30 @@ export const DOMAINS = [
     duration: "8–12 weeks",
     popular: false,
   },
+
+  {
+    id: "data-analyst",
+    label: "Data Analyst",
+    Icon: GraphIcon,
+    tagline: "Explore, clean, and visualize data to uncover the story behind the numbers.",
+    description:
+      "Explore, clean, and visualize data to uncover the story behind the numbers.",
+    skills: ["SQL", "Python", "Power BI", "Tableau", "Excel", "Statistics"],
+    projects: [
+      "Sales performance dashboard",
+      "Customer segmentation analysis",
+      "KPI tracking & reporting system",
+    ],
+    duration: "8–12 weeks",
+    popular: false,
+  },
+
   {
     id: "data-science",
     label: "Data Science",
-    Icon: Brain,
-    gradient: "from-[#00C9A7] to-[#00b7ff]",
+    Icon: SunIcon,
     glowColor: "rgba(0,201,167,0.12)",
-    tagline: "Extract knowledge from complexity",
+    tagline: "Master data analysis by working with real datasets, dashboards, and business challenges.",
     description:
       "Go beyond basic analysis and build predictive models that anticipate real outcomes. Combine statistical thinking with Python to uncover hidden patterns in complex datasets and communicate findings that shape business strategy.",
     skills: [
@@ -92,11 +83,10 @@ export const DOMAINS = [
   },
   {
     id: "ai-ml",
-    label: "AI / ML Engineer",
-    Icon: Bot,
-    gradient: "from-[#FF6B35] to-[#FF9A3C]",
+    label: "AI / ML",
+    Icon: DashboardIcon,
     glowColor: "rgba(255,107,53,0.12)",
-    tagline: "Build the systems of tomorrow",
+    tagline: "Build and train models that solve real problems, from prototype to deployment.",
     description:
       "Dive into the technologies reshaping every industry. From neural networks to large language models, you'll build, train, and deploy intelligent systems that can see, understand, and reason — hands-on from the very first week.",
     skills: [
@@ -117,11 +107,9 @@ export const DOMAINS = [
   },
   {
     id: "ui-ux",
-    label: "UI/UX Designer",
-    Icon: Palette,
-    gradient: "from-[#F857A6] to-[#FF5858]",
-    glowColor: "rgba(248,87,166,0.12)",
-    tagline: "Design experiences people love",
+    label: "UI/UX",
+    Icon: PasteIcon,
+    tagline: "Design digital products people love — from research to pixel-perfect execution.",
     description:
       "Learn the complete design process — from user research and low-fidelity wireframes to polished interactive prototypes. You'll design real interfaces, run usability sessions, and build a portfolio that stands out to top companies.",
     skills: [
@@ -143,10 +131,8 @@ export const DOMAINS = [
   {
     id: "frontend",
     label: "Frontend Developer",
-    Icon: Globe,
-    gradient: "from-[#1437FF] to-[#6A2EFF]",
-    glowColor: "rgba(20,55,255,0.12)",
-    tagline: "Build beautiful web interfaces",
+    Icon: CodeIcon,
+    tagline: "Build fast, accessible interfaces with modern frameworks and real design systems.",
     description:
       "Craft the interfaces users see and interact with every day. Build production-quality projects with modern frameworks, write clean maintainable code, and develop the eye for detail that separates great frontend engineers from good ones.",
     skills: [
@@ -167,11 +153,9 @@ export const DOMAINS = [
   },
   {
     id: "backend",
-    label: "Backend Developer",
-    Icon: Server,
-    gradient: "from-[#4F46E5] to-[#1437FF]",
-    glowColor: "rgba(79,70,229,0.12)",
-    tagline: "Engineer the logic that matters",
+    label: "Backend Development",
+    Icon: BackendIcon,
+    tagline: "Architect the servers, APIs, and databases that power real products at scale.",
     description:
       "Build the systems that power applications at scale. Design secure REST APIs, work with databases, implement authentication, and write backend code that's reliable, efficient, and truly production-ready.",
     skills: [
@@ -192,11 +176,9 @@ export const DOMAINS = [
   },
   {
     id: "full-stack",
-    label: "Full Stack Developer",
-    Icon: Layers,
-    gradient: "from-[#9A2DFF] to-[#C9A6FF]",
-    glowColor: "rgba(154,45,255,0.12)",
-    tagline: "Build complete products end to end",
+    label: "Full Stack Development",
+    Icon: FullstackIcon,
+    tagline: "Ship complete products end-to-end, from database to deployed interface.",
     description:
       "Master both frontend and backend to deliver complete, production-ready web applications from scratch. The most comprehensive track — ideal for building entire products independently or stepping into a tech lead role.",
     skills: [
@@ -221,87 +203,87 @@ export type DomainData = (typeof DOMAINS)[number];
 
 /* ─── Why SaphireIQ ─────────────────────────────────────────────────────── */
 
-export const WHY_ITEMS = [
-  {
-    Icon: FolderGit2,
-    gradient: "from-[#1437FF] to-[#6A2EFF]",
-    title: "Real-World Projects",
-    description:
-      "Not tutorials or toy examples — actual industry projects with scope documents, deliverables, and client-style review sessions that build your portfolio from day one.",
-  },
-  {
-    Icon: Users,
-    gradient: "from-[#6A2EFF] to-[#9A2DFF]",
-    title: "Expert Mentorship",
-    description:
-      "Weekly check-ins with experienced professionals in your domain who give actionable feedback, help you unblock, and share insights you won't find in any course.",
-  },
-  {
-    Icon: Award,
-    gradient: "from-[#9A2DFF] to-[#C9A6FF]",
-    title: "Portfolio & Certification",
-    description:
-      "Graduate with a verified certificate and a portfolio of real, polished projects that you can confidently present to any recruiter or hiring manager.",
-  },
-] as const;
+// export const WHY_ITEMS = [
+//   {
+//     Icon: FolderGit2,
+//     gradient: "from-[#1437FF] to-[#6A2EFF]",
+//     title: "Real-World Projects",
+//     description:
+//       "Not tutorials or toy examples — actual industry projects with scope documents, deliverables, and client-style review sessions that build your portfolio from day one.",
+//   },
+//   {
+//     Icon: Users,
+//     gradient: "from-[#6A2EFF] to-[#9A2DFF]",
+//     title: "Expert Mentorship",
+//     description:
+//       "Weekly check-ins with experienced professionals in your domain who give actionable feedback, help you unblock, and share insights you won't find in any course.",
+//   },
+//   {
+//     Icon: Award,
+//     gradient: "from-[#9A2DFF] to-[#C9A6FF]",
+//     title: "Portfolio & Certification",
+//     description:
+//       "Graduate with a verified certificate and a portfolio of real, polished projects that you can confidently present to any recruiter or hiring manager.",
+//   },
+// ] as const;
 
-/* ─── 8-Step Career Accelerator ─────────────────────────────────────────── */
+// /* ─── 8-Step Career Accelerator ─────────────────────────────────────────── */
 
-export const CAREER_ACCELERATOR_STEPS = [
-  {
-    step: 1,
-    Icon: Video,
-    title: "Live Mentor Guidance",
-    description:
-      "Learn directly from experienced industry professionals through interactive live sessions and expert guidance.",
-  },
-  {
-    step: 2,
-    Icon: BookOpen,
-    title: "Industry-Relevant Projects",
-    description:
-      "Apply your knowledge by working on practical projects designed around real business challenges.",
-  },
-  {
-    step: 3,
-    Icon: FolderGit2,
-    title: "Portfolio Development",
-    description:
-      "Build a strong project portfolio that showcases your practical skills and technical expertise.",
-  },
-  {
-    step: 4,
-    Icon: FileText,
-    title: "ATS-Optimized Resume Building",
-    description:
-      "Create a professional resume optimized for Applicant Tracking Systems (ATS) to improve your chances of getting shortlisted.",
-  },
-  {
-    step: 5,
-    Icon: LinkedinIcon,
-    title: "LinkedIn Profile Optimization",
-    description:
-      "Develop a recruiter-friendly LinkedIn profile that strengthens your professional presence and personal brand.",
-  },
-  {
-    step: 6,
-    Icon: MessageSquare,
-    title: "Mock Interviews",
-    description:
-      "Prepare for technical and HR interviews through structured mock interview sessions with personalized feedback.",
-  },
-  {
-    step: 7,
-    Icon: Zap,
-    title: "Career Readiness",
-    description:
-      "Enhance your communication, presentation, and professional skills to confidently enter the job market.",
-  },
-  {
-    step: 8,
-    Icon: Building2,
-    title: "Placement Assistance",
-    description:
-      "Receive placement assistance through our network of 500+ collaborated companies to help you explore relevant career opportunities.",
-  },
-] as const;
+// export const CAREER_ACCELERATOR_STEPS = [
+//   {
+//     step: 1,
+//     Icon: Video,
+//     title: "Live Mentor Guidance",
+//     description:
+//       "Learn directly from experienced industry professionals through interactive live sessions and expert guidance.",
+//   },
+//   {
+//     step: 2,
+//     Icon: BookOpen,
+//     title: "Industry-Relevant Projects",
+//     description:
+//       "Apply your knowledge by working on practical projects designed around real business challenges.",
+//   },
+//   {
+//     step: 3,
+//     Icon: FolderGit2,
+//     title: "Portfolio Development",
+//     description:
+//       "Build a strong project portfolio that showcases your practical skills and technical expertise.",
+//   },
+//   {
+//     step: 4,
+//     Icon: FileText,
+//     title: "ATS-Optimized Resume Building",
+//     description:
+//       "Create a professional resume optimized for Applicant Tracking Systems (ATS) to improve your chances of getting shortlisted.",
+//   },
+//   {
+//     step: 5,
+//     Icon: LinkedinIcon,
+//     title: "LinkedIn Profile Optimization",
+//     description:
+//       "Develop a recruiter-friendly LinkedIn profile that strengthens your professional presence and personal brand.",
+//   },
+//   {
+//     step: 6,
+//     Icon: MessageSquare,
+//     title: "Mock Interviews",
+//     description:
+//       "Prepare for technical and HR interviews through structured mock interview sessions with personalized feedback.",
+//   },
+//   {
+//     step: 7,
+//     Icon: Zap,
+//     title: "Career Readiness",
+//     description:
+//       "Enhance your communication, presentation, and professional skills to confidently enter the job market.",
+//   },
+//   {
+//     step: 8,
+//     Icon: Building2,
+//     title: "Placement Assistance",
+//     description:
+//       "Receive placement assistance through our network of 500+ collaborated companies to help you explore relevant career opportunities.",
+//   },
+// ] as const;

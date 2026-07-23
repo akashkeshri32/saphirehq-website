@@ -1,58 +1,86 @@
-import Layout from "@/components/layout/layout";
-import HeroV1 from "@/components/sections/hero-v1";
-import { getAllDomains } from "@/lib/db-utils/domain";
-import HomepageFormModal from "@/components/modals/homepage-form-modal";
-import CardsWithCenterImg from "@/components/sections/cards-with-center-img";
-import CardsWithLeftImg from "@/components/sections/cards-with-left-img";
-import TwoColumnCards from "@/components/sections/two-column-cards";
-import DomainsSection from "@/components/sections/domains";
-import FaqSection from "@/components/sections/faq";
-import { Suspense } from "react";
+import { HeroSection } from "@/components/sections/heroSection";
+import { DomainsSection } from "@/components/sections/domainsSection";
+import WhySapphire from "@/components/sections/cards-section/why-sapphire";
+import FindYourPath from "@/components/sections/cards-section/find-your-path";
+import { JourneySection } from "@/components/sections/journeySection";
+import { ColumnHighlightsSection } from "@/components/sections/columnHighlightsSection";
+import { PlacementAssistanceSection } from "@/components/sections/placementAssistanceSection";
+import { StatsSection } from "@/components/sections/statsSection";
+import { LogoCarouselSection } from "@/components/sections/logoCarouselSection";
+import { SuccessStoriesSection } from "@/components/sections/successStoriesSection";
+import { TestimonialsSection } from "@/components/sections/testimonialsSection";
+import { CertificatesSection } from "@/components/sections/certificatesSection";
+import { MeetInstructorsSection } from "@/components/sections/meetInstructorsSection";
+import { FaqSection } from "@/components/sections/faqSection";
+import { CtaSection } from "@/components/sections/ctaSection";
 
-export default function Home() {
+import IndustryProjectImage from "@/assets/industry-projects-col-img.png"
+import MentorshipImage from "@/assets/industry-projects-col-img.png"
+
+
+export default function Homepage() {
   return (
     <>
-      <div className="bg-canvas relative overflow-x-hidden">
-        {/* Decorative gradient orbs */}
-        {/* Top-right orb — deep royal blue → bright violet */}
-        <div
-          className="fixed top-0 right-0 w-175 h-175 pointer-events-none z-0 max-md:opacity-20"
-          style={{
-            background:
-              "radial-gradient(ellipse at 85% 0%, rgba(20,55,255,0.14) 0%, rgba(106,46,255,0.08) 45%, transparent 65%)",
-          }}
-        />
-        {/* Top-left orb — neon purple → light lavender */}
-        <div
-          className="fixed top-0 left-0 w-175 h-175 pointer-events-none z-0 max-md:opacity-30"
-          style={{
-            background:
-              "radial-gradient(ellipse at 15% 0%, rgba(154,45,255,0.11) 0%, rgba(201,166,255,0.06) 45%, transparent 65%)",
-          }}
-        />
-        {/* Mid-page center glow */}
-        <div
-          className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-200 h-200 pointer-events-none z-0 max-md:opacity-30"
-          style={{
-            background:
-              "radial-gradient(ellipse, rgba(20,55,255,0.04) 0%, transparent 70%)",
-          }}
-        />
+      <HeroSection />
 
-        <Layout>
-          <HeroV1 />
+      <WhySapphire />
 
-          <CardsWithCenterImg />
+      <FindYourPath />
 
-          <CardsWithLeftImg />
+      <DomainsSection />
 
-          <TwoColumnCards />
+      <JourneySection />
 
-          <DomainsSection />
+      <ColumnHighlightsSection
+        eyebrow="Industry Projects"
+        heading="100+ projects, built for real briefs."
+        description="Every project mirrors a real business problem — not a simplified classroom version of one. You'll leave with work you can defend in an interview, not just describe."
+        highlights={[
+          "Real datasets, real stakeholders, real constraints",
+          "Reviewed and scored by industry mentors",
+          "Directly portfolio-ready on completion",
+        ]}
 
-          <FaqSection />
-        </Layout>
-      </div>
+        imageSrc={IndustryProjectImage}
+      />
+
+      <ColumnHighlightsSection
+        eyebrow="Live Mentorship"
+        heading="Guided by people who've done the job."
+        description="Every domain is led by 30+ mentors currently working in the field — not full-time instructors reading from a syllabus. You get direct, live feedback on real work."
+        highlights={[
+          "Weekly live sessions, not pre-recorded lectures",
+          "Direct project feedback from your assigned mentor",
+          "Career guidance beyond the curriculum",
+        ]}
+
+        imageSrc={MentorshipImage}
+      />
+
+      <PlacementAssistanceSection />
+
+      <StatsSection />
+
+      <LogoCarouselSection />
+
+      <SuccessStoriesSection />
+
+      <TestimonialsSection />
+
+      <CertificatesSection />
+
+      <MeetInstructorsSection />
+
+      <FaqSection />
+
+      <CtaSection
+        heading="Don't just plan. Start building."
+        description="Your future is built on the decisions you make today. Take the first step toward an exciting career with Sapphire IQ."
+        buttons={[
+          { label: "Apply Now", href: "?apply-now", variant: "white" },
+          { label: "Explore Domains", href: "/#domains", variant: "outline-white" },
+        ]}
+      />
     </>
   );
 }
