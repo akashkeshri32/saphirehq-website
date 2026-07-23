@@ -177,7 +177,8 @@ export const sendEnquiryMail = async (
                   ${row("Email Address", enquiry.email)}
                   ${row("Phone Number", enquiry.phone)}
                   ${row("Domain of Interest", enquiry.domainOfInterest)}
-                  ${row("Duration", enquiry.duration)}
+                  ${row("Applicant Type", enquiry.applicantType || "")}
+                  ${row("Duration", enquiry?.duration || "")}
                   ${row("Submitted At", submittedAt)}
                 </table>
 
