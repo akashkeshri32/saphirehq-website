@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import Footer from "@/components/layout/footer";
-import Navbar from "@/components/layout/navbar";
 import LegalPageHeader from "@/components/sections/legal-page-header";
 import LegalContent from "@/components/sections/legal-content";
 
@@ -13,7 +11,6 @@ export const metadata: Metadata = {
 export default function CodeOfConduct() {
   return (
     <>
-      <Navbar />
       <LegalPageHeader title="Code of Conduct & Communication Guidelines" lastUpdated="09/07/2026" />
 
       <LegalContent>
@@ -74,8 +71,6 @@ export default function CodeOfConduct() {
         <h3>7. Policy Updates</h3>
         <p>Sapphire IQ reserves the right to modify or update this Code of Conduct &amp; Communication Guidelines at any time. Continued use of the platform constitutes acceptance of the revised policy.</p>
       </LegalContent>
-
-      <Footer />
     </>
   );
 }

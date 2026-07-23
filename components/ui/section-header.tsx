@@ -5,7 +5,7 @@ type Props = {
   eyebrow: string;
   eyebrowVariant?: "default" | "secondary";
   heading: string;
-  description: string;
+  description?: string;
   className?: string;
   headingClassName?: string;
   descriptionClassName?: string;
@@ -33,9 +33,9 @@ export const SectionHeader = ({
         {heading}
       </h2>
 
-      <p className={cn("text-17 text-text-gray", descriptionClassName)}>
+     { description && <p className={cn("text-17 text-text-gray", descriptionClassName)}>
         {description}
-      </p>
+      </p>}
     </div>
   );
 };

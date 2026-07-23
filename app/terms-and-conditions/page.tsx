@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import Footer from "@/components/layout/footer";
-import Navbar from "@/components/layout/navbar";
 import LegalPageHeader from "@/components/sections/legal-page-header";
 import LegalContent from "@/components/sections/legal-content";
 
@@ -13,7 +11,6 @@ export const metadata: Metadata = {
 export default function TermsAndConditions() {
   return (
     <>
-      <Navbar />
       <LegalPageHeader title="Terms And Conditions" lastUpdated="09/07/2026" />
 
       <LegalContent>
@@ -69,8 +66,6 @@ export default function TermsAndConditions() {
         <p>The information and services provided through the Sapphire IQ website are offered on an &ldquo;as available&rdquo; basis. While we strive to maintain a secure and reliable platform, we do not guarantee uninterrupted access or error-free operation. Sapphire IQ reserves the right to modify, suspend, or discontinue any part of its website or services without prior notice.</p>
         <p>Where payments are processed through third-party payment gateways, such providers are responsible solely for payment processing. Sapphire IQ remains independently responsible for its products, services, customer support, and platform operations.</p>
       </LegalContent>
-
-      <Footer />
     </>
   );
 }

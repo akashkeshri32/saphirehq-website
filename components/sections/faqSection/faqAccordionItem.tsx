@@ -20,7 +20,7 @@ export const FaqAccordionItem = ({ question, answer }: FaqItem) => {
         className="flex w-full items-center justify-between gap-4 text-left cursor-pointer"
         aria-expanded={isOpen}
       >
-        <span className="text-16 font-medium">{question}</span>
+        <span className="text-16 font-regular">{question}</span>
         <ChevronDown
           size={18}
           className={cn(

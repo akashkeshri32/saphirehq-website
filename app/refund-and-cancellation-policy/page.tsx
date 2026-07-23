@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import Footer from "@/components/layout/footer";
-import Navbar from "@/components/layout/navbar";
 import LegalPageHeader from "@/components/sections/legal-page-header";
 import LegalContent from "@/components/sections/legal-content";
 
@@ -13,7 +11,6 @@ export const metadata: Metadata = {
 export default function RefundAndCancellationPolicy() {
   return (
     <>
-      <Navbar />
       <LegalPageHeader title="Refund And Cancellation Policy" lastUpdated="09/07/2026" />
 
       <LegalContent>
@@ -53,8 +50,6 @@ export default function RefundAndCancellationPolicy() {
           If a payment is deducted but your enrollment is not confirmed due to a technical error, please contact our support team. After verification, the payment will either be adjusted against your enrollment or refunded, as applicable.
         </p>
       </LegalContent>
-
-      <Footer />
     </>
   );
 }

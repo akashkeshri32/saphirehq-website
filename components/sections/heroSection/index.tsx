@@ -48,7 +48,7 @@ export const HeroSection = () => {
           <div className="flex flex-col">
             <Eyebrow variant="default" text="Career Accelerator Program" />
 
-            <h1 className="text-h1-mobile lg:text-h1 font-heading mt-4.5">
+            <h1 className="text-h1-mobile lg:text-h1 font-heading mt-4.5 font-semibold">
              Turn Potential Into <span className="gradient-text">Placement.</span>
             </h1>
 

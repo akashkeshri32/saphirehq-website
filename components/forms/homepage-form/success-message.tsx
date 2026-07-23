@@ -6,7 +6,7 @@ const SuccessMessage = () => {
 
       <div className="relative">
         <div className="w-16 h-16 rounded-full bg-emerald-500/10 border border-emerald-500/25 flex items-center justify-center">
-          <CheckCircle size={32} className="text-emerald-400" strokeWidth={1.5} />
+          <CheckCircle size={32} className="text-blue-primary" strokeWidth={1.5} />
         </div>
         <div className="absolute inset-0 rounded-full bg-emerald-500/10 animate-ping" />
       </div>
@@ -18,9 +18,9 @@ const SuccessMessage = () => {
         </p>
       </div>
 
-      <div className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-500/8 border border-emerald-500/20">
-        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse shrink-0" />
-        <p className="text-caption text-emerald-400 font-medium">We typically respond within a few hours</p>
+      <div className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-blue-primary/10 border border-emerald-500/20">
+        <span className="w-1.5 h-1.5 rounded-full bg-blue-primary animate-pulse shrink-0" />
+        <p className="text-caption text-blue-primary font-medium">We typically respond within a few hours</p>
       </div>
 
     </div>

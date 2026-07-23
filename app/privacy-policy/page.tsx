@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import Footer from "@/components/layout/footer";
-import Navbar from "@/components/layout/navbar";
 import LegalPageHeader from "@/components/sections/legal-page-header";
 import LegalContent from "@/components/sections/legal-content";
 
@@ -13,7 +11,6 @@ export const metadata: Metadata = {
 export default function PrivacyPolicyPage() {
   return (
     <>
-      <Navbar />
       <LegalPageHeader title="Privacy Policy" lastUpdated="09/07/2026" />
 
       <LegalContent>
@@ -71,8 +68,6 @@ export default function PrivacyPolicyPage() {
         <h4>Consent</h4>
         <p>By using the Sapphire IQ website or services, you acknowledge that you have read and agreed to this Privacy Policy.</p>
       </LegalContent>
-
-      <Footer />
     </>
   );
 }

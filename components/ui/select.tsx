@@ -83,7 +83,7 @@ export function Select({
       {label && (
         <label
           htmlFor={id}
-          className="text-body-sm font-medium text-content-secondary select-none"
+          className="text-13 font-semibold text-content-secondary select-none"
         >
           {label}
         </label>
@@ -102,22 +102,22 @@ export function Select({
           aria-haspopup="listbox"
           className={cn(
             "w-full flex items-center justify-between gap-2",
-            "bg-surface-input border rounded-xl",
+            "bg-[#F8FAFF]  border border-white-two! rounded-lg",
             "text-body-sm transition-all duration-200",
-            "focus:outline-none focus:ring-2 focus:bg-surface-hover",
+            "focus:outline-none focus:ring-1 focus:bg-surface-hover",
             open
-              ? "border-brand-500/50 ring-2 ring-brand-500/25 bg-surface-hover"
-              : "border-border-default hover:border-border-strong",
+              ? "border-black/20 ring-1 ring-black/20 bg-surface-hover"
+              : "bo hover:border-border-strong",
             isSm ? "h-9 px-3" : "h-10 px-3.5",
             selectedOption ? "text-content-primary" : "text-content-subtle",
             triggerClassName,
           )}
         >
-          <span className="truncate">{displayLabel}</span>
+          <span className="truncate text-13 font-medium text-gray-two">{displayLabel}</span>
           <ChevronDown
-            size={14}
+            size={20}
             className={cn(
-              "shrink-0 text-content-subtle transition-transform duration-200",
+              "shrink-0 text-content-subtle transition-transform duration-200 text-gray-600",
               open && "rotate-180",
             )}
           />
@@ -129,7 +129,7 @@ export function Select({
             role="listbox"
             className={cn(
               "absolute z-50 w-full mt-1.5 py-1 rounded-xl",
-              "bg-surface-1 border border-border-default",
+              "bg-white border border-border-stroke",
               "shadow-lg shadow-black/10",
               "max-h-60 overflow-y-auto",
             )}

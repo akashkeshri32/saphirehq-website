@@ -25,6 +25,8 @@
   --color-gray-two : #8E9BAC;
   --color-bg-light : #F1F5F9;
 
+  --color-purple-two : #9A2DFF;
+
   /* Font Families */
   --font-heading: var(--font-poppins);
 
@@ -34,6 +36,8 @@
 
   --color-border-stroke : #E3E9F2;
 
+
+  --color-bg-light : #F8FAFF;
 
   /*
     SIZES
@@ -71,6 +75,11 @@
   --text-h3-mobile--line-height: 110%;
   --text-h3-mobile--letter-spacing: -0.03em;
   --text-h3-mobile--font-weight: 600;
+
+  --text-h5 : 1.5rem;
+  --text-h5--line-height: 110%;
+  --text-h5--letter-spacing: -0.03em;
+  --text-h5--font-weight: 600;
 
   --text-20: 1.25rem; /* 20px */
   --text-20--line-height: 140%;
