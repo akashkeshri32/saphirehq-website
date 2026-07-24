@@ -20,6 +20,7 @@ export const DOMAINS = [
     id: "business-analyst",
     label: "Business Analyst",
     Icon: BarGraphIcon,
+    heroPillText : "Most in-demand domain",
     tagline: "Turn business problems into data-backed decisions and strategy.",
     description:
       "Turn business problems into data-backed decisions and strategy.",
@@ -38,11 +39,45 @@ export const DOMAINS = [
     ],
     duration: "8–12 weeks",
     popular: false,
+    highlights: [
+      "Bridge business goals with data-driven strategy",
+      "Learn stakeholder communication that gets buy-in",
+      "Master Agile delivery from a business lens",
+      "Build dashboards decision-makers actually use",
+    ],
+    impactPoints: [
+      "Lead a real process-optimisation case study",
+      "Present findings to a live stakeholder panel",
+      "Build a market opportunity analysis from scratch",
+      "Ship a product roadmap ready for leadership review",
+    ],
+    careerStats: [
+      { stat: "250+", text: "Hiring Partners" },
+      { stat: "1000+", text: "Students Trained" },
+      { stat: "99%", text: "Completion Rate" },
+      { stat: "30+", text: "Skilled Mentors" },
+    ],
+    instructors: [
+      {
+        name: "Meera Shah",
+        domain: "Business Analyst",
+        description:
+          "9+ years translating business requirements into shipped product decisions.",
+      },
+      {
+        name: "Rahul Deshmukh",
+        domain: "Business Analyst",
+        description:
+          "Agile delivery lead who has run 50+ stakeholder-facing projects.",
+      },
+    ],
   },
 
   {
     id: "data-analyst",
     label: "Data Analyst",
+    heroPillText : "Most in-demand domain",
+    
     Icon: GraphIcon,
     tagline: "Explore, clean, and visualize data to uncover the story behind the numbers.",
     description:
@@ -55,12 +90,45 @@ export const DOMAINS = [
     ],
     duration: "8–12 weeks",
     popular: false,
+    highlights: [
+      "Turn raw spreadsheets into decision-ready dashboards",
+      "Learn SQL and Python the way analysts use them daily",
+      "Practice on real, messy business datasets",
+      "Build a portfolio recruiters can verify",
+    ],
+    impactPoints: [
+      "Ship a sales performance dashboard end-to-end",
+      "Run a full customer segmentation analysis",
+      "Build a live KPI tracking & reporting system",
+      "Present insights to a real mentor review panel",
+    ],
+     careerStats: [
+      { stat: "250+", text: "Hiring Partners" },
+      { stat: "1000+", text: "Students Trained" },
+      { stat: "99%", text: "Completion Rate" },
+      { stat: "30+", text: "Skilled Mentors" },
+    ],
+    instructors: [
+      {
+        name: "Ananya Iyer",
+        domain: "Data Analyst",
+        description:
+          "Ex-analytics lead who has built reporting systems for 3 unicorn startups.",
+      },
+      {
+        name: "Vivek Nair",
+        domain: "Data Analyst",
+        description: "SQL and BI specialist with 7+ years in retail analytics.",
+      },
+    ],
   },
 
   {
     id: "data-science",
     label: "Data Science",
     Icon: SunIcon,
+    heroPillText : "Most in-demand domain",
+
     glowColor: "rgba(0,201,167,0.12)",
     tagline: "Master data analysis by working with real datasets, dashboards, and business challenges.",
     description:
@@ -80,13 +148,46 @@ export const DOMAINS = [
     ],
     duration: "12–16 weeks",
     popular: true,
+    highlights: [
+      "Go beyond theory into applied statistical modeling",
+      "Work with real, messy, business-scale datasets",
+      "Learn the exact ML workflow used in industry",
+      "Build models you can explain in an interview",
+    ],
+    impactPoints: [
+      "Build a predictive sales forecasting model",
+      "Ship an NLP-based text classification system",
+      "Run a full exploratory data analysis end-to-end",
+      "Defend your model choices to a mentor panel",
+    ],
+     careerStats: [
+      { stat: "250+", text: "Hiring Partners" },
+      { stat: "1000+", text: "Students Trained" },
+      { stat: "99%", text: "Completion Rate" },
+      { stat: "30+", text: "Skilled Mentors" },
+    ],
+    instructors: [
+      {
+        name: "Dr. Kavya Menon",
+        domain: "Data Science",
+        description:
+          "Applied ML researcher who has shipped models to production at scale.",
+      },
+      {
+        name: "Aditya Rao",
+        domain: "Data Science",
+        description: "Data scientist with 6+ years across fintech and healthtech.",
+      },
+    ],
   },
   {
     id: "ai-ml",
     label: "AI / ML",
     Icon: DashboardIcon,
     glowColor: "rgba(255,107,53,0.12)",
-    tagline: "Build and train models that solve real problems, from prototype to deployment.",
+    heroPillText : "Most in-demand domain",
+
+    tagline: "Turn Data into Insights.",
     description:
       "Dive into the technologies reshaping every industry. From neural networks to large language models, you'll build, train, and deploy intelligent systems that can see, understand, and reason — hands-on from the very first week.",
     skills: [
@@ -104,11 +205,44 @@ export const DOMAINS = [
     ],
     duration: "12–16 weeks",
     popular: true,
+    highlights: [
+      "Build with the same tools shaping every industry today",
+      "Go from neural network theory to deployed systems",
+      "Work hands-on with LLMs, not just slides about them",
+      "Ship a project recruiters will actually ask about",
+    ],
+    impactPoints: [
+      "Train an image classification model from scratch",
+      "Build a product recommendation engine",
+      "Fine-tune and deploy an LLM assistant",
+      "Document your MLOps pipeline like a production team",
+    ],
+    careerStats: [
+      { stat: "250+", text: "Hiring Partners" },
+      { stat: "1000+", text: "Students Trained" },
+      { stat: "99%", text: "Completion Rate" },
+      { stat: "30+", text: "Skilled Mentors" },
+    ],
+    instructors: [
+      {
+        name: "Rohan Kulkarni",
+        domain: "AI / ML",
+        description: "ML engineer building LLM-powered products in production today.",
+      },
+      {
+        name: "Sneha Kapoor",
+        domain: "AI / ML",
+        description:
+          "Deep learning specialist with 5+ years shipping computer vision systems.",
+      },
+    ],
   },
   {
     id: "ui-ux",
     label: "UI/UX",
     Icon: PasteIcon,
+    heroPillText : "Most in-demand domain",
+
     tagline: "Design digital products people love — from research to pixel-perfect execution.",
     description:
       "Learn the complete design process — from user research and low-fidelity wireframes to polished interactive prototypes. You'll design real interfaces, run usability sessions, and build a portfolio that stands out to top companies.",
@@ -127,10 +261,43 @@ export const DOMAINS = [
     ],
     duration: "8–12 weeks",
     popular: false,
+    highlights: [
+      "Learn the full design process, not just Figma shortcuts",
+      "Run real usability sessions with real users",
+      "Design systems used by actual product teams",
+      "Build a case-study portfolio that gets callbacks",
+    ],
+    impactPoints: [
+      "Redesign a mobile app end-to-end",
+      "Build a reusable component design system",
+      "Run a full user journey and flow optimisation",
+      "Present case studies to a live design critique",
+    ],
+    careerStats: [
+      { stat: "250+", text: "Hiring Partners" },
+      { stat: "1000+", text: "Students Trained" },
+      { stat: "99%", text: "Completion Rate" },
+      { stat: "30+", text: "Skilled Mentors" },
+    ],
+    instructors: [
+      {
+        name: "Priya Nair",
+        domain: "UI/UX",
+        description: "Lead product designer with a decade of experience across startups.",
+      },
+      {
+        name: "Farah Sheikh",
+        domain: "UI/UX",
+        description:
+          "Design systems specialist who has scaled UI libraries for 3 product teams.",
+      },
+    ],
   },
   {
     id: "frontend",
     label: "Frontend Developer",
+    heroPillText : "Most in-demand domain",
+
     Icon: CodeIcon,
     tagline: "Build fast, accessible interfaces with modern frameworks and real design systems.",
     description:
@@ -150,10 +317,43 @@ export const DOMAINS = [
     ],
     duration: "10–14 weeks",
     popular: false,
+    highlights: [
+      "Build production-quality UI, not tutorial clones",
+      "Learn the exact stack modern teams hire for",
+      "Write code reviewed the way real teams review it",
+      "Ship a portfolio with real, working deployed apps",
+    ],
+    impactPoints: [
+      "Build a personal developer portfolio from scratch",
+      "Ship a SaaS product dashboard UI",
+      "Build a full e-commerce storefront",
+      "Get your code reviewed by a working engineer",
+    ],
+    careerStats: [
+      { stat: "250+", text: "Hiring Partners" },
+      { stat: "1000+", text: "Students Trained" },
+      { stat: "99%", text: "Completion Rate" },
+      { stat: "30+", text: "Skilled Mentors" },
+    ],
+    instructors: [
+      {
+        name: "Arjun Mehta",
+        domain: "Frontend Developer",
+        description: "Senior engineer who has shipped production apps used by millions.",
+      },
+      {
+        name: "Ishaan Bhatt",
+        domain: "Frontend Developer",
+        description:
+          "React specialist with 6+ years building design-system-driven products.",
+      },
+    ],
   },
   {
     id: "backend",
     label: "Backend Development",
+    heroPillText : "Most in-demand domain",
+
     Icon: BackendIcon,
     tagline: "Architect the servers, APIs, and databases that power real products at scale.",
     description:
@@ -173,11 +373,43 @@ export const DOMAINS = [
     ],
     duration: "10–14 weeks",
     popular: false,
+    highlights: [
+      "Design systems that hold up under real traffic",
+      "Learn auth, databases, and APIs the production way",
+      "Get your architecture reviewed by working engineers",
+      "Ship backend code ready for a real deployment",
+    ],
+    impactPoints: [
+      "Build a REST API with JWT authentication",
+      "Design a relational database schema from scratch",
+      "Ship a serverless microservice end-to-end",
+      "Get your architecture reviewed by a mentor",
+    ],
+    careerStats: [
+      { stat: "250+", text: "Hiring Partners" },
+      { stat: "1000+", text: "Students Trained" },
+      { stat: "99%", text: "Completion Rate" },
+      { stat: "30+", text: "Skilled Mentors" },
+    ],
+    instructors: [
+      {
+        name: "Karthik Subramaniam",
+        domain: "Backend Development",
+        description: "Backend architect with 8+ years building systems at scale.",
+      },
+      {
+        name: "Neha Bansal",
+        domain: "Backend Development",
+        description: "API and cloud infrastructure specialist across fintech platforms.",
+      },
+    ],
   },
   {
     id: "full-stack",
     label: "Full Stack Development",
     Icon: FullstackIcon,
+    heroPillText : "Most in-demand domain",
+
     tagline: "Ship complete products end-to-end, from database to deployed interface.",
     description:
       "Master both frontend and backend to deliver complete, production-ready web applications from scratch. The most comprehensive track — ideal for building entire products independently or stepping into a tech lead role.",
@@ -196,6 +428,36 @@ export const DOMAINS = [
     ],
     duration: "14–20 weeks",
     popular: true,
+    highlights: [
+      "Own a product end-to-end, frontend to backend",
+      "Learn the full stack modern teams actually hire for",
+      "Build and deploy, not just prototype in a sandbox",
+      "Graduate ready to lead, not just contribute",
+    ],
+    impactPoints: [
+      "Ship a full-stack SaaS application",
+      "Build a real-time collaboration tool",
+      "Launch an e-commerce platform with a CMS",
+      "Deploy your own project to production",
+    ],
+    careerStats: [
+      { stat: "250+", text: "Hiring Partners" },
+      { stat: "1000+", text: "Students Trained" },
+      { stat: "99%", text: "Completion Rate" },
+      { stat: "30+", text: "Skilled Mentors" },
+    ],
+    instructors: [
+      {
+        name: "Aakash Verma",
+        domain: "Full Stack Development",
+        description: "Full-stack lead who has taken 4 products from zero to production.",
+      },
+      {
+        name: "Ritika Chawla",
+        domain: "Full Stack Development",
+        description: "Full-stack engineer with 7+ years across startups and scale-ups.",
+      },
+    ],
   },
 ] as const;
 

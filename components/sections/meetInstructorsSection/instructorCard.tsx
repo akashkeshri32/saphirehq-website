@@ -9,7 +9,7 @@ type Props = {
 
 export const InstructorCard = ({ image, name, domain, description }: Props) => {
   return (
-    <div className="bg-white border border-border-stroke rounded-xl p-6 w-full max-w-[287px]">
+    <div className="bg-white border border-border-stroke rounded-xl p-6 w-full md:max-w-71">
       <div className="rounded-lg overflow-hidden border-2 border-blue-primary">
         <Image
           src={image}

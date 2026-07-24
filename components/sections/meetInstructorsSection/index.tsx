@@ -3,7 +3,13 @@ import { SectionHeader } from "@/components/ui/section-header";
 import PortraitPlaceholder from "@/assets/images/placeholders/portrait-placeholder.svg";
 import { InstructorCard } from "./instructorCard";
 
-const INSTRUCTORS = [
+export type Instructor = {
+  name: string;
+  domain: string;
+  description: string;
+};
+
+const DEFAULT_INSTRUCTORS: Instructor[] = [
   {
     name: "Ritika Verma",
     domain: "Data Science",
@@ -26,18 +32,26 @@ const INSTRUCTORS = [
   },
 ];
 
-export const MeetInstructorsSection = () => {
-  return (
-    <section className="py-120">
-      <Container>
-        <SectionHeader
-          eyebrow="Meet Your Instructors"
-          heading="30+ mentors, currently working in the field."
-          description="Every instructor is an active industry professional, not a full-time trainer reading from a script."
-        />
+type Props = {
+  instructors?: Instructor[];
+  eyebrow?: string;
+  heading?: string;
+  description?: string;
+};
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-12 justify-items-center">
-          {INSTRUCTORS.map((instructor) => (
+export const MeetInstructorsSection = ({
+  instructors = DEFAULT_INSTRUCTORS,
+  eyebrow = "Meet Your Instructors",
+  heading = "30+ mentors, currently working in the field.",
+  description = "Every instructor is an active industry professional, not a full-time trainer reading from a script.",
+}: Props) => {
+  return (
+    <section className="py-12 md:py-22">
+      <Container>
+        <SectionHeader eyebrow={eyebrow} heading={heading} description={description} />
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12 justify-items-center">
+          {instructors.map((instructor) => (
             <InstructorCard
               key={instructor.name}
               image={PortraitPlaceholder}
