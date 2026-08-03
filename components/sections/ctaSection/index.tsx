@@ -22,9 +22,7 @@ export const CtaSection = ({ heading, description, buttons, className }: Props) 
     <section className={cn("py-25 relative")}>
       <Container className={cn("relative z-5 max-w-[480px]!", className)}>
         <div className=" flex flex-col items-center text-center mx-auto">
-          <h2 className="text-h2-mobile lg:text-h2 font-heading font-semibold text-white">
-            {heading}
-          </h2>
+          <h2 className="text-h2-mobile lg:text-h2 font-heading font-semibold text-white" dangerouslySetInnerHTML={{ __html : heading }} />
 
           <p className="text-16 max-w-[480px] font-normal text-white mt-4 opacity-80">{description}</p>
 

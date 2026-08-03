@@ -3,21 +3,45 @@
 import { useActionState, useEffect, useRef, useState } from "react";
 import toast from "react-hot-toast";
 import { Input, Select } from "@/components/ui";
-import { DOMAINS } from "@/lib/data/domains";
 import { sendEnrollmentApplication } from "@/actions/send-enrollment-application";
 import SubmitButton from "@/components/forms/homepage-form/submit-btn";
 import SuccessMessage from "@/components/forms/homepage-form/success-message";
 
-const APPLICANT_TYPES = ["Student", "Switching Careers", "Working Professional"];
+import { useSearchParams } from "next/navigation";
+import DOMAINS from "@/lib/data/domains";
+
+const APPLICANT_TYPES = ["Student", "Switching Careers", "Working Professional"] as const;
+
+
+const roles : Record<string, typeof APPLICANT_TYPES[number]> = {
+  "student" : "Student",
+  "switching-careers" : "Switching Careers",
+  "working-professional" : "Working Professional"
+}
+
 
 export const ApplicationForm = () => {
+
+  const searchParams = useSearchParams()
+
+  const roleParam = searchParams.get('role');
+
+  const domainParam = searchParams.get("domain");
+
+  const defaultRole = roleParam ? roles[roleParam] ?? "Student" : "Student";
+
+  
   const initialState = { success: false, message: "" };
   const [state, formAction] = useActionState(sendEnrollmentApplication, initialState);
 
   const formRef = useRef<HTMLFormElement>(null);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
-  const domainOptions = DOMAINS.map((item) => ({ label: item.label, value: item.label }));
+  const domainOptions = DOMAINS.map((item) => ({ label: item.label, value: item.label, id : item.id }));
+  
+  const defaultDomain = domainParam ? domainOptions.find(el => el.id === domainParam)?.label : ""
+
+
 
   useEffect(() => {
     if (!state?.message) return;
@@ -77,6 +101,7 @@ export const ApplicationForm = () => {
           <Select
             name="domain"
             options={domainOptions}
+            defaultValue={defaultDomain}
             placeholder="Select Domain"
             label="Choose a Domain"
           />
@@ -89,7 +114,7 @@ export const ApplicationForm = () => {
                   type="radio"
                   name="applicantType"
                   value={type}
-                  defaultChecked={index === 0}
+                  defaultChecked={type === defaultRole}
                   required
                   className="peer sr-only"
                 />

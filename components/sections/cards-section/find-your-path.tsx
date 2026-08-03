@@ -15,7 +15,7 @@ export default function () {
       heading: "I'm a student",
       description:
         `Build a real portfolio alongside your degree, so you graduate with proof of skill — not just a transcript.`,
-      cta: { label: "Explore Student Path", href: "#quiz" },
+      cta: { label: "Explore Student Path", href: "/enroll-now?role=student" },
     },
     {
       gradient: "light-deep-blue",
@@ -23,7 +23,7 @@ export default function () {
       heading: "I'm switching careers",
       description:
         `Move into tech with a structured, mentor-guided track built around outcomes — not open-ended self-study.`,
-      cta: { label: "Explore Career-Switch Path", href: "?apply-now" },
+      cta: { label: "Explore Career-Switch Path", href: "/enroll-now?role=switching-careers" },
     },
     {
       gradient: "psych-violet",
@@ -31,7 +31,7 @@ export default function () {
       heading: "I'm a working professional",
       description:
         "Flexible schedules and weekly live sessions built around a job you're already keeping.",
-      cta: { label: "Explore Upskilling Path", href: "/#domains" },
+      cta: { label: "Explore Upskilling Path", href: "/enroll-now?role=working-professional" },
     },
   ];
 

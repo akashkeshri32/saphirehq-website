@@ -22,15 +22,17 @@ export const DomainCard = ({
   return (
     <div
       className={cn(
-        "bg-white border border-border-stroke border-t-4 rounded-xl p-6 flex flex-col items-start",
+        "bg-white border border-border-stroke border-t-4 rounded-xl p-6 flex flex-col justify-between items-start",
         className,
       )}
     >
-      <Image src={icon} alt={heading} width={38} height={38} />
+      <div>
+        <Image src={icon} alt={heading} width={38} height={38} />
 
-      <h3 className="text-18 font-heading mt-4.5 font-semibold">{heading}</h3>
+        <h3 className="text-18 font-heading mt-4.5 font-semibold">{heading}</h3>
 
-      <p className="text-14 text-text-gray mt-2">{tagline}</p>
+        <p className="text-14 text-text-gray mt-2">{tagline}</p>
+      </div>
 
       <div className="flex gap-3 mt-9.5 w-full">
         <ButtonLink href={secondaryHref} variant="outline" size="sm" className="w-full">

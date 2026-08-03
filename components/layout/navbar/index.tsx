@@ -12,9 +12,9 @@ import Link from "next/link";
 const NAV_ITEMS = [
   { title: "Domains", href: "/#domains" },
   { title: "Instructors", href: "/#instructors" },
-  { title: "Success stories", href: "/#success-stories" },
+  { title: "Success stories", href: "/placement-statistics#success-stories" },
   { title: "FAQs", href: "/#faqs" },
-  { title: "About Us", href: "/about" },
+  { title: "About Us", href: "/about-us" },
 ];
 
 const Navbar = () => {
@@ -42,8 +42,8 @@ const Navbar = () => {
           </div>
 
           <div className="max-lg:hidden space-x-1">
-            <NavItem title="Login" href={"/login"} />
-            <ButtonLink href="?apply-now" size={"sm"}>
+            {/* <NavItem title="Login" href={"/login"} /> */}
+            <ButtonLink href="/enroll-now" size={"sm"}>
               Apply For Internship
             </ButtonLink>
           </div>
@@ -72,16 +72,16 @@ const Navbar = () => {
               </Link>
             ))}
 
-            <Link
+            {/* <Link
               href="/login"
               onClick={() => setIsOpen(false)}
               className="text-text-gray hover:text-black text-15 font-medium py-3 px-2 rounded-lg transition-colors"
             >
               Login
-            </Link>
+            </Link> */}
 
             <ButtonLink
-              href="?apply-now"
+              href="/enroll-now"
               onClick={() => setIsOpen(false)}
               className="w-full justify-center mt-3"
             >

@@ -1,9 +1,8 @@
 import Link from "next/link";
 import Container from "@/components/layout/container";
 import { Eyebrow } from "@/components/ui/eyebrow";
-import { DOMAINS } from "@/lib/data/domains";
-import IconPlaceholder from "@/assets/images/placeholders/icon-placeholder-dark.svg";
 import { DomainCard } from "./domainCard";
+import DOMAINS from "@/lib/data/domains";
 
 const BORDER_TOP_COLORS = [
   "border-t-blue-primary",
@@ -29,7 +28,7 @@ export const DomainsSection = () => {
           </div>
 
           <Link
-            href="/#talk-to-mentor"
+            href="/enroll-now"
             className="text-14 font-semibold text-blue-primary whitespace-nowrap hover:opacity-80"
           >
             Not sure which domain fits you? Talk to a mentor →
@@ -43,7 +42,7 @@ export const DomainsSection = () => {
               icon={domain.Icon}
               heading={domain.label}
               tagline={domain.tagline}
-              primaryHref="?apply-now"
+              primaryHref={`/enroll-now?domain=${domain.id}`}
               secondaryHref={`/domains/${domain.id}`}
               className={BORDER_TOP_COLORS[index]}
             />

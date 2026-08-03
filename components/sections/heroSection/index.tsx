@@ -44,7 +44,7 @@ export const HeroSection = () => {
       <Image src={GradientLeft} alt="" className="absolute bottom-0 -left-20 w-105 h-105" />
 
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.3fr] gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.3fr] gap-20 items-center relative z-10">
           <div className="flex flex-col">
             <Eyebrow variant="default" text="Career Accelerator Program" />
 
@@ -59,7 +59,7 @@ export const HeroSection = () => {
             </p>
 
             <div className="flex flex-wrap gap-3.5 mt-8.5">
-              <ButtonLink variant={"default"} href="/programs">Explore Programs</ButtonLink>
+              <ButtonLink variant={"default"} href="/enroll-now">Apply Now</ButtonLink>
               <ButtonLink variant="outline" href="/#domains">
                 Explore Domains
                 <ArrowRight />

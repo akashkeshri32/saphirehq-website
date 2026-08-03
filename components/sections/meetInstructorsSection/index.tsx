@@ -7,28 +7,33 @@ export type Instructor = {
   name: string;
   domain: string;
   description: string;
+  linkedin : string
 };
 
 const DEFAULT_INSTRUCTORS: Instructor[] = [
   {
-    name: "Ritika Verma",
+    name: "Ashish Rajput",
     domain: "Data Science",
-    description: "8+ years building ML systems at scale for fintech and retail.",
+    description: "8+ Years work Exp.",
+    linkedin : "https://www.linkedin.com/in/ashish-rajput-8b26a31b2/",
   },
   {
-    name: "Arjun Mehta",
-    domain: "Full Stack Development",
-    description: "Senior engineer who has shipped production apps used by millions.",
+    name: "Ritik Singh",
+    domain: "Full Stack Developer",
+    description: "5+ years work Exp.",
+    linkedin : ""
   },
   {
-    name: "Priya Nair",
-    domain: "UI/UX Design",
-    description: "Lead product designer with a decade of experience across startups.",
+    name: "Tanish Raj Sharma",
+    domain: "UI UX Designer",
+    description: "5+ years work Exp.",
+    linkedin : ""
   },
   {
-    name: "Karan Singh",
-    domain: "AI / ML Engineering",
-    description: "Applied ML engineer working on LLM-powered products in production.",
+    name: "Muskan Swaroop",
+    linkedin : "https://www.linkedin.com/in/muskan-swaroop/",
+    domain: "Student Career Guide",
+    description: "5+ years of Exp.",
   },
 ];
 
@@ -46,7 +51,7 @@ export const MeetInstructorsSection = ({
   description = "Every instructor is an active industry professional, not a full-time trainer reading from a script.",
 }: Props) => {
   return (
-    <section className="py-12 md:py-22">
+    <section id="instructors" className="py-12 md:py-22">
       <Container>
         <SectionHeader eyebrow={eyebrow} heading={heading} description={description} />
 

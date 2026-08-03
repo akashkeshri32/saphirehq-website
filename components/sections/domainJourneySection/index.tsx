@@ -23,7 +23,7 @@ const STEPS = [
 
 export const DomainJourneySection = () => {
   return (
-    <section className="bg-black py-15 md:py-22">
+    <section id="journey" className="bg-black py-15 md:py-22">
       <Container>
         <SectionHeader
           variant="dark"

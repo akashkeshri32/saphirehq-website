@@ -74,7 +74,7 @@ export default function Homepage() {
       <FaqSection />
 
       <CtaSection
-        heading="Don't just plan. Start building."
+        heading="Don't just plan. </br> Start building."
         description="Your future is built on the decisions you make today. Take the first step toward an exciting career with Sapphire IQ."
         buttons={[
           { label: "Apply Now", href: "?apply-now", variant: "white" },

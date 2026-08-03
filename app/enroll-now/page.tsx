@@ -10,10 +10,13 @@ export const metadata: Metadata = {
     "Apply to the Sapphire IQ career accelerator program — submit your application and our team will reach out within 24 hours.",
 };
 
+
+
 export default function EnrollNowPage() {
+
   return (
     <>
-      <EnrollmentHeroSection />
+      <EnrollmentHeroSection  />
 
       <HowEnrollmentWorksSection />
 

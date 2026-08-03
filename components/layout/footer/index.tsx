@@ -7,17 +7,17 @@ const FOOTER_COLUMNS = [
   {
     label: "Programs",
     links: [
-      { label: "Data Science", href: "/#data-science" },
-      { label: "AI/ML", href: "/#ai-ml" },
-      { label: "UI/UX", href: "/#ui-ux" },
-      { label: "Full Stack", href: "/#full-stack" },
+      { label: "Data Science", href: "/domains/data-science" },
+      { label: "AI/ML", href: "/domains/ai-ml" },
+      { label: "UI/UX", href: "/domains/ui-ux" },
+      { label: "Full Stack", href: "/domains/full-stack" },
     ],
   },
   {
     label: "Company",
     links: [
-      { label: "About Us", href: "/about" },
-      { label: "Success Stories", href: "/#success-stories" },
+      { label: "About Us", href: "/about-us" },
+      { label: "Success Stories", href: "/placement-statistics#success-stories" },
       { label: "FAQs", href: "/#faqs" },
       { label: "Contact", href: "/contact" },
     ],

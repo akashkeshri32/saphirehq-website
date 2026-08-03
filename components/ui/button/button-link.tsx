@@ -18,8 +18,8 @@ export const ButtonLink = React.forwardRef<HTMLAnchorElement, ButtonLinkProps>(
         ref={ref}
         {...props}
       >
-        {icon && <span className="inline-flex">{icon}</span>}
         {children}
+        {icon && <span className="inline-flex">{icon}</span>}
       </Link>
     );
   },

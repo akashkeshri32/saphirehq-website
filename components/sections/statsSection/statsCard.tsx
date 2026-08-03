@@ -20,7 +20,7 @@ export const StatsCard = ({
         bgClassName,
       )}
     >
-      <span className={cn("font-jetbrains text-h2! font-bold inline-block", textClassName)}>
+      <span className={cn("font-poppins text-h2! font-bold inline-block", textClassName)}>
         {number}
       </span>
       <span className="text-14 text-text-gray">{text}</span>

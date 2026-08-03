@@ -5,6 +5,9 @@ import { ApplicationForm } from "./applicationForm";
 import { FeatureBox } from "./featureBox";
 import { HighlightsBox } from "./highlightsBox";
 
+
+
+
 export const EnrollmentHeroSection = () => {
   return (
     <section className="py-22 bg-bg-light">

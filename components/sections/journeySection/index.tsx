@@ -1,6 +1,10 @@
 import Container from "@/components/layout/container";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { JourneyCard } from "./journeyCard";
+import JourneyDesktopImage from "@/assets/images/journey.svg";
+import JourneyMobileImage from "@/assets/images/journey-mobile.svg";
+
+import Image from "next/image";
 
 const JOURNEY_STEPS = [
   {
@@ -51,7 +55,7 @@ export const JourneySection = () => {
           </p>
         </div>
 
-        <div className="flex gap-3 overflow-x-auto pb-2 md:hidden">
+        {/* <div className="flex gap-3 overflow-x-auto pb-2 md:hidden">
           {JOURNEY_STEPS.map((step, i) => (
             <div key={step.heading} className="w-40 shrink-0">
               <JourneyCard index={i + 1} {...step} />
@@ -64,6 +68,29 @@ export const JourneySection = () => {
           {JOURNEY_STEPS.map((step, i) => (
             <JourneyCard key={step.heading} index={i + 1} {...step} />
           ))}
+        </div> */}
+
+
+        <div className="hidden lg:block">
+          <Image 
+            src={JourneyDesktopImage}
+            alt="journey"
+            width={1236}
+            height={400}
+            className="h-100 w-full max-w-309 "
+          />
+
+        </div>
+
+        <div className="lg:hidden">
+          <Image 
+            src={JourneyMobileImage}
+            alt="journey"
+            width={600}
+            height={900}
+            className="w-full max-w-81 md:max-w-136 "
+          />
+
         </div>
       </Container>
     </section>

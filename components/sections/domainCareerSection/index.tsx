@@ -18,7 +18,7 @@ export const DomainCareerSection = ({ domain }: Props) => {
           // description="Outcomes tracked from real graduates of this specific domain."
         />
 
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-5 mt-12">
+        <div className="grid grid-cols-3 md:grid-cols-5 gap-5 mt-12">
           {domain.careerStats.map((stat) => (
             <div
               key={stat.text}
@@ -27,17 +27,6 @@ export const DomainCareerSection = ({ domain }: Props) => {
               <span className="text-[36px] font-heading font-bold">{stat.stat}</span>
               <span className="text-12 text-text-gray">{stat.text}</span>
             </div>
-          ))}
-        </div>
-
-        <div className="flex flex-wrap justify-center items-center gap-10 mt-12">
-          {PARTNER_LOGOS.map((logo) => (
-            <Image
-              key={logo.name}
-              src={logo.src}
-              alt={logo.name}
-              className="h-6 w-auto object-contain grayscale opacity-70"
-            />
           ))}
         </div>
       </Container>

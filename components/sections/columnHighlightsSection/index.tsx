@@ -6,33 +6,35 @@ import { HighlightItem } from "./highlightItem";
 
 
 type Props = {
-  heading : string
-  description : string
-  eyebrow : string
-  highlights : string[]
-  imageSrc : StaticImageData
+  heading: string
+  description: string
+  eyebrow: string
+  highlights: string[]
+  imageSrc: StaticImageData
 }
 
-export const ColumnHighlightsSection = ({ heading, description, eyebrow, highlights, imageSrc } : Props) => {
+export const ColumnHighlightsSection = ({ heading, description, eyebrow, highlights, imageSrc }: Props) => {
   return (
     <section className="py-120 border-b border-border-stroke">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="flex flex-col max-w-xl">
-            <Eyebrow variant="default" text={eyebrow} />
+          <div className="flex flex-col lg:max-w-xl">
+            <div className="flex flex-col max-w-xl">
+              <Eyebrow variant="default" text={eyebrow} />
 
-            <h2 className="text-h3 font-heading font-semibold mt-5">
-              {heading}
-            </h2>
+              <h2 className="text-h3 font-heading font-semibold mt-5">
+                {heading}
+              </h2>
 
-            <p className="text-16 text-text-gray mt-4">
-             {description}
-            </p>
+              <p className="text-16 text-text-gray mt-4">
+                {description}
+              </p>
 
-            <div className="flex flex-col gap-3 mt-5.5">
-              {highlights.map((text) => (
-                <HighlightItem key={text} text={text} />
-              ))}
+              <div className="flex flex-col gap-3 mt-5.5">
+                {highlights.map((text) => (
+                  <HighlightItem key={text} text={text} />
+                ))}
+              </div>
             </div>
           </div>
 
@@ -40,7 +42,7 @@ export const ColumnHighlightsSection = ({ heading, description, eyebrow, highlig
             <Image
               src={imageSrc}
               alt="Column highlights placeholder"
-              className="w-full h-auto max-w-xl object-contain"
+              className="w-full h-auto lg:max-w-xl object-contain"
               width={576} height={344}
             />
           </div>

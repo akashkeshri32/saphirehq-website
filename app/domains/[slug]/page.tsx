@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { DOMAINS } from "@/lib/data/domains";
 import { DomainHeroSection } from "@/components/sections/domainHeroSection";
 import { DomainToolsSection } from "@/components/sections/domainToolsSection";
 import { DomainProjectsSection } from "@/components/sections/domainProjectsSection";
@@ -9,6 +8,9 @@ import { DomainJourneySection } from "@/components/sections/domainJourneySection
 import { MeetInstructorsSection } from "@/components/sections/meetInstructorsSection";
 import { DomainCareerSection } from "@/components/sections/domainCareerSection";
 import { CtaSection } from "@/components/sections/ctaSection";
+import { CertificatesSection } from "@/components/sections/certificatesSection";
+import { LogoCarouselSection } from "@/components/sections/logoCarouselSection";
+import DOMAINS from "@/lib/data/domains";
 
 type Params = {
   slug: string;
@@ -64,6 +66,12 @@ export default async function DomainPage({
       />
 
       <DomainCareerSection domain={domain} />
+
+
+      <LogoCarouselSection />
+
+      <CertificatesSection />
+      
 
       <CtaSection
         heading={`Ready to start your ${domain.label} journey?`}

@@ -5,6 +5,7 @@ import BlueTick from "@/assets/icons/blue-tick.svg";
 import HeroPlaceholder from "@/assets/images/placeholders/hero-placeholder.svg";
 import type { DomainData } from "@/lib/data/domains";
 import DomainHeroImage from "@/assets/images/domain-hero.svg"
+import { ArrowRight } from "lucide-react";
 
 
 type Props = {
@@ -54,24 +55,56 @@ export const DomainHeroSection = ({ domain }: Props) => {
             </div>
 
             <div className="flex flex-wrap gap-3.5 mt-6">
-              <ButtonLink href="/enroll-now" variant="default">
+              <ButtonLink href={`/enroll-now?domain=${domain.id}`}variant="default">
                 Enroll Now
               </ButtonLink>
-              <ButtonLink href="?apply-now" variant="outline">
-                Talk to a Mentor
+              <ButtonLink href="#journey" variant="outline">
+                See the Journey
               </ButtonLink>
             </div>
           </div>
 
-          <div className="relative rounded-3xl overflow-hidden">
-            <Image
-              src={DomainHeroImage}
-              alt={domain.label}
-              className="w-full h-auto"
-            />
-          </div>
+
+          <DomainHeroStats domain={domain.id} />
         </div>
       </Container>
     </section>
   );
 };
+
+
+
+
+const DomainHeroStats = ({ domain } : { domain : string }) => {
+  return (
+    <div style={{ boxShadow: "0px 12px 32px rgba(20, 55, 255, 0.14)" }} className="max-w-138 border border-border-stroke bg-white rounded-xl md:rounded-[30px] p-5 md:p-7.5 ">
+      <div  className=" grid grid-cols-2 gap-4 md:gap-7.5">
+
+        <div style={{ boxShadow: '0px 12px 32px rgba(20, 55, 255, 0.14)' }} className="border border-[#AFF4C7] bg-[#EBFFF2] py-5 md:py-7.5 px-3.5 md:px-13 text-[#00A138] rounded-lg md:rounded-[30px]">
+          <h6 className="text-2xl md:text-h3 font-bold font-poppins">250+</h6>
+          <p className="text-xs! md:text-13 font-inter font-semibold opacity-75">Hiring Partners</p>
+        </div>
+
+        <div style={{ boxShadow: '0px 12px 32px rgba(20, 55, 255, 0.14)' }} className="border border-[#FFD1FD] bg-[#FFEBFE] py-5 md:py-7.5 px-3.5 md:px-13 text-[#8E0187] rounded-lg md:rounded-[30px]">
+          <h6 className="text-2xl md:ext-h3 font-bold font-poppins">1000+</h6>
+          <p className="text-xs! md:text-13 font-inter font-semibold opacity-75">Students Trained</p>
+        </div>
+
+        <div style={{ boxShadow: '0px 12px 32px rgba(20, 55, 255, 0.14)' }} className="border border-[#FDCEC1] bg-[#FFEAE4] py-5 md:py-7.5 px-3.5 md:px-13 text-[#994200] rounded-lg md:rounded-[30px]">
+          <h6 className="text-2xl md:text-h3 font-bold font-poppins">40%</h6>
+          <p className="text-xs! md:text-13 font-inter font-semibold opacity-75" >Avg. CTC Hike</p>
+        </div>
+
+        <div style={{ boxShadow: '0px 12px 32px rgba(20, 55, 255, 0.14)' }} className="border border-[#DCCDFF] bg-[#F1EBFF] py-5 md:py-7.5 px-3.5 md:px-13 text-[#29008A] rounded-lg md:rounded-[30px]">
+          <h6 className="text-2xl md:text-h3 font-bold font-poppins">99%</h6>
+          <p className="text-xs! md:text-13 font-inter font-semibold opacity-75">Completion Rate</p>
+        </div>
+
+      </div>
+
+      <ButtonLink className="w-full mt-7.5" href={`/enroll-now?domain=${domain}`} icon={<ArrowRight size={10} color="white" />}>
+      Enroll Now
+      </ButtonLink>
+    </div>
+  )
+}
