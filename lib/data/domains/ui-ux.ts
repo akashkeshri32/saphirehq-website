@@ -1,5 +1,5 @@
 import PasteIcon from "@/assets/icons/paste-purple.svg";
-
+import FigmaIcon from "@/assets/tools-icons/figma.png"
 
 export const uiUx = {
   id: "ui-ux",
@@ -18,7 +18,7 @@ export const uiUx = {
     "Usability Testing",
   ],
 
-  tools: [{ name: "Figma", icon: null }],
+  tools: [{ name: "Figma", icon: FigmaIcon }],
   projects: [
     "Mobile app end-to-end redesign",
     "Component design system",
