@@ -2,16 +2,15 @@ import Image from "next/image";
 import Link from "next/link";
 import Container from "@/components/layout/container";
 import Logo from "@/assets/sapphire-logo.svg";
+import DOMAINS from "@/lib/data/domains";
 
 const FOOTER_COLUMNS = [
   {
     label: "Programs",
-    links: [
-      { label: "Data Science", href: "/domains/data-science" },
-      { label: "AI/ML", href: "/domains/ai-ml" },
-      { label: "UI/UX", href: "/domains/ui-ux" },
-      { label: "Full Stack", href: "/domains/full-stack" },
-    ],
+    links : DOMAINS.map(domain => ({
+      label : domain.label,
+      href : `/domains/${domain.id}`
+    }))
   },
   {
     label: "Company",
@@ -19,12 +18,23 @@ const FOOTER_COLUMNS = [
       { label: "About Us", href: "/about-us" },
       { label: "Success Stories", href: "/placement-statistics#success-stories" },
       { label: "FAQs", href: "/#faqs" },
-      { label: "Contact", href: "/contact" },
+      { label: "Enroll Now", href: "/enroll-now" },
+
+      // { label: "Contact", href: "/contact" },
     ],
   },
   {
     label: "Legal",
-    links: [{ label: "Privacy Policy", href: "/privacy-policy" }],
+    links: [
+      { label: "Privacy Policy", href: "/privacy-policy" },
+      { label: "Refund & Cancellation Policy", href: "/refund-and-cancellation-policy" },
+      { label: "Terms And Conditions", href: "/terms-and-conditions" },
+      { label: "Code Of Conduct", href: "/code-of-conduct" },
+
+
+    
+    ],
+    
   },
 ];
 
