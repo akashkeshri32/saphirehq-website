@@ -4,6 +4,8 @@ import { SectionHeader } from "@/components/ui/section-header";
 import { ApplicationForm } from "./applicationForm";
 import { FeatureBox } from "./featureBox";
 import { HighlightsBox } from "./highlightsBox";
+import { Suspense } from "react";
+import { Loader } from "lucide-react";
 
 
 
@@ -24,7 +26,9 @@ export const EnrollmentHeroSection = () => {
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mt-12 items-start">
-          <ApplicationForm />
+          <Suspense fallback={<Loader size={18} />}>
+            <ApplicationForm />
+          </Suspense>
 
           <div className="flex flex-col gap-6">
             <FeatureBox />
