@@ -15,7 +15,7 @@ type Props = {
 
 export const ColumnHighlightsSection = ({ heading, description, eyebrow, highlights, imageSrc }: Props) => {
   return (
-    <section className="py-120 border-b border-border-stroke">
+    <section className="py-19 md:py-120 border-b border-border-stroke">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="flex flex-col lg:max-w-xl">

@@ -5,6 +5,7 @@ export const WhyWeExistSection = () => {
   return (
     <TwoColumnIntroSection
       eyebrow="Why We Exist"
+      className="pt-10 md:pt-17"
       heading="Sapphire IQ was created to solve a simple, persistent problem."
       description={`
         <p>

@@ -12,7 +12,7 @@ import { Loader } from "lucide-react";
 
 export const EnrollmentHeroSection = () => {
   return (
-    <section className="py-22 bg-bg-light">
+    <section className="max-md:pb-19 py-22 bg-bg-light">
       <div className="h-px bg-border-stroke/80 w-full"></div>
       <Container className="mt-6">
         <Breadcrumb currentPage="Enrollment" />

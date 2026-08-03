@@ -4,7 +4,7 @@ import { PlacementStatsSection } from "@/components/sections/placementStatsSecti
 import { PlacementDistributionSection } from "@/components/sections/placementDistributionSection";
 import { HowPlacementWorksSection } from "@/components/sections/howPlacementWorksSection";
 import { LogoCarouselSection } from "@/components/sections/logoCarouselSection";
-import { SuccessStoriesSection } from "@/components/sections/successStoriesSection";
+import { PlacementSuccessStoriesSection } from "@/components/sections/placementSuccessStoriesSection";
 import { CtaSection } from "@/components/sections/ctaSection";
 
 export const metadata: Metadata = {
@@ -26,7 +26,7 @@ export default function PlacementStatisticsPage() {
 
       <LogoCarouselSection />
 
-      <SuccessStoriesSection />
+      <PlacementSuccessStoriesSection />
 
       <CtaSection
         heading="Ready to be our next placement story?"

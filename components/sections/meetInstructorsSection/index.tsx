@@ -51,7 +51,7 @@ export const MeetInstructorsSection = ({
   description = "Every instructor is an active industry professional, not a full-time trainer reading from a script.",
 }: Props) => {
   return (
-    <section id="instructors" className="py-12 md:py-22">
+    <section id="instructors" className="py-19 md:py-22">
       <Container>
         <SectionHeader eyebrow={eyebrow} heading={heading} description={description} />
 

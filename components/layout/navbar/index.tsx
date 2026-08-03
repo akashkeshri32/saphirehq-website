@@ -12,7 +12,7 @@ import Link from "next/link";
 const NAV_ITEMS = [
   { title: "Domains", href: "/#domains" },
   { title: "Instructors", href: "/#instructors" },
-  { title: "Success stories", href: "/placement-statistics#success-stories" },
+  { title: "Success stories", href: "/placement-statistics" },
   { title: "FAQs", href: "/#faqs" },
   { title: "About Us", href: "/about-us" },
 ];

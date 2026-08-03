@@ -38,7 +38,7 @@ const STATS = [
 
 export const HeroSection = () => {
   return (
-    <section className="pt-41 pb-[64px] relative bg-bg-light overflow-hidden">
+    <section className="pt-28 pb-[64px] relative bg-bg-light overflow-hidden">
 
       <Image src={GradientRight} alt="" className="absolute -top-10 -right-40 w-[480px] h-[480px]" />
       <Image src={GradientLeft} alt="" className="absolute bottom-0 -left-20 w-105 h-105" />

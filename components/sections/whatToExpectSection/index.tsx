@@ -12,7 +12,7 @@ const POINTS = [
 
 export const WhatToExpectSection = () => {
   return (
-    <section className="py-15 md:py-22">
+    <section className="py-19 md:py-22">
       <Container>
         <SectionHeader
           eyebrow="Our Promise"

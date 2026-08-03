@@ -16,7 +16,7 @@ const FOOTER_COLUMNS = [
     label: "Company",
     links: [
       { label: "About Us", href: "/about-us" },
-      { label: "Success Stories", href: "/placement-statistics#success-stories" },
+      { label: "Success Stories", href: "/placement-statistics" },
       { label: "FAQs", href: "/#faqs" },
       { label: "Enroll Now", href: "/enroll-now" },
 

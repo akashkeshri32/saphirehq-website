@@ -21,7 +21,7 @@ export const CardsSection = ({
   className,
 }: Props) => {
   return (
-    <section id={id} className={cn("py-120", className)}>
+    <section id={id} className={cn("py-19 md:py-120", className)}>
       <Container>
         <div className="max-w-160 flex flex-col gap-3.25">
           <Eyebrow variant="default" text={eyebrow} />

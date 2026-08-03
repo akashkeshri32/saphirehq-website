@@ -17,7 +17,7 @@ const BORDER_TOP_COLORS = [
 
 export const DomainsSection = () => {
   return (
-    <section  id="domains" className="py-120 bg-bg-light">
+    <section  id="domains" className="py-19 md:py-120 bg-bg-light">
       <Container>
         <div className=" flex w-full flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
           <div className="flex flex-col gap-3.25 max-w-160">

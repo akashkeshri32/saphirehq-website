@@ -128,7 +128,7 @@ const FAQ_CATEGORIES: FaqCategory[] = [
 
 export const FaqSection = () => {
   return (
-    <section id="faqs" className="py-120">
+    <section id="faqs" className="py-19 md:py-120">
       <Container>
         <SectionHeader
           eyebrow="FAQs"

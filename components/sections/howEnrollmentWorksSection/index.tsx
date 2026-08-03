@@ -24,7 +24,7 @@ export const HowEnrollmentWorksSection = () => {
   return (
     <section className="bg-bg-light">
       <div className="h-px bg-border-stroke/80 w-full"></div>
-      <Container className="py-22">
+      <Container className="py-19 md:py-22">
         <SectionHeader
           eyebrow="How Enrollment Works"
           heading="Three steps to get started."

@@ -24,7 +24,7 @@ const CARDS: FeatureCardData[] = [
 
 export const VisionAndMissionSection = () => {
   return (
-    <section className="py-15 md:py-22 bg-bg-light">
+    <section className="py-19 md:py-22 bg-bg-light">
       <Container>
         <SectionHeader 
           eyebrow="Vision & Mission"

@@ -51,7 +51,7 @@ export const TestimonialCarousel = ({ testimonials }: Props) => {
         </div>
       </div>
 
-      <div className="flex items-center justify-center gap-4 mt-8">
+      <div className="flex items-center justify-center gap-4 mt-7">
         <button
           type="button"
           onClick={scrollPrev}
@@ -70,7 +70,7 @@ export const TestimonialCarousel = ({ testimonials }: Props) => {
         </button>
       </div>
 
-      <div className="flex items-center justify-center gap-2 mt-4">
+      <div className="flex items-center justify-center gap-2 mt-5">
         {scrollSnaps.map((_, index) => (
           <button
             key={index}

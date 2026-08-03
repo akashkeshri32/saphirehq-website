@@ -23,7 +23,7 @@ const CARDS = [
 
 export const PlacementHeroSection = () => {
   return (
-    <section className="pt-41 pb-[64px]">
+    <section className="pt-28 md:pt-41 pb-[64px]">
       <Container>
         <SectionHeader
           eyebrow="Placement Statistics"

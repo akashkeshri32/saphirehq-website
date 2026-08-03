@@ -32,7 +32,7 @@ const ENROLLMENT_FAQS: FaqItem[] = [
 
 export const EnrollmentFaqSection = () => {
   return (
-    <section className="bg-[#F1F5F9] py-22">
+    <section className="bg-[#F1F5F9] py-19 md:py-22">
       <Container>
         <SectionHeader
           eyebrow="FAQs"

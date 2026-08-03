@@ -40,7 +40,7 @@ const PLACEMENT_CARDS = [
 
 export const PlacementAssistanceSection = () => {
   return (
-    <section className="py-120 bg-black">
+    <section className="py-19 md:py-120 bg-black">
       <Container>
         <div className="max-w-160 flex flex-col gap-3.5">
           <Eyebrow variant="secondary" text="Placement Assistance" />

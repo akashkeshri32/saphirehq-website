@@ -11,7 +11,7 @@ export const LogoCarouselSection = () => {
 
 
   return (
-    <section className="py-80">
+    <section className="py-19 md:py-80">
       <Container>
         <p className="text-13 font-jetbrains font-normal text-center text-text-gray">
           Trusted by 250+ hiring companies

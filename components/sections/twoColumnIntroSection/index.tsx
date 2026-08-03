@@ -51,7 +51,7 @@ export const TwoColumnIntroSection = ({
   );
 
   return (
-    <section className={cn("py-25", className)}>
+    <section className={cn("pb-19 pt-25", className)}>
       <Container>
         {breadcrumbLabel && <Breadcrumb currentPage={breadcrumbLabel} />}
 

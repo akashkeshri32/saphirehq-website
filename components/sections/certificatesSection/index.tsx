@@ -14,7 +14,7 @@ const CERTIFICATES = [
 
 export const CertificatesSection = () => {
   return (
-    <section className="py-120 bg-black">
+    <section className="py-19 md:py-120 bg-black">
       <Container>
         <SectionHeader
           eyebrow="Certification"

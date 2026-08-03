@@ -43,7 +43,7 @@ const JOURNEY_STEPS = [
 
 export const JourneySection = () => {
   return (
-    <section className="py-120 border-b border-border-stroke">
+    <section className="py-19 md:py-120 border-b border-border-stroke">
       <Container>
         <div className="max-w-160 flex flex-col gap-3.25 mb-12">
           <Eyebrow variant="default" text="Your Journey" />

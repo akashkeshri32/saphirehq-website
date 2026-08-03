@@ -49,7 +49,7 @@ const TESTIMONIALS: Testimonial[] = [
 
 export const TestimonialsSection = () => {
   return (
-    <section className="bg-bg-light py-120">
+    <section className="bg-bg-light py-19 md:py-120">
       <Container>
         <SectionHeader
           eyebrow="Testimonials"
