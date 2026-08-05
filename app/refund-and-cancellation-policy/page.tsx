@@ -1,16 +1,27 @@
 import type { Metadata } from "next";
 import LegalPageHeader from "@/components/sections/legal-page-header";
 import LegalContent from "@/components/sections/legal-content";
+import { JsonLd } from "@/lib/seo/json-ld";
+import { breadcrumbSchema } from "@/lib/seo/schema";
+import { buildMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
-  title: "Refund & Cancellation Policy — SaphireIQ",
+export const metadata: Metadata = buildMetadata({
+  title: "Refund & Cancellation Policy | Sapphire IQ",
   description:
-    "Understand SaphireIQ's refund and cancellation policy for program enrollments and payments.",
-};
+    "Understand Sapphire IQ's refund and cancellation policy for program enrollments, payments, and internship registrations.",
+  path: "/refund-and-cancellation-policy",
+});
 
 export default function RefundAndCancellationPolicy() {
   return (
     <>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Refund & Cancellation Policy", path: "/refund-and-cancellation-policy" },
+        ])}
+      />
+
       <LegalPageHeader title="Refund And Cancellation Policy" lastUpdated="09/07/2026" />
 
       <LegalContent>

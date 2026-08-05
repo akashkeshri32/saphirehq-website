@@ -1,16 +1,27 @@
 import type { Metadata } from "next";
 import LegalPageHeader from "@/components/sections/legal-page-header";
 import LegalContent from "@/components/sections/legal-content";
+import { JsonLd } from "@/lib/seo/json-ld";
+import { breadcrumbSchema } from "@/lib/seo/schema";
+import { buildMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
-  title: "Code of Conduct & Communication Guidelines — SaphireIQ",
+export const metadata: Metadata = buildMetadata({
+  title: "Code of Conduct & Communication Guidelines | Sapphire IQ",
   description:
-    "Review the professional conduct, communication, and academic integrity guidelines for the SaphireIQ learning community.",
-};
+    "Review the professional conduct, communication, and academic integrity guidelines for the Sapphire IQ learning community.",
+  path: "/code-of-conduct",
+});
 
 export default function CodeOfConduct() {
   return (
     <>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Code of Conduct", path: "/code-of-conduct" },
+        ])}
+      />
+
       <LegalPageHeader title="Code of Conduct & Communication Guidelines" lastUpdated="09/07/2026" />
 
       <LegalContent>

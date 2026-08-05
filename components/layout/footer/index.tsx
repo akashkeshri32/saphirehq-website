@@ -51,6 +51,13 @@ export default function Footer() {
             <p className="text-14 text-gray-two mt-4 leading-5.5 max-w-65">
              The career accelerator that replaces theory with proof — real projects, real mentors, real placements.
             </p>
+
+            <Link
+              href="mailto:admin@sapphireiq.in"
+              className="text-14 text-white-two hover:text-white transition-colors mt-4 inline-block"
+            >
+              admin@sapphireiq.in
+            </Link>
           </div>
 
           {FOOTER_COLUMNS.map((column) => (

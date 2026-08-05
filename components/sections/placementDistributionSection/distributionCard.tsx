@@ -11,7 +11,7 @@ export const DistributionCard = ({ heading, image }: Props) => {
       <h3 className="text-16 font-heading font-semibold text-center">{heading}</h3>
 
       <div className="rounded-[20px] border border-border-stroke overflow-hidden flex justify-center py-2">
-        <Image src={image} alt=""  width={260} height={360} />
+        <Image src={image} alt={heading} width={260} height={360} />
       </div>
     </div>
   );

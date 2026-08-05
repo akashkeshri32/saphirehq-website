@@ -24,6 +24,7 @@ export const WhyWeExistSection = () => {
       
       `}
       image={WhyWeExistImage}
+      imageAlt="Sapphire IQ learner working through a mentor-reviewed project"
       imagePosition="left"
       headingSize="h5"
     />

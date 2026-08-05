@@ -11,6 +11,7 @@ export const AboutHeroSection = () => {
 real-world projects, mentorship, and portfolio development —
 preparing students for successful careers, not just certificates.</p>"
       image={AboutHero}
+      imageAlt="Sapphire IQ mentors and learners collaborating on a real project"
       imagePosition="right"
       headingSize="h1"
     />

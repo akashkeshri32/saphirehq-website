@@ -18,6 +18,7 @@ export const EnrollmentHeroSection = () => {
         <Breadcrumb currentPage="Enrollment" />
 
         <SectionHeader
+          as="h1"
           eyebrow="Enroll Now"
           heading="Start Your Career Transformation."
           description="Tell us a little about yourself — a mentor will follow up to help you pick the right domain and get started."

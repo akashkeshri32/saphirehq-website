@@ -7,16 +7,27 @@ import { CommitmentSection } from "@/components/sections/commitmentSection";
 import { WhatToExpectSection } from "@/components/sections/whatToExpectSection";
 import { CtaSectionV2 } from "@/components/sections/ctaSectionV2";
 import { CtaSection } from "@/components/sections/ctaSection";
+import { JsonLd } from "@/lib/seo/json-ld";
+import { breadcrumbSchema } from "@/lib/seo/schema";
+import { buildMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
-  title: "About Us — Sapphire IQ",
+export const metadata: Metadata = buildMetadata({
+  title: "About Sapphire IQ | India's Career Accelerator for Tech Internships",
   description:
-    "Learn why Sapphire IQ exists, what we're building, and the commitment we make to every learner who joins the program.",
-};
+    "Learn why Sapphire IQ exists, how our career accelerator program works, and the commitment we make to every learner who joins us.",
+  path: "/about-us",
+});
 
 export default function AboutUsPage() {
   return (
     <>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "About Us", path: "/about-us" },
+        ])}
+      />
+
       <AboutHeroSection />
 
       <WhyWeExistSection />

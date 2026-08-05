@@ -6,16 +6,27 @@ import { HowPlacementWorksSection } from "@/components/sections/howPlacementWork
 import { LogoCarouselSection } from "@/components/sections/logoCarouselSection";
 import { PlacementSuccessStoriesSection } from "@/components/sections/placementSuccessStoriesSection";
 import { CtaSection } from "@/components/sections/ctaSection";
+import { JsonLd } from "@/lib/seo/json-ld";
+import { breadcrumbSchema } from "@/lib/seo/schema";
+import { buildMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
-  title: "Placement Statistics — Sapphire IQ",
+export const metadata: Metadata = buildMetadata({
+  title: "Placement Statistics | Sapphire IQ Success Stories & Hiring Outcomes",
   description:
-    "See real placement outcomes from Sapphire IQ learners — hiring partners, completion rates, CTC hikes, and how our placement process works.",
-};
+    "See real placement outcomes from Sapphire IQ learners — hiring partners, completion rates, average CTC hikes, and success stories from our alumni.",
+  path: "/placement-statistics",
+});
 
 export default function PlacementStatisticsPage() {
   return (
     <>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Placement Statistics", path: "/placement-statistics" },
+        ])}
+      />
+
       <PlacementHeroSection />
 
       <PlacementStatsSection />

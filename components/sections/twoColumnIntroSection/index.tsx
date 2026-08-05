@@ -9,6 +9,7 @@ type Props = {
   heading: string;
   description: string;
   image: StaticImageData;
+  imageAlt: string;
   imagePosition?: "left" | "right";
   headingSize?: "h1" | "h5";
   breadcrumbLabel?: string;
@@ -20,6 +21,7 @@ export const TwoColumnIntroSection = ({
   heading,
   description,
   image,
+  imageAlt,
   imagePosition = "right",
   headingSize = "h1",
   breadcrumbLabel,
@@ -46,7 +48,7 @@ export const TwoColumnIntroSection = ({
 
   const imageEl = (
     <div className="relative rounded-3xl overflow-hidden">
-      <Image src={image} alt="" className="w-full h-auto" />
+      <Image src={image} alt={imageAlt} className="w-full h-auto" />
     </div>
   );
 

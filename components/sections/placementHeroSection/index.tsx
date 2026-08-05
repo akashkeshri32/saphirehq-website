@@ -26,6 +26,7 @@ export const PlacementHeroSection = () => {
     <section className="pt-28 md:pt-41 pb-[64px]">
       <Container>
         <SectionHeader
+          as="h1"
           eyebrow="Placement Statistics"
           heading="Numbers that speak for themselves."
           description="Real outcomes from real learners — tracked, verified, and updated every cohort."

@@ -24,7 +24,11 @@ export const DomainProjectsSection = ({ domain }: Props) => {
               key={index}
               className="border border-border-stroke rounded-xl overflow-hidden"
             >
-              <Image src={ImagePlaceholder} alt={"project"} className="w-full h-79 md:h-42.5 object-cover" />
+              <Image
+                src={ImagePlaceholder}
+                alt={`${domain.projects[0]} — ${domain.label} sample project`}
+                className="w-full h-79 md:h-42.5 object-cover"
+              />
 
               <div className="bg-white p-3.5">
                 <span className="text-14 font-medium">{domain.projects[0]}</span>

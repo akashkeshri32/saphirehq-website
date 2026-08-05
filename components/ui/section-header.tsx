@@ -5,6 +5,7 @@ type Props = {
   eyebrow?: string;
   eyebrowVariant?: "default" | "secondary";
   variant? : "default" | "dark",
+  as?: "h1" | "h2";
   heading: string;
   description?: string;
   className?: string;
@@ -16,6 +17,7 @@ export const SectionHeader = ({
   variant = "default",
   eyebrow,
   eyebrowVariant = "default",
+  as: HeadingTag = "h2",
   heading,
   description,
   className,
@@ -26,7 +28,7 @@ export const SectionHeader = ({
     <div className={cn("max-w-160 flex flex-col gap-3.25", className)}>
       { eyebrow && <Eyebrow variant={eyebrowVariant} text={eyebrow} />}
 
-      <h2
+      <HeadingTag
         className={cn(
           "text-h2-mobile! lg:text-h2! font-heading font-semibold",
           headingClassName,
@@ -34,7 +36,7 @@ export const SectionHeader = ({
         )}
       >
         {heading}
-      </h2>
+      </HeadingTag>
 
      { description && <p className={cn(
         "text-17", 

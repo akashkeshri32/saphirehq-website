@@ -28,7 +28,7 @@ const Navbar = () => {
             <figure>
               <Image
                 src={NavLogo}
-                alt="saphireiq logo"
+                alt="Sapphire IQ logo"
                 height={30}
                 objectFit="contain"
               />

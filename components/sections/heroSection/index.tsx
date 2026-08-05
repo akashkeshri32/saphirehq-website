@@ -54,8 +54,7 @@ export const HeroSection = () => {
 
             <p className="text-18 text-text-gray mt-5">
               Collaborate with mentors, build portfolio-worthy projects, and
-              gain practical experience across Data Science, AI/ML,
-              Analytics, Design, and Development.
+              gain practical experience across Data Science, AI/ML, Full Stack, Business Analyst UI/UX, Frontend and Backend Development.
             </p>
 
             <div className="flex flex-wrap gap-3.5 mt-8.5">

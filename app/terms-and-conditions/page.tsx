@@ -1,16 +1,27 @@
 import type { Metadata } from "next";
 import LegalPageHeader from "@/components/sections/legal-page-header";
 import LegalContent from "@/components/sections/legal-content";
+import { JsonLd } from "@/lib/seo/json-ld";
+import { breadcrumbSchema } from "@/lib/seo/schema";
+import { buildMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
-  title: "Terms & Conditions — SaphireIQ",
+export const metadata: Metadata = buildMetadata({
+  title: "Terms & Conditions | Sapphire IQ",
   description:
-    "Read the terms and conditions that govern your access to and use of the SaphireIQ website, platform, and programs.",
-};
+    "Read the terms and conditions that govern your access to and use of the Sapphire IQ website, platform, and internship programs.",
+  path: "/terms-and-conditions",
+});
 
 export default function TermsAndConditions() {
   return (
     <>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Terms & Conditions", path: "/terms-and-conditions" },
+        ])}
+      />
+
       <LegalPageHeader title="Terms And Conditions" lastUpdated="09/07/2026" />
 
       <LegalContent>

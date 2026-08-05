@@ -3,7 +3,7 @@ import { SectionHeader } from "@/components/ui/section-header";
 import { ButtonLink } from "@/components/ui/button/button-link";
 import { FaqTabs, type FaqCategory } from "./faqTabs";
 
-const FAQ_CATEGORIES: FaqCategory[] = [
+export const FAQ_CATEGORIES: FaqCategory[] = [
   {
     label: "General",
     items: [

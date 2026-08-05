@@ -74,7 +74,7 @@ export const JourneySection = () => {
         <div className="hidden lg:block">
           <Image 
             src={JourneyDesktopImage}
-            alt="journey"
+            alt="Sapphire IQ journey from application to placement"
             width={1236}
             height={400}
             className="h-100 w-full max-w-309 "
@@ -85,7 +85,7 @@ export const JourneySection = () => {
         <div className="lg:hidden">
           <Image 
             src={JourneyMobileImage}
-            alt="journey"
+            alt="Sapphire IQ journey from application to placement"
             width={600}
             height={900}
             className="w-full max-w-81 md:max-w-136 "

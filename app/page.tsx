@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { HeroSection } from "@/components/sections/heroSection";
 import { DomainsSection } from "@/components/sections/domainsSection";
 import WhySapphire from "@/components/sections/cards-section/why-sapphire";
@@ -11,16 +12,29 @@ import { SuccessStoriesSection } from "@/components/sections/successStoriesSecti
 import { TestimonialsSection } from "@/components/sections/testimonialsSection";
 import { CertificatesSection } from "@/components/sections/certificatesSection";
 import { MeetInstructorsSection } from "@/components/sections/meetInstructorsSection";
-import { FaqSection } from "@/components/sections/faqSection";
+import { FaqSection, FAQ_CATEGORIES } from "@/components/sections/faqSection";
 import { CtaSection } from "@/components/sections/ctaSection";
+import { JsonLd } from "@/lib/seo/json-ld";
+import { faqSchema } from "@/lib/seo/schema";
+import { buildMetadata } from "@/lib/seo/metadata";
 
 import IndustryProjectImage from "@/assets/industry-projects-col-img.png"
 import MentorshipImage from "@/assets/industry-projects-col-img.png"
 
+export const metadata: Metadata = buildMetadata({
+  title: "Sapphire IQ | AI, Data Science & Software Development Internships",
+  description:
+    "Sapphire IQ offers internships in AI, Data Science, Business Analytics, Full Stack Development & UI/UX — live projects, expert mentors, placement assistance.",
+  path: "/",
+});
+
+const FAQ_ITEMS = FAQ_CATEGORIES.flatMap((category) => category.items);
 
 export default function Homepage() {
   return (
     <>
+      <JsonLd data={faqSchema(FAQ_ITEMS)} />
+
       <HeroSection />
 
       <WhySapphire />

@@ -23,7 +23,11 @@ export const PlacementHeroCard = ({ icon, heading, images }: Props) => {
       >
         {images.map((image, index) => (
           <div key={index} className="relative rounded-xl overflow-hidden">
-            <Image src={image} alt="" className="max-md:w-82 w-full h-auto" />
+            <Image
+              src={image}
+              alt={`${heading} chart`}
+              className="max-md:w-82 w-full h-auto"
+            />
           </div>
         ))}
       </div>

@@ -59,7 +59,7 @@ const HomepageForm = ({ domains }: { domains: Domain[] }) => {
           <div className="mb-8">
             <div className="flex items-center gap-2.5 mb-3">
               <div>
-                <Image src={BrandLogo} alt="saphireiq logo" height={35} />
+                <Image src={BrandLogo} alt="Sapphire IQ logo" height={35} />
               </div>
               <span className="text-caption text-brand-400 font-semibold tracking-wider uppercase">
                 SahphireHQ Internship

@@ -1,16 +1,27 @@
 import type { Metadata } from "next";
 import LegalPageHeader from "@/components/sections/legal-page-header";
 import LegalContent from "@/components/sections/legal-content";
+import { JsonLd } from "@/lib/seo/json-ld";
+import { breadcrumbSchema } from "@/lib/seo/schema";
+import { buildMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
-  title: "Privacy Policy — SaphireIQ",
+export const metadata: Metadata = buildMetadata({
+  title: "Privacy Policy | Sapphire IQ",
   description:
-    "Learn how SaphireIQ collects, uses, stores, and protects your personal information across our website and learning platform.",
-};
+    "Learn how Sapphire IQ collects, uses, stores, and protects your personal information across our website and learning platform.",
+  path: "/privacy-policy",
+});
 
 export default function PrivacyPolicyPage() {
   return (
     <>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Privacy Policy", path: "/privacy-policy" },
+        ])}
+      />
+
       <LegalPageHeader title="Privacy Policy" lastUpdated="09/07/2026" />
 
       <LegalContent>

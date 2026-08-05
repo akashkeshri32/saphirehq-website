@@ -2,7 +2,7 @@ import Container from "@/components/layout/container";
 import { SectionHeader } from "@/components/ui/section-header";
 import { FaqAccordionItem, type FaqItem } from "@/components/sections/faqSection/faqAccordionItem";
 
-const ENROLLMENT_FAQS: FaqItem[] = [
+export const ENROLLMENT_FAQS: FaqItem[] = [
   {
     question: "How long does the application review take?",
     answer:
