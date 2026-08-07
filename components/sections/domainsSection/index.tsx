@@ -3,6 +3,9 @@ import Container from "@/components/layout/container";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { DomainCard } from "./domainCard";
 import DOMAINS from "@/lib/data/domains";
+import { RevealHeading } from "@/components/ui/motion/reveal-heading";
+import { Reveal } from "@/components/ui/motion/reveal";
+import { cn } from "@/lib/utils/tailwind";
 
 const BORDER_TOP_COLORS = [
   "border-t-blue-primary",
@@ -22,9 +25,11 @@ export const DomainsSection = () => {
         <div className=" flex w-full flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
           <div className="flex flex-col gap-3.25 max-w-160">
             <Eyebrow variant="default" text="Choose Your Path" />
-            <h2 className="text-h2-mobile lg:text-h2 font-heading font-semibold">
-              Eight paths. One outcome: hired
-            </h2>
+            <RevealHeading
+              as="h2"
+              text="Eight paths. One outcome: hired"
+              className="text-h2-mobile lg:text-h2 font-heading font-semibold"
+            />
           </div>
 
           <Link
@@ -37,15 +42,16 @@ export const DomainsSection = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-11">
           {DOMAINS.map((domain, index) => (
-            <DomainCard
-              key={domain.id}
-              icon={domain.Icon}
-              heading={domain.label}
-              tagline={domain.tagline}
-              primaryHref={`/enroll-now?domain=${domain.id}`}
-              secondaryHref={`/domains/${domain.id}`}
-              className={BORDER_TOP_COLORS[index]}
-            />
+            <Reveal key={domain.id} direction="up" delay={(index % 4) * 0.08} className="h-full">
+              <DomainCard
+                icon={domain.Icon}
+                heading={domain.label}
+                tagline={domain.tagline}
+                primaryHref={`/enroll-now?domain=${domain.id}`}
+                secondaryHref={`/domains/${domain.id}`}
+                className={cn(BORDER_TOP_COLORS[index], "h-full")}
+              />
+            </Reveal>
           ))}
         </div>
       </Container>

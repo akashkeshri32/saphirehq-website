@@ -12,7 +12,7 @@ import { SuccessStoriesSection } from "@/components/sections/successStoriesSecti
 import { TestimonialsSection } from "@/components/sections/testimonialsSection";
 import { CertificatesSection } from "@/components/sections/certificatesSection";
 import { MeetInstructorsSection } from "@/components/sections/meetInstructorsSection";
-import { FaqSection, FAQ_CATEGORIES } from "@/components/sections/faqSection";
+import { FaqSection } from "@/components/sections/faqSection";
 import { CtaSection } from "@/components/sections/ctaSection";
 import { JsonLd } from "@/lib/seo/json-ld";
 import { faqSchema } from "@/lib/seo/schema";
@@ -20,6 +20,7 @@ import { buildMetadata } from "@/lib/seo/metadata";
 
 import IndustryProjectImage from "@/assets/industry-projects-col-img.png"
 import MentorshipImage from "@/assets/industry-projects-col-img.png"
+import { FAQ_CATEGORIES } from "@/components/sections/faqSection/data";
 
 export const metadata: Metadata = buildMetadata({
   title: "Sapphire IQ | AI, Data Science & Software Development Internships",

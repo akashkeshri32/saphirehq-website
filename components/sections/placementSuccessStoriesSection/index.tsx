@@ -1,5 +1,6 @@
 import Container from "@/components/layout/container";
 import { SectionHeader } from "@/components/ui/section-header";
+import { Reveal } from "@/components/ui/motion/reveal";
 import AvatarPlaceholder from "@/assets/images/placeholders/avatar-placeholder.svg";
 import {
   PlacementSuccessStoryCard,
@@ -74,8 +75,10 @@ export const PlacementSuccessStoriesSection = () => {
         />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
-          {PLACEMENT_SUCCESS_STORIES.map((story) => (
-            <PlacementSuccessStoryCard key={story.name} {...story} />
+          {PLACEMENT_SUCCESS_STORIES.map((story, index) => (
+            <Reveal key={story.name} direction="up" delay={(index % 3) * 0.1} hover className="h-full [&>*]:h-full">
+              <PlacementSuccessStoryCard {...story} />
+            </Reveal>
           ))}
         </div>
       </Container>

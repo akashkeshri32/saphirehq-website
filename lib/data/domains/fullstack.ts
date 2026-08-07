@@ -1,8 +1,26 @@
 import FullstackIcon from "@/assets/icons/fullstack.svg";
+import HtmlIcon from "@/assets/tools-icons/html.svg";
+import CssIcon from "@/assets/tools-icons/css.svg";
+import JavascriptIcon from "@/assets/tools-icons/javascript.svg";
 import ReactIcon from "@/assets/tools-icons/react.svg";
 import NodejsIcon from "@/assets/tools-icons/nodejs.png";
-import TypescriptIcon from "@/assets/tools-icons/typescript.svg";
-import DevopsIcon from "@/assets/tools-icons/devops.svg";
+import ExpressJsIcon from "@/assets/tools-icons/Express JS.svg";
+import MongoDbIcon from "@/assets/tools-icons/MongoDB.svg";
+import MySqlIcon from "@/assets/tools-icons/MySQL.svg";
+import GitHubIcon from "@/assets/tools-icons/GitHub.svg";
+import RestApiIcon from "@/assets/tools-icons/rest-api-icon.webp";
+import RitikSinghImage from "@/assets/images/instructors/ritik-singh.png";
+
+import EcommercePlatformProject from "@/assets/images/projects/fullstack/ecommerce platform.png";
+import LearningManagementSystemProject from "@/assets/images/projects/fullstack/learning management system.png";
+import JobPortalProject from "@/assets/images/projects/fullstack/job portal.png";
+import HospitalManagementSystemProject from "@/assets/images/projects/fullstack/hospital management system.png";
+import ExpenseTrackerProject from "@/assets/images/projects/fullstack/expense tracker.png";
+import CrmPlatformProject from "@/assets/images/projects/fullstack/crm platform.png";
+import FoodOrderingWebsiteProject from "@/assets/images/projects/fullstack/food ordering website.png";
+import ProjectManagementToolProject from "@/assets/images/projects/fullstack/project management tool.png";
+import BankingApplicationProject from "@/assets/images/projects/fullstack/banking application.png";
+import SocialMediaPlatformProject from "@/assets/images/projects/fullstack/social media platform.png";
 
 export const fullstack = {
   id: "full-stack",
@@ -10,28 +28,40 @@ export const fullstack = {
   Icon: FullstackIcon,
   heroPillText: "Most in-demand domain",
 
-  tagline: "Ship complete products end-to-end, from database to deployed interface.",
+  tagline: "Build Complete Web Applications from Frontend to Backend.",
   description:
     "Master both frontend and backend to deliver complete, production-ready web applications from scratch. The most comprehensive track — ideal for building entire products independently or stepping into a tech lead role.",
   tools: [
-    { name: "React", icon: ReactIcon },
+    { name: "HTML5", icon: HtmlIcon },
+    { name: "CSS3", icon: CssIcon },
+    { name: "JavaScript", icon: JavascriptIcon },
+    { name: "React.js", icon: ReactIcon },
     { name: "Node.js", icon: NodejsIcon },
-    { name: "PostgreSQL", icon: null },
-    { name: "TypeScript", icon: TypescriptIcon },
-    { name: "DevOps", icon: DevopsIcon },
+    { name: "Express.js", icon: ExpressJsIcon },
+    { name: "MongoDB", icon: MongoDbIcon },
+    { name: "MySQL", icon: MySqlIcon },
+    { name: "Git & GitHub", icon: GitHubIcon },
+    { name: "REST APIs", icon: RestApiIcon },
   ],
   projects: [
-    "Full-stack SaaS application",
-    "Real-time collaboration tool",
-    "E-commerce platform with CMS",
+    { name: "E-commerce Platform", icon: EcommercePlatformProject },
+    { name: "Learning Management System", icon: LearningManagementSystemProject },
+    { name: "Job Portal", icon: JobPortalProject },
+    { name: "Hospital Management System", icon: HospitalManagementSystemProject },
+    { name: "Expense Tracker", icon: ExpenseTrackerProject },
+    { name: "CRM Platform", icon: CrmPlatformProject },
+    { name: "Food Ordering Website", icon: FoodOrderingWebsiteProject },
+    { name: "Project Management Tool", icon: ProjectManagementToolProject },
+    { name: "Banking Application", icon: BankingApplicationProject },
+    { name: "Social Media Platform", icon: SocialMediaPlatformProject },
   ],
   duration: "14–20 weeks",
   popular: true,
   highlights: [
-    "Own a product end-to-end, frontend to backend",
-    "Learn the full stack modern teams actually hire for",
-    "Build and deploy, not just prototype in a sandbox",
-    "Graduate ready to lead, not just contribute",
+    "Build responsive frontend interfaces and secure backend systems for web applications.",
+    "Connect databases, integrate APIs, and develop complete end-to-end application functionality.",
+    "Work on real-world projects across the complete software development lifecycle.",
+    "Build a strong portfolio showcasing practical full stack development skills.",
   ],
   impactPoints: [
     "Ship a full-stack SaaS application",
@@ -40,7 +70,7 @@ export const fullstack = {
     "Deploy your own project to production",
   ],
   careerStats: [
-    { stat: "250+", text: "Hiring Partners" },
+    { stat: "500+", text: "Hiring Partners" },
     { stat: "1000+", text: "Students Trained" },
     { stat: "100+", text: "Real Projects" },
 
@@ -49,16 +79,11 @@ export const fullstack = {
   ],
   instructors: [
     {
-      name: "Aakash Verma",
-      domain: "Full Stack Development",
-      description: "Full-stack lead who has taken 4 products from zero to production.",
-      linkedin: ""
-    },
-    {
-      name: "Ritika Chawla",
-      domain: "Full Stack Development",
-      description: "Full-stack engineer with 7+ years across startups and scale-ups.",
-      linkedin: ""
+      name: "Ritik Singh",
+      domain: "Full Stack Developer",
+      description: "5+ years work Exp.",
+      image : RitikSinghImage,
+      linkedin : "https://www.linkedin.com/in/ritikkumarsingh7739"
     },
   ],
 }

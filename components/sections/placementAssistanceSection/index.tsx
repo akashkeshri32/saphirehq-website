@@ -1,5 +1,7 @@
 import Container from "@/components/layout/container";
 import { Eyebrow } from "@/components/ui/eyebrow";
+import { RevealHeading } from "@/components/ui/motion/reveal-heading";
+import { Reveal } from "@/components/ui/motion/reveal";
 import { PlacementCard } from "./placementCard";
 import UserIcon from "@/assets/icons/user-green.svg";
 import DocBlueIcon from "@/assets/icons/doc-blue.svg";
@@ -28,7 +30,7 @@ const PLACEMENT_CARDS = [
     icon: UserIcon,
     heading: "Hiring Partner Network",
     description:
-      "Direct access to our network of 250+ companies actively hiring our graduates.",
+      "Direct access to our network of 500+ companies actively hiring our graduates.",
   },
   {
     icon: SunIcon,
@@ -44,18 +46,24 @@ export const PlacementAssistanceSection = () => {
       <Container>
         <div className="max-w-160 flex flex-col gap-3.5">
           <Eyebrow variant="secondary" text="Placement Assistance" />
-          <h2 className="text-h2-mobile lg:text-h2 font-heading font-semibold text-white">
-            We Don&apos;t Stop at Training
-          </h2>
-          <p className="text-17 text-white-two">
-            From resumes to interviews to introductions — we stay with you
-            until you have an offer in hand.
-          </p>
+          <RevealHeading
+            as="h2"
+            text="We Don't Stop at Training"
+            className="text-h2-mobile lg:text-h2 font-heading font-semibold text-white"
+          />
+          <Reveal direction="up" distance={16} delay={0.15} duration={0.5}>
+            <p className="text-17 text-white-two">
+              From resumes to interviews to introductions — we stay with you
+              until you have an offer in hand.
+            </p>
+          </Reveal>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-12">
-          {PLACEMENT_CARDS.map((card) => (
-            <PlacementCard key={card.heading} {...card} />
+          {PLACEMENT_CARDS.map((card, index) => (
+            <Reveal key={card.heading} direction="up" delay={(index % 4) * 0.08} hover className="h-full [&>*]:h-full">
+              <PlacementCard {...card} />
+            </Reveal>
           ))}
         </div>
       </Container>

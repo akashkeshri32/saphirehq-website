@@ -16,7 +16,7 @@ export const SuccessStoryCarousel = ({ stories }: Props) => {
 
   return (
     <div className="overflow-hidden" ref={emblaRef}>
-      <div className="flex gap-6">
+      <div className="flex gap-6 pb-5">
         {stories.map((story) => (
           <div
             key={story.name}

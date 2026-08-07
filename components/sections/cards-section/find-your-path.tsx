@@ -6,7 +6,7 @@ import { CardsSection } from ".";
 
 
 
-export default function () {
+export default function CardsSectionHomePage() {
 
   const FIND_PATH_CARDS: FeatureCardData[] = [
     {
@@ -44,6 +44,7 @@ export default function () {
         heading="Wherever you're starting from, there's a path in."
         description="Sapphire IQ works differently depending on where you're coming from — tell us which one sounds like you."
         cards={FIND_PATH_CARDS}
+        showHoverAnim={false}
       />
     </div>
   )

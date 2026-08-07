@@ -4,13 +4,16 @@ type Props = {
   heading: string;
   items: string[];
   icon: StaticImageData;
+  description : string
 };
 
-export const ProblemBulletCard = ({ heading, items, icon }: Props) => {
+export const ProblemBulletCard = ({ heading, items, icon, description }: Props) => {
   return (
-    <div className="bg-white border border-border-stroke rounded-xl p-7.5">
+    <div className="bg-white border border-border-stroke rounded-xl p-7.5 hover:shadow-md">
       <h3 className="text-20 font-heading font-semibold">{heading}</h3>
 
+
+      <p className="mt-3 text-14">{description}</p>
       <ul className="flex flex-col gap-3 mt-5">
         {items.map((item) => (
           <li key={item} className="flex items-start gap-3">

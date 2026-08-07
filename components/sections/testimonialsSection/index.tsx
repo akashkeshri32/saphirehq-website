@@ -3,6 +3,7 @@ import { SectionHeader } from "@/components/ui/section-header";
 import AvatarPlaceholder from "@/assets/images/placeholders/avatar-placeholder.svg";
 import { TestimonialCarousel } from "./testimonialCarousel";
 import type { Testimonial } from "./testimonialCard";
+import { Reveal } from "@/components/ui/motion/reveal";
 
 const TESTIMONIALS: Testimonial[] = [
   {
@@ -57,9 +58,11 @@ export const TestimonialsSection = () => {
           description="Honest feedback from people who went through the program, in their own words."
         />
 
-        <div className="mt-12">
-          <TestimonialCarousel testimonials={TESTIMONIALS} />
-        </div>
+        <Reveal direction="up" distance={40} delay={0.25} duration={0.5}>
+          <div className="mt-12">
+            <TestimonialCarousel testimonials={TESTIMONIALS} />
+          </div>
+        </Reveal>
       </Container>
     </section>
   );

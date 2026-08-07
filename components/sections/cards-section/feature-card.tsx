@@ -38,9 +38,10 @@ export const FeatureCard = ({
 
           <h3 className="text-20 font-heading text-white mt-5 font-semibold">{heading}</h3>
 
-          <p className="text-15 text-text-white-secondary mt-2.5 font-normal">
-            {description}
-          </p>
+          <div className="text-15 text-text-white-secondary mt-2.5 font-normal space-y-3"
+            dangerouslySetInnerHTML={{ __html : description}}
+          >
+          </div>
         </div>
 
         {cta && (

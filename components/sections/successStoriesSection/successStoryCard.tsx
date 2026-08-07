@@ -19,7 +19,7 @@ export const SuccessStoryCard = ({
   company,
 }: SuccessStory) => {
   return (
-    <div className="bg-white border border-border-stroke rounded-xl p-6.5 h-full flex flex-col">
+    <div className="bg-white border border-border-stroke rounded-xl p-6.5 h-full flex flex-col transition-all duration-300 ease-out hover:-translate-y-1.5 hover:scale-[1.015] hover:shadow-lg hover:border-green/10">
       <Author avatar={avatar} name={name} designation={designation} />
 
       <p className="text-14 text-black mt-5">{testimonial}</p>

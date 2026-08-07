@@ -1,29 +1,29 @@
-import Accenture from "@/assets/partner-logos/accenture.png";
-import Adobe from "@/assets/partner-logos/adobe.png";
-import Amazon from "@/assets/partner-logos/amazon.png";
-import Capgemini from "@/assets/partner-logos/capgemini.png";
-import Cognizant from "@/assets/partner-logos/cognizant.png";
-import Deloitte from "@/assets/partner-logos/deloitte.png";
-import Google from "@/assets/partner-logos/google.png";
-import Hcl from "@/assets/partner-logos/hcl.png";
-import Ibm from "@/assets/partner-logos/ibm.png";
-import Infosys from "@/assets/partner-logos/infosys.png";
-import Jio from "@/assets/partner-logos/jio.png";
-import Ltimindtree from "@/assets/partner-logos/ltimindtree.png";
-import Meesho from "@/assets/partner-logos/meesho.png";
-import Oracle from "@/assets/partner-logos/oracle.png";
-import Paytm from "@/assets/partner-logos/paytm.png";
-import Razorpay from "@/assets/partner-logos/razorpay.png";
-import Swiggy from "@/assets/partner-logos/swiggy.png";
-import Tcs from "@/assets/partner-logos/tcs.png";
-import TechMahindra from "@/assets/partner-logos/tech-mahindra.png";
-import Wipro from "@/assets/partner-logos/wipro.png";
-import Zoho from "@/assets/partner-logos/zoho.png";
+import Accenture from "@/assets/partner-logos/accenture.svg";
+import Adobe from "@/assets/partner-logos/adobe.svg";
+import Amazon from "@/assets/partner-logos/amazon.svg";
+import Capgemini from "@/assets/partner-logos/capgemini.svg";
+import Cognizant from "@/assets/partner-logos/cognizant.svg";
+import Deloitte from "@/assets/partner-logos/deloitte.svg";
+import Google from "@/assets/partner-logos/google.svg";
+import Hcl from "@/assets/partner-logos/hcl.svg";
+import Ibm from "@/assets/partner-logos/ibm.svg";
+import Infosys from "@/assets/partner-logos/infosys.svg";
+import Jio from "@/assets/partner-logos/jio.svg";
+import Ltimindtree from "@/assets/partner-logos/LTIMindtree.svg";
+import Meesho from "@/assets/partner-logos/meesho.svg";
+import Oracle from "@/assets/partner-logos/oracle.svg";
+import Paytm from "@/assets/partner-logos/paytm.svg";
+import Razorpay from "@/assets/partner-logos/razorpay.svg";
+import Swiggy from "@/assets/partner-logos/swiggy.svg";
+import Tcs from "@/assets/partner-logos/tcs.svg";
+import TechMahindra from "@/assets/partner-logos/tech-mahindra.svg";
+import Wipro from "@/assets/partner-logos/wipro.svg";
+import Zoho from "@/assets/partner-logos/zoho.svg";
 
 export const PARTNER_LOGOS = [
   { src: Accenture, name: "Accenture" },
   { src: Adobe, name: "Adobe", scale : "scale-120" },
-  { src: Amazon, name: "Amazon", scale : "scale-130" },
+  { src: Amazon, name: "Amazon", scale : "scale-100" },
   { src: Capgemini, name: "Capgemini" },
   { src: Cognizant, name: "Cognizant" },
   { src: Deloitte, name: "Deloitte", scale : "scale-90" },
@@ -31,10 +31,10 @@ export const PARTNER_LOGOS = [
   { src: Hcl, name: "HCL", scale : "scale-90" },
   { src: Ibm, name: "IBM" },
   { src: Infosys, name: "Infosys" },
-  { src: Jio, name: "Jio", scale : "scale-110" },
+  { src: Jio, name: "Jio", scale : "scale-130" },
   { src: Ltimindtree, name: "LTIMindtree" },
-  { src: Meesho, name: "Meesho" },
-  { src: Oracle, name: "Oracle" },
+  { src: Meesho, name: "Meesho", scale : "scale-130" },
+  { src: Oracle, name: "Oracle", scale : "scale-90" },
   { src: Paytm, name: "Paytm" },
   { src: Razorpay, name: "Razorpay" },
   { src: Swiggy, name: "Swiggy" },

@@ -3,6 +3,7 @@ import { SectionHeader } from "@/components/ui/section-header";
 import AvatarPlaceholder from "@/assets/images/placeholders/avatar-placeholder.svg";
 import { SuccessStoryCarousel } from "./successStoryCarousel";
 import type { SuccessStory } from "./successStoryCard";
+import { Reveal } from "@/components/ui/motion/reveal";
 
 const SUCCESS_STORIES: SuccessStory[] = [
   {
@@ -71,9 +72,11 @@ export const SuccessStoriesSection = () => {
           description="Hear directly from students who turned a structured program into an actual job offer."
         />
 
-        <div className="mt-12">
-          <SuccessStoryCarousel stories={SUCCESS_STORIES} />
-        </div>
+        <Reveal direction="up" distance={40} delay={0.25} duration={0.5}>
+          <div className="mt-12">
+            <SuccessStoryCarousel stories={SUCCESS_STORIES} />
+          </div>
+        </Reveal>
       </Container>
     </section>
   );

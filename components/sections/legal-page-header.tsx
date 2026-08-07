@@ -1,5 +1,6 @@
 import { FileText } from "lucide-react"
 import Container from "../layout/container"
+import { RevealHeading } from "../ui/motion/reveal-heading"
 
 type Props = {
   title: string
@@ -39,9 +40,11 @@ export default function LegalPageHeader({ title, lastUpdated }: Props) {
           Last Updated : {lastUpdated}
         </div>
 
-        <h1 className="text-h1-mobile md:text-h1 text-ink font-bold font-heading">
-          {title}
-        </h1>
+        <RevealHeading
+          as="h1"
+          text={title}
+          className="text-h1-mobile md:text-h1 text-ink font-bold font-heading"
+        />
       </Container>
 
       {/* Bottom gradient divider */}

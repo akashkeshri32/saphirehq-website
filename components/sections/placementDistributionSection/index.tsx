@@ -1,5 +1,6 @@
 import Container from "@/components/layout/container";
 import { SectionHeader } from "@/components/ui/section-header";
+import { Reveal } from "@/components/ui/motion/reveal";
 import ByIndustry from "@/assets/images/placements/by-industry.svg";
 import ByRole from "@/assets/images/placements/by-role.svg";
 import { DistributionCard } from "./distributionCard";
@@ -21,8 +22,10 @@ export const PlacementDistributionSection = () => {
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-          {CARDS.map((card) => (
-            <DistributionCard key={card.heading} {...card} />
+          {CARDS.map((card, index) => (
+            <Reveal key={card.heading} direction="up" delay={index * 0.1} hover={{ scale: 1.02, y: -6 }}>
+              <DistributionCard {...card} />
+            </Reveal>
           ))}
         </div>
       </Container>

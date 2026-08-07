@@ -14,7 +14,7 @@ export const LogoCarouselSection = () => {
     <section className="py-19 md:py-80">
       <Container>
         <p className="text-13 font-jetbrains font-normal text-center text-text-gray">
-          Trusted by 250+ hiring companies
+          Trusted by 500+ hiring companies
         </p>
 
         <div className="mt-7 py-4 overflow-hidden mask-[linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
@@ -27,8 +27,9 @@ export const LogoCarouselSection = () => {
                 <Image
                   src={logo.src}
                   alt={logo.name}
+                  height={28}
                   // layout="fill"
-                  className="w-auto h-7.5 object-contain grayscale opacity-70"
+                  className="w-auto h-7.5 object-contain"
                 />
               </div>
             ))}
@@ -45,8 +46,9 @@ export const LogoCarouselSection = () => {
                 <Image
                   src={logo.src}
                   alt={logo.name}
+                  height={28}
                   // layout="fill"
-                  className="h-7.5 w-auto object-contain grayscale opacity-70"
+                  className="h-7.5 w-auto object-contain"
                 />
               </div>
             ))}

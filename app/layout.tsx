@@ -36,7 +36,14 @@ export const metadata: Metadata = {
     type: "website",
     siteName: SITE_NAME,
     locale: "en_IN",
-    url: SITE_URL,
+    images: [
+      {
+        url: "/metadata/opengraph-image.webp",
+        width: 1568,
+        height: 1003,
+        alt: SITE_NAME,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -45,6 +52,10 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  icons: {
+    icon: '/favicon.ico',
+    apple : '/apple-touch-icon.png'
+  }
 };
 
 export default function RootLayout({

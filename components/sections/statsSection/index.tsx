@@ -1,9 +1,10 @@
 import Container from "@/components/layout/container";
+import { Reveal } from "@/components/ui/motion/reveal";
 import { StatsCard } from "./statsCard";
 
 const STATS = [
   {
-    number: "250+",
+    number: "500+",
     text: "Hiring Companies",
     bgClassName: "bg-[#E9EEFF]",
     textClassName: "text-blue-primary",
@@ -45,8 +46,10 @@ export const StatsSection = () => {
     <section className="py-19 md:py-25">
       <Container>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-5">
-          {STATS.map((stat) => (
-            <StatsCard key={stat.text} {...stat} />
+          {STATS.map((stat, index) => (
+            <Reveal key={stat.text} direction="up" delay={(index % 6) * 0.06} hover className="h-full">
+              <StatsCard {...stat} />
+            </Reveal>
           ))}
         </div>
       </Container>

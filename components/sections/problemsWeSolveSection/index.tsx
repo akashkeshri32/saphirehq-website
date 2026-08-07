@@ -1,21 +1,30 @@
 import Container from "@/components/layout/container";
 import { SectionHeader } from "@/components/ui/section-header";
+import { Reveal } from "@/components/ui/motion/reveal";
 import RedCross from "@/assets/icons/red-cross.svg";
 import GreenTick from "@/assets/icons/green-tick.svg";
 import { ProblemBulletCard } from "./problemBulletCard";
 
 const PROBLEMS = [
-  "Graduates lack hands-on, portfolio-ready experience",
-  "Online courses teach concepts with no career pathway",
-  "Self-study has no structured roadmap or accountability.",
-  `Placement support usually stops at "here are some job links"`,
+"Lack of practical, hands-on experience",
+"Limited exposure to real-world projects",
+"Difficulty building a strong portfolio",
+"Insufficient industry mentorship",
+"Uncertainty about employer expectations",
+"Low confidence during interviews",
+"Inability to showcase skills beyond academics",
+
 ];
 
 const SOLUTIONS = [
-  "Real industry projects reviewed by working mentors.",
-  "A structured 8-step Career Accelerator with clear milestones.",
-  "Live, weekly mentor accountability — not self-paced isolation.",
-  "Resume, portfolio, HR referral, and mock interview support.",
+  "Work on industry-relevant projects",
+  "Build a professional portfolio",
+  "Learn from experienced industry mentors",
+  "Develop practical problem-solving skills",
+  "Master modern tools and technologies",
+  "Showcase real-world project experience",
+  "Strengthen their resume and LinkedIn profile",
+
 ];
 
 export const ProblemsWeSolveSection = () => {
@@ -28,16 +37,22 @@ export const ProblemsWeSolveSection = () => {
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
-          <ProblemBulletCard
-            heading="Problems We Are Solving"
-            items={PROBLEMS}
-            icon={RedCross}
-          />
-          <ProblemBulletCard
-            heading="How We Solve It"
-            items={SOLUTIONS}
-            icon={GreenTick}
-          />
+          <Reveal direction="left" className="h-full [&>*]:h-full">
+            <ProblemBulletCard
+              heading="Problems We Are Solving"
+              description="Despite completing courses and earning certifications, many students struggle with:"
+              items={PROBLEMS}
+              icon={RedCross}
+            />
+          </Reveal>
+          <Reveal direction="right" delay={0.1} className="h-full [&>*]:h-full">
+            <ProblemBulletCard
+              heading="How We Solve It"
+              description="Our ecosystem enables students to:"
+              items={SOLUTIONS}
+              icon={GreenTick}
+            />
+          </Reveal>
         </div>
       </Container>
     </section>

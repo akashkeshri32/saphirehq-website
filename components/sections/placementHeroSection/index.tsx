@@ -1,5 +1,6 @@
 import Container from "@/components/layout/container";
 import { SectionHeader } from "@/components/ui/section-header";
+import { Reveal } from "@/components/ui/motion/reveal";
 import BarGraphIcon from "@/assets/icons/placement-bar-graph.svg";
 import PlacementOverviewIcon from "@/assets/icons/placement-overview.svg";
 import ProjectsDeliveryImage from "@/assets/images/placements/projects-delivery.svg";
@@ -34,8 +35,10 @@ export const PlacementHeroSection = () => {
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
-          {CARDS.map((card) => (
-            <PlacementHeroCard key={card.heading} {...card} />
+          {CARDS.map((card, index) => (
+            <Reveal key={card.heading} direction="up" delay={index * 0.1} hover={{ scale: 1.015, y: -6 }}>
+              <PlacementHeroCard {...card} />
+            </Reveal>
           ))}
         </div>
       </Container>

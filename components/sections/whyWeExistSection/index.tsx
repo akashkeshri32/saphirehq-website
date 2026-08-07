@@ -6,27 +6,21 @@ export const WhyWeExistSection = () => {
     <TwoColumnIntroSection
       eyebrow="Why We Exist"
       className="pt-10 md:pt-17"
-      heading="Sapphire IQ was created to solve a simple, persistent problem."
+      heading="Sapphire IQ was created to solve this challenge."
       description={`
         <p>
-          Most graduates leave education with theoretical knowledge but little proof they can
-          apply it. Employers, in turn, spend months training new hires on skills a structured,
-          project-based program could have taught in weeks.
+          We are a project-based internship platform that helps students transform theoretical knowledge into practical skills through industry-focused projects, expert mentorship, and portfolio development.
         </p>
-        
+
         <p>
-          Sapphire IQ closes that gap directly — pairing every learner with live mentors, real
-          industry projects, and a placement process built around outcomes, not attendance.
+          Instead of simply learning concepts, our students work on real-world projects, build professional portfolios, receive mentor guidance, and develop the confidence needed to succeed in today's competitive job market.
         </p>
-
-
-
-      
       `}
       image={WhyWeExistImage}
       imageAlt="Sapphire IQ learner working through a mentor-reviewed project"
       imagePosition="left"
       headingSize="h5"
+      reverseOrderOnMobile={true}
     />
   );
 };

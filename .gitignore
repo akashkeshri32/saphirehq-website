@@ -13,6 +13,9 @@
 # testing
 /coverage
 
+todo.txt
+SEO-Meta-Suggestions.txt
+
 # next.js
 /.next/
 /out/

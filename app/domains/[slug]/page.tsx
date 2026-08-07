@@ -14,53 +14,12 @@ import DOMAINS from "@/lib/data/domains";
 import { JsonLd } from "@/lib/seo/json-ld";
 import { breadcrumbSchema } from "@/lib/seo/schema";
 import { buildMetadata } from "@/lib/seo/metadata";
+import MuskanSwaroopImage from "@/assets/images/instructors/muskan-swaroop.png";
 
 type Params = {
   slug: string;
 };
 
-const DOMAIN_META: Record<string, { title: string; description: string }> = {
-  "business-analyst": {
-    title: "Business Analyst Internship | Sapphire IQ",
-    description:
-      "Turn business problems into data-backed decisions and strategy. Join Sapphire IQ's Business Analyst internship with real mentors and live projects.",
-  },
-  "data-analyst": {
-    title: "Data Analyst Internship | Sapphire IQ",
-    description:
-      "Explore, clean, and visualize real data to uncover the story behind the numbers. Build a portfolio-ready Data Analyst skillset with Sapphire IQ.",
-  },
-  "data-science": {
-    title: "Data Science Internship | Sapphire IQ",
-    description:
-      "Master data analysis by working with real datasets, dashboards, and business challenges. Learn Data Science hands-on with Sapphire IQ mentors.",
-  },
-  "ai-ml": {
-    title: "AI/ML Engineering Internship | Sapphire IQ",
-    description:
-      "Build and train machine learning models that solve real problems, from prototype to deployment. Gain hands-on AI/ML experience with Sapphire IQ.",
-  },
-  "ui-ux": {
-    title: "UI/UX Design Internship | Sapphire IQ",
-    description:
-      "Design digital products people love — from research to pixel-perfect execution. Build a real UI/UX portfolio with Sapphire IQ's mentor-led internship.",
-  },
-  frontend: {
-    title: "Frontend Developer Internship | Sapphire IQ",
-    description:
-      "Build fast, accessible interfaces with modern frameworks and real design systems. Learn frontend development hands-on with Sapphire IQ mentors.",
-  },
-  backend: {
-    title: "Backend Development Internship | Sapphire IQ",
-    description:
-      "Architect the servers, APIs, and databases that power real products at scale. Gain hands-on backend experience with Sapphire IQ's mentor program.",
-  },
-  "full-stack": {
-    title: "Full Stack Development Internship | Sapphire IQ",
-    description:
-      "Ship complete products end-to-end, from database to deployed interface. Learn full-stack development hands-on with Sapphire IQ mentors.",
-  },
-};
 
 export function generateStaticParams() {
   return DOMAINS.map((domain) => ({ slug: domain.id }));
@@ -76,7 +35,7 @@ export async function generateMetadata({
 
   if (!domain) return {};
 
-  const meta = DOMAIN_META[domain.id] ?? {
+  const meta = {
     title: `${domain.label} Internship | Sapphire IQ`,
     description: domain.tagline,
   };
@@ -118,7 +77,16 @@ export default async function DomainPage({
       <DomainJourneySection />
 
       <MeetInstructorsSection
-        instructors={[...domain.instructors]}
+        instructors={[
+          ...domain.instructors,
+          {
+            name: "Muskan Swaroop",
+            linkedin : "https://www.linkedin.com/in/muskan-swaroop",
+            domain: "Student Career Guide",
+            description: "5+ years of Exp.",
+            image : MuskanSwaroopImage
+          },
+        ]}
         eyebrow="Meet Your Instructors"
         heading={`Mentors currently working in ${domain.label}`}
         description="Every instructor teaching this track is an active industry professional."
@@ -130,7 +98,7 @@ export default async function DomainPage({
       <LogoCarouselSection />
 
       <CertificatesSection />
-      
+
 
       <CtaSection
         heading={`Ready to start your ${domain.label} journey?`}

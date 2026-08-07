@@ -1,8 +1,9 @@
 import Container from "@/components/layout/container";
+import { Reveal } from "@/components/ui/motion/reveal";
 import { PlacementStatCard } from "./placementStatCard";
 
 const STAT_DETAILS = [
-  { bgColor: "bg-black", textColor: "text-white", title: "250+", text: "Hiring Partners" },
+  { bgColor: "bg-black", textColor: "text-white", title: "500+", text: "Hiring Partners" },
   { bgColor: "bg-blue-primary", textColor: "text-white", title: "1000+", text: "Students Trained" },
   { bgColor: "bg-[#1E3A8A]", textColor: "text-white", title: "99%", text: "Completion Rate" },
   { bgColor: "bg-purple", textColor: "text-white", title: "40%", text: "Avg. CTC Hike" },
@@ -17,8 +18,10 @@ export const PlacementStatsSection = () => {
     <section className="py-15 md:py-22">
       <Container>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-5">
-          {STAT_DETAILS.map((stat) => (
-            <PlacementStatCard key={stat.text} {...stat} />
+          {STAT_DETAILS.map((stat, index) => (
+            <Reveal key={stat.text} direction="up" delay={(index % 4) * 0.06} hover={{ scale: 1.03, y: -4 }}>
+              <PlacementStatCard {...stat} />
+            </Reveal>
           ))}
         </div>
       </Container>

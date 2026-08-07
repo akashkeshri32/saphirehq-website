@@ -6,7 +6,7 @@ import { ButtonLink } from "@/components/ui/button/button-link";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
 
-import NavLogo from "@/assets/sapphire-logo-nav.svg";
+import NavLogo from "@/assets/brand-logos/logo-main.svg";
 import Link from "next/link";
 
 const NAV_ITEMS = [
@@ -29,7 +29,7 @@ const Navbar = () => {
               <Image
                 src={NavLogo}
                 alt="Sapphire IQ logo"
-                height={30}
+                height={35}
                 objectFit="contain"
               />
             </figure>

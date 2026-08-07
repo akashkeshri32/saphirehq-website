@@ -18,7 +18,7 @@ export const TestimonialCard = ({
   designation,
 }: Testimonial) => {
   return (
-    <div className="bg-white border border-border-stroke rounded-xl p-6.5 h-full flex flex-col">
+    <div className="bg-white border border-border-stroke rounded-xl p-6.5 h-full flex flex-col transition-all duration-300 ease-out hover:-translate-y-1.5 hover:scale-[1.015] hover:shadow-md hover:border-blue-primary/20">
       <Rating value={rating} />
 
       <p className="text-15 font-normal font-inter mt-5">{testimonial}</p>

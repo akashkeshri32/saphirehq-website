@@ -22,7 +22,7 @@ export const DomainCard = ({
   return (
     <div
       className={cn(
-        "bg-white border border-border-stroke border-t-4 rounded-xl p-6 flex flex-col justify-between items-start",
+        "bg-white border border-border-stroke border-t-4 rounded-xl p-6 flex flex-col justify-between items-start transition-all hover:shadow-md shadow-blue-primary/10",
         className,
       )}
     >

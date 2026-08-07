@@ -36,8 +36,9 @@ export const EnrollmentFaqSection = () => {
       <Container>
         <SectionHeader
           eyebrow="FAQs"
-          heading="Common questions before youapply."
+          heading="Common questions before you apply."
           description="Quick answers to the questions we get most from applicants."
+          descriptionDelay={0.4}
         />
 
         <div className="mt-12 max-w-190">

@@ -1,5 +1,6 @@
 import Container from "@/components/layout/container";
 import { SectionHeader } from "@/components/ui/section-header";
+import { Reveal } from "@/components/ui/motion/reveal";
 import ResumeIcon from "@/assets/icons/placements/resume-building.svg";
 import PortfolioIcon from "@/assets/icons/placements/portfolio-building.svg";
 import HRIcon from "@/assets/icons/placements/hr.svg";
@@ -49,8 +50,10 @@ export const HowPlacementWorksSection = () => {
         />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-12">
-          {STEPS.map((step) => (
-            <HowPlacementWorksCard key={step.heading} {...step} />
+          {STEPS.map((step, index) => (
+            <Reveal key={step.heading} direction="up" delay={(index % 4) * 0.08} hover className="h-full [&>*]:h-full">
+              <HowPlacementWorksCard {...step} />
+            </Reveal>
           ))}
         </div>
       </Container>

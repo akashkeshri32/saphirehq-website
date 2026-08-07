@@ -9,6 +9,7 @@ import GraphIcon from "@/assets/icons/journey/graph.svg";
 import TickIcon from "@/assets/icons/journey/tick.svg";
 import CertificateIcon from "@/assets/icons/journey/certificate.svg";
 import { cn } from "@/lib/utils/tailwind";
+import { Reveal } from "@/components/ui/motion/reveal";
 
 
 
@@ -35,23 +36,25 @@ export const DomainJourneySection = () => {
 
         <div className="flex flex-col flex-wrap md:flex-row items-center md:gap-4 mt-12 md:overflow-x-auto md:pb-2">
           {STEPS.map((step, index) => (
-            <div key={step.text} >
-              <div className="flex max-md:flex-col max-md:items-center max-md:gap-5 gap-7 p-3 md:p-5">
-                <div className="flex flex-col items-center text-center gap-4">
-                  <Image src={step.icon} alt="" width={32} height={32} />
-                  <span className="text-14 text-white">{step.text}</span>
+            <Reveal direction="left" key={step.text}>
+              <div  >
+                <div className="flex max-md:flex-col max-md:items-center max-md:gap-5 gap-7 p-3 md:p-5">
+                  <div className="flex flex-col items-center text-center gap-4">
+                    <Image src={step.icon} alt="" width={32} height={32} />
+                    <span className="text-14 text-white">{step.text}</span>
+                  </div>
+                  <Image
+                    src={GrayArrow}
+                    alt=""
+                    width={20}
+                    height={20}
+                    className={cn("rotate-90 md:rotate-0 shrink-0 ",
+                      index === STEPS.length-1 && 'hidden'
+                    )}
+                  />
                 </div>
-                <Image
-                  src={GrayArrow}
-                  alt=""
-                  width={20}
-                  height={20}
-                  className={cn("rotate-90 md:rotate-0 shrink-0 ",
-                    index === STEPS.length-1 && 'hidden'
-                  )}
-                />
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </Container>

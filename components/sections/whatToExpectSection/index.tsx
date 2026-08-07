@@ -4,10 +4,9 @@ import { SectionHeader } from "@/components/ui/section-header";
 import GreenTick from "@/assets/icons/green-tick.svg";
 
 const POINTS = [
-  "A live mentor, not a pre-recorded course",
-  "Real projects that become your portfolio",
-  "A clear, structured path — never guesswork.",
-  "Placement support that continues past enrollment",
+  "To help students move from learning concepts to applying them confidently in the real world.",
+  "Because we believe that real skills are built through real projects, real guidance, and real experience.",
+
 ];
 
 export const WhatToExpectSection = () => {
@@ -16,7 +15,7 @@ export const WhatToExpectSection = () => {
       <Container>
         <SectionHeader
           eyebrow="Our Promise"
-          heading="What you can expect from us."
+          heading="At Sapphire IQ, our goal is simple:"
         />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-9 gap-y-4 mt-12 max-w-200">

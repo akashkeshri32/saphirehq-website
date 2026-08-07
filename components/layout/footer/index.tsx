@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Container from "@/components/layout/container";
-import Logo from "@/assets/sapphire-logo.svg";
+import Logo from "@/assets/brand-logos/logo-plain.png";
 import DOMAINS from "@/lib/data/domains";
 
 const FOOTER_COLUMNS = [
@@ -30,11 +30,8 @@ const FOOTER_COLUMNS = [
       { label: "Refund & Cancellation Policy", href: "/refund-and-cancellation-policy" },
       { label: "Terms And Conditions", href: "/terms-and-conditions" },
       { label: "Code Of Conduct", href: "/code-of-conduct" },
-
-
-    
     ],
-    
+
   },
 ];
 
@@ -45,7 +42,7 @@ export default function Footer() {
         <div className="grid grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr] gap-10">
           <div className="col-span-2 lg:col-span-1">
             <Link href="/">
-              <Image src={Logo} alt="Sapphire IQ" className="h-32 w-auto" />
+              <Image src={Logo} alt="Sapphire IQ" height={24} className="h-24 w-auto" />
             </Link>
 
             <p className="text-14 text-gray-two mt-4 leading-5.5 max-w-65">

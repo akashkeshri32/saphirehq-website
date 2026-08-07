@@ -3,6 +3,8 @@ import Container from "@/components/layout/container";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import ImagePlaceholder from "@/assets/images/placeholders/image-placeholder.svg";
 import { HighlightItem } from "./highlightItem";
+import { Reveal } from "@/components/ui/motion/reveal";
+import { RevealHeading } from "@/components/ui/motion/reveal-heading";
 
 
 type Props = {
@@ -22,30 +24,38 @@ export const ColumnHighlightsSection = ({ heading, description, eyebrow, highlig
             <div className="flex flex-col max-w-xl">
               <Eyebrow variant="default" text={eyebrow} />
 
-              <h2 className="text-h3 font-heading font-semibold mt-5">
-                {heading}
-              </h2>
+              <RevealHeading
+                text={heading}
+                as="h2"
+                className="text-h3 font-heading font-semibold mt-5"
+              />
 
-              <p className="text-16 text-text-gray mt-4">
-                {description}
-              </p>
+              <Reveal direction="up" distance={16} delay={0.3} duration={0.5}>
+                <p className="text-16 text-text-gray mt-4">
+                  {description}
+                </p>
+              </Reveal>
 
-              <div className="flex flex-col gap-3 mt-5.5">
-                {highlights.map((text) => (
-                  <HighlightItem key={text} text={text} />
-                ))}
-              </div>
+              <Reveal  direction="up" distance={16} delay={0.35} duration={0.6}>
+                <div className="flex flex-col gap-3 mt-5.5">
+                  {highlights.map((text) => (
+                    <HighlightItem key={text} text={text} />
+                  ))}
+                </div>
+              </Reveal>
             </div>
           </div>
 
-          <div className="relative rounded-3xl overflow-hidden">
-            <Image
-              src={imageSrc}
-              alt="Column highlights placeholder"
-              className="w-full h-auto lg:max-w-xl object-contain"
-              width={576} height={344}
-            />
-          </div>
+          <Reveal direction="up" distance={16} delay={0.35} duration={0.6}>
+            <div className="relative rounded-3xl overflow-hidden">
+              <Image
+                src={imageSrc}
+                alt="Column highlights placeholder"
+                className="w-full h-auto lg:max-w-xl object-contain"
+                width={576} height={344}
+              />
+            </div>
+          </Reveal>
         </div>
       </Container>
     </section>

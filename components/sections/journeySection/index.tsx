@@ -1,5 +1,7 @@
 import Container from "@/components/layout/container";
 import { Eyebrow } from "@/components/ui/eyebrow";
+import { RevealHeading } from "@/components/ui/motion/reveal-heading";
+import { Reveal } from "@/components/ui/motion/reveal";
 import { JourneyCard } from "./journeyCard";
 import JourneyDesktopImage from "@/assets/images/journey.svg";
 import JourneyMobileImage from "@/assets/images/journey-mobile.svg";
@@ -47,12 +49,16 @@ export const JourneySection = () => {
       <Container>
         <div className="max-w-160 flex flex-col gap-3.25 mb-12">
           <Eyebrow variant="default" text="Your Journey" />
-          <h2 className="text-h2-mobile lg:text-h2 font-heading font-semibold">
-            Build your career, not just a resume.
-          </h2>
-          <p className="text-17 text-text-gray">
-            More than an internship — our 8-step Career Accelerator equips you with the skills, experience, and confidence to become industry-ready, one verifiable milestone at a time.
-          </p>
+          <RevealHeading
+            as="h2"
+            text="Build your career, not just a resume."
+            className="text-h2-mobile lg:text-h2 font-heading font-semibold"
+          />
+          <Reveal direction="up" distance={16} delay={0.15} duration={0.5}>
+            <p className="text-17 text-text-gray">
+              More than an internship — our 8-step Career Accelerator equips you with the skills, experience, and confidence to become industry-ready, one verifiable milestone at a time.
+            </p>
+          </Reveal>
         </div>
 
         {/* <div className="flex gap-3 overflow-x-auto pb-2 md:hidden">
@@ -71,27 +77,25 @@ export const JourneySection = () => {
         </div> */}
 
 
-        <div className="hidden lg:block">
-          <Image 
+        <Reveal direction="up" distance={30} className="hidden lg:block">
+          <Image
             src={JourneyDesktopImage}
             alt="Sapphire IQ journey from application to placement"
             width={1236}
             height={400}
             className="h-100 w-full max-w-309 "
           />
+        </Reveal>
 
-        </div>
-
-        <div className="lg:hidden">
-          <Image 
+        <Reveal direction="up" distance={30} className="lg:hidden">
+          <Image
             src={JourneyMobileImage}
             alt="Sapphire IQ journey from application to placement"
             width={600}
             height={900}
             className="w-full max-w-81 md:max-w-136 "
           />
-
-        </div>
+        </Reveal>
       </Container>
     </section>
   );

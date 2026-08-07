@@ -5,7 +5,7 @@ const FEATURES = [
   "Real-world projects reviewed by industry mentors",
   "Weekly live mentorship sessions",
   "Verified certificate on completion",
-  "Placement assistance with 250+ hiring partners",
+  "Placement assistance with 500+ hiring partners",
 ];
 
 export const FeatureBox = () => {

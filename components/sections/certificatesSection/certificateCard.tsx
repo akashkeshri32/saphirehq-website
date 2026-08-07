@@ -28,9 +28,9 @@ export const CertificateCard = ({ image, alt }: Props) => {
       <button
         type="button"
         onClick={() => setIsOpen(true)}
-        className="group relative w-full overflow-hidden rounded-xl border border-white/10 cursor-pointer"
+        className="group relative w-full overflow-hidden rounded-xl  cursor-pointer group"
       >
-        <Image src={image} alt={alt} className="w-full h-auto" />
+        <Image src={image} alt={alt} height={500} width={500} className="object-cover w-full object-[50%_23%] lg:object-top-left h-94  md:h-82 transition group-hover:scale-110" />
 
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/60 transition-colors flex items-center justify-center">
           <div className="w-12 h-12 rounded-full bg-white/10 border border-white/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
@@ -41,7 +41,7 @@ export const CertificateCard = ({ image, alt }: Props) => {
 
       {isOpen && (
         <div
-          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-6"
+          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-6 w-full h-full"
           onClick={() => setIsOpen(false)}
         >
           <button

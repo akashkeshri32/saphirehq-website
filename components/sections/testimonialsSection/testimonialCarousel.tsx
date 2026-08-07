@@ -39,7 +39,7 @@ export const TestimonialCarousel = ({ testimonials }: Props) => {
   return (
     <div>
       <div className="overflow-hidden" ref={emblaRef}>
-        <div className="flex gap-6">
+        <div className="flex gap-6 pb-3">
           {testimonials.map((testimonial) => (
             <div
               key={testimonial.name}

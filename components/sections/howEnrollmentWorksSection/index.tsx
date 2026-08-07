@@ -1,5 +1,6 @@
 import Container from "@/components/layout/container";
 import { SectionHeader } from "@/components/ui/section-header";
+import { Reveal } from "@/components/ui/motion/reveal";
 import { EnrollmentStepCard } from "./enrollmentStepCard";
 
 const STEPS = [
@@ -29,11 +30,14 @@ export const HowEnrollmentWorksSection = () => {
           eyebrow="How Enrollment Works"
           heading="Three steps to get started."
           description="Here's exactly what happens after you hit submit."
+          descriptionDelay={0.4}
         />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
           {STEPS.map((step, index) => (
-            <EnrollmentStepCard key={step.heading} index={index + 1} {...step} />
+            <Reveal key={step.heading} direction="up" delay={index * 0.1} hover className="h-full [&>*]:h-full">
+              <EnrollmentStepCard index={index + 1} {...step} />
+            </Reveal>
           ))}
         </div>
       </Container>
