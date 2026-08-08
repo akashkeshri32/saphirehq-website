@@ -7,7 +7,9 @@ export default function Layout({ children }: PropsWithChildren) {
     <>
       <Navbar />
 
-      {children}
+      <div className="overflow-x-hidden">
+        {children}
+      </div>
 
       <Footer />
     </>

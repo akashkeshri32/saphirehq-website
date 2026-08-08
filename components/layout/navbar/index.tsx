@@ -30,6 +30,7 @@ const Navbar = () => {
                 src={NavLogo}
                 alt="Sapphire IQ logo"
                 height={35}
+                className="w-auto h-7 md:h-8.75"
                 objectFit="contain"
               />
             </figure>
