@@ -23,7 +23,7 @@ const Navbar = () => {
   return (
     <nav className="fixed left-0 w-full top-4 z-50">
       <Container>
-        <div className="bg-white/10 rounded-full backdrop-blur-md bg-canvas-tint/80 p-2.5 pl-5 flex items-center justify-between">
+        <div className="bg-white/10 rounded-full backdrop-blur-md bg-canvas-tint/80 max-md:p-2 p-2.5 pl-5 flex items-center justify-between">
           <Link href={"/"}>
             <figure>
               <Image
