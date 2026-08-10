@@ -26,6 +26,7 @@ export const DomainProjectsSection = ({ domain }: Props) => {
                   src={project.icon}
                   width={400}
                   height={400}
+                  sizes="(min-width: 1024px) 20vw, (min-width: 768px) 25vw, (min-width: 640px) 33vw, 100vw"
                   alt={`${project.name} — ${domain.label} sample project`}
                   className="w-full h-79 md:h-42.5 object-cover object-top-left"
                 />

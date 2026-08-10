@@ -30,7 +30,14 @@ export const CertificateCard = ({ image, alt }: Props) => {
         onClick={() => setIsOpen(true)}
         className="group relative w-full overflow-hidden rounded-xl  cursor-pointer group"
       >
-        <Image src={image} alt={alt} height={500} width={500} className="object-cover w-full object-[50%_23%] lg:object-top-left h-94  md:h-82 transition group-hover:scale-110" />
+        <Image
+          src={image}
+          alt={alt}
+          height={500}
+          width={500}
+          sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw"
+          className="object-cover w-full object-[50%_23%] lg:object-top-left h-94  md:h-82 transition group-hover:scale-110"
+        />
 
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/60 transition-colors flex items-center justify-center">
           <div className="w-12 h-12 rounded-full bg-white/10 border border-white/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
@@ -56,6 +63,8 @@ export const CertificateCard = ({ image, alt }: Props) => {
           <Image
             src={image}
             alt={alt}
+            sizes="100vw"
+            priority={isOpen}
             className="max-w-full max-h-full w-auto h-auto object-contain rounded-xl"
             onClick={(e) => e.stopPropagation()}
           />

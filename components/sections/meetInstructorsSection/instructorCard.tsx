@@ -12,15 +12,15 @@ type Props = {
 
 export const InstructorCard = ({ image, name, domain, description, linkedin }: Props) => {
   return (
-    <div className="bg-white flex flex-col gap-y-1 border border-border-stroke rounded-xl p-6 w-full md:max-w-71 h-full hover:shadow-lg shadow-blue-primary/10">
+    <div className="bg-white flex flex-col gap-y-1 border border-border-stroke  rounded-xl p-4 md:p-6 w-full md:max-w-71 h-full hover:shadow-lg shadow-blue-primary/10">
       <div>
         <div className="rounded-lg overflow-hidden border-2 border-blue-primary">
           <Image
             src={image}
             alt={name}
-            width={240}
-            height={240}
-            className="w-full h-auto max-h-60 object-cover"
+            width={300}
+            height={300}
+            className="w-full h-68 md:h-60 object-cover object-top"
           />
         </div>
 

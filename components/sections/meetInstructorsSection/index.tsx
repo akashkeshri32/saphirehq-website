@@ -71,7 +71,7 @@ export const MeetInstructorsSection = ({
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12 justify-items-center">
           {instructors.map((instructor, index) => (
-            <Reveal key={instructor.name} direction="up" delay={(index % 4) * 0.08}>
+            <Reveal className="w-full" key={instructor.name} direction="up" delay={(index % 4) * 0.08}>
               <InstructorCard {...instructor} />
             </Reveal>
           ))}
