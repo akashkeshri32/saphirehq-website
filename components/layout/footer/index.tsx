@@ -85,7 +85,7 @@ export default function Footer() {
           <p className="text-13 text-gray-two">
             © {new Date().getFullYear()} Sapphire IQ. All rights reserved
           </p>
-          <p className="text-13 text-gray-two font-medium">Ahmedabad, India</p>
+          <p className="text-13 text-gray-two font-medium">Unitech Unihomes, Sector 117, Noida, Uttar Pradesh, 201304</p>
         </div>
       </Container>
     </footer>
