@@ -70,8 +70,8 @@ export const ContactHeroSection = () => {
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mt-12 items-start">
-          <Reveal direction="left">
-            <div className="bg-black rounded-2xl p-7.5 flex flex-col gap-6">
+          <Reveal className="h-full" direction="left">
+            <div className="bg-black rounded-2xl p-7.5 flex flex-col gap-6 h-full">
               <div className="flex flex-col gap-6">
                 {CONTACT_DETAILS.map((detail) => (
                   <ContactInfoRow key={detail.label} {...detail} />
@@ -100,15 +100,17 @@ export const ContactHeroSection = () => {
                 </div>
               </div>
 
-              <div className="h-px bg-white/10" />
+              {/*<div className="h-px bg-white/5" />*/}
 
-              <div>
-                <p className="text-15 font-heading font-semibold text-white">
-                  Sapphire IQ Innovations Pvt. Ltd.
-                </p>
-                <p className="text-13 text-gray-two mt-1">
-                  Brilliant Minds. Intelligent Solutions.
-                </p>
+              <div className="flex-1 flex items-end">
+                <div>
+                  <p className="text-15 font-heading font-semibold text-white">
+                    Sapphire IQ Innovations Pvt. Ltd.
+                  </p>
+                  <p className="text-13 text-gray-two mt-1">
+                    Brilliant Minds. Intelligent Solutions.
+                  </p>
+                </div>
               </div>
             </div>
           </Reveal>
