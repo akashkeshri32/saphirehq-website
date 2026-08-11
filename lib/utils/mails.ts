@@ -2,6 +2,13 @@ import nodemailer from "nodemailer";
 
 import { CreateEnquiry } from "../drizzle/schema";
 
+export type ContactMessage = {
+  name: string;
+  email: string;
+  phone?: string;
+  message: string;
+};
+
 export async function sendWelcomeEmail(
   email: string,
   password: string,
@@ -215,6 +222,135 @@ export const sendEnquiryMail = async (
       from: process.env.SMTP_FROM ?? "CoderNext <noreply@codernext.com>",
       to: process.env.ENQUIRY_RECIPIENT_EMAIL ?? process.env.SMTP_USER,
       subject: `New Internship Enquiry — ${enquiry.name} (${enquiry.domainOfInterest})`,
+      html,
+    });
+    return { error: null };
+  } catch (err) {
+    return { error: err instanceof Error ? err : new Error(String(err)) };
+  }
+};
+
+export const sendContactMessage = async (
+  contact: ContactMessage,
+): Promise<{ error: Error | null }> => {
+  const transporter = nodemailer.createTransport({
+    host: process.env.SMTP_HOST,
+    port: Number(process.env.SMTP_PORT ?? 587),
+    secure: process.env.SMTP_PORT === "465",
+    auth: {
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASS,
+    },
+  });
+
+  const submittedAt = new Date().toLocaleString("en-IN", {
+    dateStyle: "medium",
+    timeStyle: "short",
+    timeZone: "Asia/Kolkata",
+  });
+
+  const row = (label: string, value: string) => `
+    <tr>
+      <td bgcolor="#f8fafc" style="padding:12px 16px;background-color:#f8fafc;border-bottom:1px solid #e2e8f0;width:38%">
+        <p style="margin:0;color:#94a3b8;font-size:11px;text-transform:uppercase;letter-spacing:0.08em;font-weight:600">${label}</p>
+      </td>
+      <td bgcolor="#ffffff" style="padding:12px 16px;background-color:#ffffff;border-bottom:1px solid #e2e8f0">
+        <p style="margin:0;color:#1e293b;font-size:14px;font-weight:500">${value}</p>
+      </td>
+    </tr>`;
+
+  const html = `
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+    </head>
+    <body bgcolor="#f1f5f9" style="margin:0;padding:0;background-color:#f1f5f9;font-family:system-ui,-apple-system,sans-serif">
+      <table width="100%" cellpadding="0" cellspacing="0" bgcolor="#f1f5f9" style="background-color:#f1f5f9;padding:40px 16px">
+        <tr><td align="center">
+          <table width="520" cellpadding="0" cellspacing="0" bgcolor="#ffffff" style="background-color:#ffffff;border:1px solid #e2e8f0;border-radius:16px;overflow:hidden;max-width:520px;width:100%">
+
+            <!-- Header -->
+            <tr>
+              <td bgcolor="#1437FF" style="background-color:#1437FF;padding:28px 32px;text-align:center">
+                <h1 style="margin:0 0 6px;color:#ffffff;font-size:20px;font-weight:700">Sapphire IQ</h1>
+                <p style="margin:0;color:#dbe4ff;font-size:13px">New Contact Form Submission</p>
+              </td>
+            </tr>
+
+            <!-- Alert banner -->
+            <tr>
+              <td bgcolor="#eef1ff" style="background-color:#eef1ff;padding:14px 32px;border-bottom:1px solid #e2e8f0">
+                <p style="margin:0;color:#1437FF;font-size:14px;font-weight:600">
+                  You have a new message from <span style="color:#0c1f8f">${contact.name}</span>
+                </p>
+              </td>
+            </tr>
+
+            <!-- Body -->
+            <tr>
+              <td bgcolor="#ffffff" style="padding:28px 32px 20px;background-color:#ffffff">
+                <p style="margin:0 0 20px;color:#475569;font-size:14px;line-height:1.6">
+                  Someone submitted the contact form on the Sapphire IQ website. Here are the details:
+                </p>
+
+                <!-- Details table -->
+                <table width="100%" cellpadding="0" cellspacing="0" style="border:1px solid #e2e8f0;border-radius:12px;overflow:hidden;border-collapse:separate;border-spacing:0">
+                  ${row("Full Name", contact.name)}
+                  ${row("Email Address", contact.email)}
+                  ${contact.phone ? row("Phone Number", contact.phone) : ""}
+                  ${row("Submitted At", submittedAt)}
+                </table>
+
+                <!-- Message -->
+                <table width="100%" cellpadding="0" cellspacing="0" style="margin-top:20px;border:1px solid #e2e8f0;border-radius:12px;overflow:hidden">
+                  <tr>
+                    <td bgcolor="#f8fafc" style="padding:12px 16px;background-color:#f8fafc;border-bottom:1px solid #e2e8f0">
+                      <p style="margin:0;color:#94a3b8;font-size:11px;text-transform:uppercase;letter-spacing:0.08em;font-weight:600">Message</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td bgcolor="#ffffff" style="padding:16px;background-color:#ffffff">
+                      <p style="margin:0;color:#1e293b;font-size:14px;line-height:1.6;white-space:pre-wrap">${contact.message}</p>
+                    </td>
+                  </tr>
+                </table>
+
+                <!-- CTA -->
+                <table width="100%" cellpadding="0" cellspacing="0" style="margin-top:24px">
+                  <tr>
+                    <td align="center">
+                      <a href="mailto:${contact.email}?subject=Re: Your message to Sapphire IQ&body=Hi ${contact.name}," style="display:inline-block;background-color:#1437FF;color:#ffffff;padding:12px 28px;border-radius:10px;text-decoration:none;font-weight:600;font-size:14px">
+                        Reply to ${contact.name}
+                      </a>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- Footer -->
+            <tr>
+              <td bgcolor="#f8fafc" style="padding:16px 32px;border-top:1px solid #e2e8f0;text-align:center;background-color:#f8fafc">
+                <p style="margin:0;color:#94a3b8;font-size:12px">
+                  This is an automated notification from the Sapphire IQ website contact form.
+                </p>
+              </td>
+            </tr>
+
+          </table>
+        </td></tr>
+      </table>
+    </body>
+    </html>`;
+
+  try {
+    await transporter.sendMail({
+      from: process.env.SMTP_FROM ?? "Sapphire IQ <noreply@sapphireiq.in>",
+      to: process.env.ENQUIRY_RECIPIENT_EMAIL ?? "admin@sapphireiq.in",
+      replyTo: contact.email,
+      subject: `New Contact Form Submission — ${contact.name}`,
       html,
     });
     return { error: null };

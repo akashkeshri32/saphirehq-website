@@ -15,6 +15,8 @@ const NAV_ITEMS = [
   { title: "Success stories", href: "/placement-statistics" },
   { title: "FAQs", href: "/#faqs" },
   { title: "About Us", href: "/about-us" },
+  { title: "Contact Us", href: "/contact-us" },
+
 ];
 
 const Navbar = () => {
@@ -104,7 +106,7 @@ type NavItemProps = {
 
 const NavItem = ({ title, href }: NavItemProps) => {
   return (
-    <ButtonLink variant={"link"} href={href} className="font-medium! font-inter text-14">
+    <ButtonLink variant={"link"} href={href} className="font-medium! font-inter text-14 px-4.5">
       {title}
     </ButtonLink>
   );

@@ -19,8 +19,7 @@ const FOOTER_COLUMNS = [
       { label: "Success Stories", href: "/placement-statistics" },
       { label: "FAQs", href: "/#faqs" },
       { label: "Enroll Now", href: "/enroll-now" },
-
-      // { label: "Contact", href: "/contact" },
+      { label: "Contact Us", href: "/contact-us" },
     ],
   },
   {

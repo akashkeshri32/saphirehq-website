@@ -3,11 +3,16 @@
 import { Button } from "@/components/ui/button/button";
 import { useFormStatus } from "react-dom";
 
-const SubmitButton = () => {
+type Props = {
+  label?: string;
+  pendingLabel?: string;
+};
+
+const SubmitButton = ({ label = "Submit Application", pendingLabel = "Submitting…" }: Props) => {
   const { pending } = useFormStatus();
   return (
     <Button type="submit" size="lg" loading={pending}>
-      {pending ? "Submitting…" : "Submit Application"}
+      {pending ? pendingLabel : label}
     </Button>
   );
 };
