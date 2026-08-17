@@ -8,6 +8,7 @@ export type Testimonial = {
   avatar: StaticImageData;
   name: string;
   designation: string;
+  linkedinUrl? : string
 };
 
 export const TestimonialCard = ({
@@ -16,16 +17,19 @@ export const TestimonialCard = ({
   avatar,
   name,
   designation,
+  linkedinUrl
 }: Testimonial) => {
   return (
-    <div className="bg-white border border-border-stroke rounded-xl p-6.5 h-full flex flex-col transition-all duration-300 ease-out hover:-translate-y-1.5 hover:scale-[1.015] hover:shadow-md hover:border-blue-primary/20">
+    <div className="bg-white border border-border-stroke rounded-xl p-6.5 h-full flex flex-col  transition-all duration-300 ease-out hover:-translate-y-1.5 hover:scale-[1.015] hover:shadow-md hover:border-blue-primary/20">
       <Rating value={rating} />
 
       <p className="text-15 font-normal font-inter mt-5">{testimonial}</p>
 
-      <div className="mt-6">
-        <Author avatar={avatar} name={name} designation={designation} />
+      <div className="mt-6  flex-1 flex items-end justify-between">
+        <Author avatar={avatar} name={name} designation={designation} linkedinUrl={linkedinUrl} />
+
       </div>
+
     </div>
   );
 };

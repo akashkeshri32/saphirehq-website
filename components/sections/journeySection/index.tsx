@@ -77,13 +77,13 @@ export const JourneySection = () => {
         </div> */}
 
 
-        <Reveal direction="up" distance={30} className="hidden lg:block">
+        <Reveal direction="up" distance={30} className="hidden lg:block pl-4">
           <Image
             src={JourneyDesktopImage}
             alt="Sapphire IQ journey from application to placement"
-            width={1236}
-            height={400}
-            className="h-100 w-full max-w-309 "
+            width={1280}
+            height={430}
+            className="h-110 w-full max-w-315 "
           />
         </Reveal>
 
@@ -93,7 +93,7 @@ export const JourneySection = () => {
             alt="Sapphire IQ journey from application to placement"
             width={600}
             height={900}
-            className="w-full max-w-81 md:max-w-136 "
+            className="w-full max-w-105 md:max-w-136 "
           />
         </Reveal>
       </Container>

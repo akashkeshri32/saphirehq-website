@@ -4,6 +4,7 @@ import LegalContent from "@/components/sections/legal-content";
 import { JsonLd } from "@/lib/seo/json-ld";
 import { breadcrumbSchema } from "@/lib/seo/schema";
 import { buildMetadata } from "@/lib/seo/metadata";
+import Link from "next/link";
 
 export const metadata: Metadata = buildMetadata({
   title: "Privacy Policy | Sapphire IQ",
@@ -73,9 +74,10 @@ export default function PrivacyPolicyPage() {
         </p>
         <h3>8. Contact Us</h3>
         <p>If you have any questions regarding this Privacy Policy, please contact us:</p>
-        <p>Email: admin@sapphireiq.in</p>
-        <p>Phone: [Support Number]</p>
-        <p>Website: [Website URL]</p>
+        <p>Email: <Link href="mailto:admin@sapphireiq.in">admin@sapphireiq.in</Link></p>
+        <p>Phone: <Link href={"tel:+918851442459"}>+918851442459</Link></p>
+        <p>Website: <Link href="https://sapphireiq.in/">https://sapphireiq.in/</Link>
+        </p>
         <h4>Consent</h4>
         <p>By using the Sapphire IQ website or services, you acknowledge that you have read and agreed to this Privacy Policy.</p>
       </LegalContent>

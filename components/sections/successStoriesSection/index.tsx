@@ -8,57 +8,64 @@ import { Reveal } from "@/components/ui/motion/reveal";
 const SUCCESS_STORIES: SuccessStory[] = [
   {
     avatar: AvatarPlaceholder,
-    name: "Ananya Sharma",
+    name: "Aakash Singh",
+    linkedinUrl : "http://www.linkedin.com/in/akash-singh-621538419",
     designation: "Data Analyst",
     testimonial:
-      "The mentor feedback loop was what made the difference — I wasn't just submitting assignments, I was building things a hiring manager would actually want to see.",
-    highlight: "40% Salary Hike",
+      `<p>
+        My six-month journey with <strong className="font-semibold">Sapphire IQ</strong> was an amazing learning experience. The hands-on projects, supportive mentors, and regular guidance helped me strengthen my Data Analytics skills and gain practical industry exposure.
+      </p>
+      <p>
+        The mock interviews and placement preparation were especially helpful in building my confidence and preparing me for real interview scenarios. I’m grateful to the entire Sapphire IQ team for their support, which played an important role in helping me secure my placement as a <strong className="font-semibold">Data Analyst at TCS</strong>.
+
+      </p>`,
+    highlight: "8lpa",
     company: "TCS",
   },
   {
     avatar: AvatarPlaceholder,
-    name: "Rohan Kapoor",
-    designation: "AI/ML Engineer",
-    testimonial:
-      "I came in with zero ML experience. Within four months I had shipped a real recommendation engine and could actually explain every decision behind it.",
-    highlight: "Placed in 60 days",
-    company: "Infosys",
-  },
-  {
-    avatar: AvatarPlaceholder,
-    name: "Meera Iyer",
-    designation: "UI/UX Designer",
-    testimonial:
-      "The portfolio reviews were brutally honest in the best way. My final case studies were strong enough to get callbacks from every company I applied to.",
-    highlight: "3 Offers Received",
-    company: "Adobe",
-  },
-  {
-    avatar: AvatarPlaceholder,
-    name: "Vikram Rao",
-    designation: "Full Stack Developer",
-    testimonial:
-      "Working on a real client-style project changed how I talk about my skills in interviews. I stopped describing tutorials and started describing decisions.",
-    highlight: "35% Salary Hike",
-    company: "Wipro",
-  },
-  {
-    avatar: AvatarPlaceholder,
-    name: "Sneha Reddy",
+    name: "Rahul Bansal",
+    linkedinUrl : "http://www.linkedin.com/in/rahul-bansal-9a61a2429",
     designation: "Business Analyst",
     testimonial:
-      "My mentor pushed me to defend every recommendation with data. That habit alone is what got me through three rounds of case interviews.",
-    highlight: "Placed in 45 days",
-    company: "Deloitte",
+      `My five-month journey with <strong className="font-semibold">Sapphire IQ</strong> as a Business Analyst Intern was a great learning experience. The practical projects, mentorship, and especially the placement team’s constant support helped me improve my skills and build confidence for interviews. I’m grateful to the entire team for their guidance, which played an important role in helping me secure my placement as a <strong className="font-semibold">Business Analyst at Zoho.</strong>`,
+    highlight: "9lpa",
+    company: "Zoho",
   },
   {
     avatar: AvatarPlaceholder,
-    name: "Aditya Nair",
-    designation: "Backend Developer",
+    name: "Rhea Gupta",
+    linkedinUrl : "https://www.linkedin.com/in/rhea-gupta-1271ba429/",
+    designation: "HTML Developer",
     testimonial:
-      "I finally understood how production systems actually work — not just how to make an API return 200. That gap was what interviews kept exposing before.",
-    highlight: "50% Salary Hike",
-    company: "Cognizant",
+      `
+        <p>
+          My experience with Sapphire IQ as a Frontend Development Intern was a great learning journey. The practical projects, mentorship, <strong className="font-semibold">mock interviews, placement assistance, and LinkedIn profile guidance </strong> helped me improve my skills and build confidence.
+        </p>
+
+        <p>
+        I’m grateful to the entire Sapphire IQ team for their constant support, which helped me secure my placement as an <strong className="font-semibold">HTML Developer at Groww</strong>
+        </p>
+      `,
+    highlight: "7lpa",
+    company: "Groww",
+  },
+  {
+    avatar: AvatarPlaceholder,
+    name: "Aditya Verma",
+    linkedinUrl : "http://www.linkedin.com/in/aditya-verma-a175a7429",
+    designation: "Full Stack Developer",
+    testimonial:
+      `<p>
+        Joining <strong className="font-semibold">Sapphire IQ</strong> turned out to be an important step in my career. Over six months, I got the opportunity to work on practical assignments, understand professional workflows, and improve the way I approach real-world problems.
+      </p>
+      <p>
+        The experience helped me become more confident and better prepared for the recruitment process. I’m happy to share that I’ve now secured a placement at <strong className="font-semibold">Scaler Academy</strong>, and I truly appreciate the role Sapphire IQ played in helping me reach this milestone.
+      </p>
+
+      `,
+    highlight: "10lpa",
+    company: "Scaler Academy",
   },
 ];
 

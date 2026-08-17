@@ -18,7 +18,7 @@ const CONTACT_DETAILS = [
   {
     icon: Phone,
     label: "Contact Number",
-    value: "+91 88514 42459",
+    value: "+918851442459",
     href: "tel:+918851442459",
   },
   // {
@@ -105,7 +105,7 @@ export const ContactHeroSection = () => {
               <div className="flex-1 flex items-end">
                 <div>
                   <p className="text-15 font-heading font-semibold text-white">
-                    Sapphire IQ Innovations Pvt. Ltd.
+                    Sapphire IQ.
                   </p>
                   <p className="text-13 text-gray-two mt-1">
                     Brilliant Minds. Intelligent Solutions.
