@@ -1,13 +1,23 @@
 import Container from "@/components/layout/container";
 import { SectionHeader } from "@/components/ui/section-header";
-import AvatarPlaceholder from "@/assets/images/placeholders/avatar-placeholder.svg";
 import { SuccessStoryCarousel } from "./successStoryCarousel";
 import type { SuccessStory } from "./successStoryCard";
 import { Reveal } from "@/components/ui/motion/reveal";
 
+import AkashSinghImage from "@/assets/placements/Akash Singh.png";
+import RahulBansalImage from "@/assets/placements/Rahul Bansal.png";
+import RheaGuptaImage from "@/assets/placements/Rhea Gupta.png";
+import AdityaVerma from "@/assets/placements/Aditya Verma.png";
+
+import TCSIcon from "@/assets/partner-logos/tcs.svg";
+import ZohoIcon from "@/assets/partner-logos/zoho.svg";
+import GrowwIcon from "@/assets/partner-logos/groww.png"
+import ScalerAcademyIcon from "@/assets/partner-logos/scaler-academy.svg";
+
+
 const SUCCESS_STORIES: SuccessStory[] = [
   {
-    avatar: AvatarPlaceholder,
+    avatar: AkashSinghImage,
     name: "Aakash Singh",
     linkedinUrl : "http://www.linkedin.com/in/akash-singh-621538419",
     designation: "Data Analyst",
@@ -21,9 +31,11 @@ const SUCCESS_STORIES: SuccessStory[] = [
       </p>`,
     highlight: "8lpa",
     company: "TCS",
+    companyIcon : TCSIcon
+
   },
   {
-    avatar: AvatarPlaceholder,
+    avatar: RahulBansalImage,
     name: "Rahul Bansal",
     linkedinUrl : "http://www.linkedin.com/in/rahul-bansal-9a61a2429",
     designation: "Business Analyst",
@@ -31,9 +43,11 @@ const SUCCESS_STORIES: SuccessStory[] = [
       `My five-month journey with <strong className="font-semibold">Sapphire IQ</strong> as a Business Analyst Intern was a great learning experience. The practical projects, mentorship, and especially the placement team’s constant support helped me improve my skills and build confidence for interviews. I’m grateful to the entire team for their guidance, which played an important role in helping me secure my placement as a <strong className="font-semibold">Business Analyst at Zoho.</strong>`,
     highlight: "9lpa",
     company: "Zoho",
+    companyIcon : ZohoIcon
+
   },
   {
-    avatar: AvatarPlaceholder,
+    avatar: RheaGuptaImage,
     name: "Rhea Gupta",
     linkedinUrl : "https://www.linkedin.com/in/rhea-gupta-1271ba429/",
     designation: "HTML Developer",
@@ -49,9 +63,11 @@ const SUCCESS_STORIES: SuccessStory[] = [
       `,
     highlight: "7lpa",
     company: "Groww",
+    companyIcon : GrowwIcon
+
   },
   {
-    avatar: AvatarPlaceholder,
+    avatar: AdityaVerma,
     name: "Aditya Verma",
     linkedinUrl : "http://www.linkedin.com/in/aditya-verma-a175a7429",
     designation: "Full Stack Developer",
@@ -66,6 +82,8 @@ const SUCCESS_STORIES: SuccessStory[] = [
       `,
     highlight: "10lpa",
     company: "Scaler Academy",
+    companyIcon : ScalerAcademyIcon
+
   },
 ];
 
