@@ -56,7 +56,7 @@ export const TestimonialCarousel = ({ testimonials }: Props) => {
           type="button"
           onClick={scrollPrev}
           aria-label="Previous testimonial"
-          className="w-10 h-10 rounded-full border border-border-stroke bg-white flex items-center justify-center hover:border-blue-primary hover:text-blue-primary transition-colors"
+          className="w-10 h-10 cursor-pointer rounded-full border border-border-stroke bg-white flex items-center justify-center hover:border-blue-primary hover:text-blue-primary transition-colors"
         >
           <ChevronLeft size={18} />
         </button>
@@ -64,7 +64,7 @@ export const TestimonialCarousel = ({ testimonials }: Props) => {
           type="button"
           onClick={scrollNext}
           aria-label="Next testimonial"
-          className="w-10 h-10 rounded-full border border-border-stroke bg-white flex items-center justify-center hover:border-blue-primary hover:text-blue-primary transition-colors"
+          className="w-10 h-10 cursor-pointer rounded-full border border-border-stroke bg-white flex items-center justify-center hover:border-blue-primary hover:text-blue-primary transition-colors"
         >
           <ChevronRight size={18} />
         </button>

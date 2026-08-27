@@ -23,7 +23,7 @@ export const SuccessStoryCard = ({
   companyIcon
 }: SuccessStory) => {
   return (
-    <div className="bg-white border border-border-stroke rounded-xl p-6.5 h-full flex flex-col justify-between  transition-all duration-300 ease-out hover:-translate-y-1.5 hover:scale-[1.015] hover:shadow-lg hover:border-green/10">
+    <div className="bg-white border border-border-stroke rounded-xl p-6.5 h-full flex flex-col justify-between  transition-all duration-300 ease-out h hover:shadow-lg hover:border-green/10">
       <div>
         <div className="flex gap-x-3 ">
           <Author avatar={avatar} name={name} designation={designation} linkedinUrl={linkedinUrl} />
