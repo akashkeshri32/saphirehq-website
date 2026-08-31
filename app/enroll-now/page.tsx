@@ -39,7 +39,7 @@ export default function EnrollNowPage() {
         description="Don't just plan. Start building — take the first step towards an exciting career."
         className="max-w-155!"
         buttons={[
-          { label: "Talk to a Mentor", href: "?apply-now", variant: "white" },
+          { label: "Talk to a Mentor", href: "/enroll-now", variant: "white" },
           { label: "Explore Domains", href: "/#domains", variant: "outline-white" },
         ]}
       />

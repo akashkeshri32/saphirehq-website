@@ -157,7 +157,7 @@ export const sendEnquiryMail = async (
             <!-- Header -->
             <tr>
               <td bgcolor="#7c3aed" style="background-color:#7c3aed;padding:28px 32px;text-align:center">
-                <h1 style="margin:0 0 6px;color:#ffffff;font-size:20px;font-weight:700">CoderNext</h1>
+                <h1 style="margin:0 0 6px;color:#ffffff;font-size:20px;font-weight:700">Sapphire IQ</h1>
                 <p style="margin:0;color:#ddd6fe;font-size:13px">Internship Enquiry Notification</p>
               </td>
             </tr>

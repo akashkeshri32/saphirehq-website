@@ -35,8 +35,8 @@ export async function sendEnrollmentApplication(prevState: any, formData: FormDa
     const { error } = await createEnquiry(newEnquiry);
     if (error) throw new Error(error.message);
 
-    const { error: enquiryMailError } = await sendEnquiryMail(newEnquiry);
-    if (enquiryMailError) throw new Error(enquiryMailError.message);
+    // const { error: enquiryMailError } = await sendEnquiryMail(newEnquiry);
+    // if (enquiryMailError) throw new Error(enquiryMailError.message);
 
     return {
       success: true,
