@@ -42,7 +42,7 @@ export const WebinarRegistrationForm = ({
   const [state, formAction] = useActionState(sendWebinarEnquiry, initialState);
 
   const formRef = useRef<HTMLFormElement>(null);
-  const [showSuccessMessage, setShowSuccessMessage] = useState(true);
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
   // Seeded from the server-rendered value for a correct first paint, then
   // self-corrects at IST midnight so a tab left open overnight never shows
