@@ -42,7 +42,7 @@ export const WebinarRegistrationForm = ({
   const [state, formAction] = useActionState(sendWebinarEnquiry, initialState);
 
   const formRef = useRef<HTMLFormElement>(null);
-  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+  const [showSuccessMessage, setShowSuccessMessage] = useState(true);
 
   // Seeded from the server-rendered value for a correct first paint, then
   // self-corrects at IST midnight so a tab left open overnight never shows
@@ -94,6 +94,10 @@ export const WebinarRegistrationForm = ({
     >
       <h3 className="text-20 font-heading font-semibold">Webinar Registration</h3>
 
+      {showSuccessMessage ? (
+        <SuccessMessage />
+      ) : <>
+
       <div className="flex flex-wrap gap-3 mt-4.5">
         <span className="inline-flex items-center gap-2 rounded-full bg-blue-light px-3.5 py-2 text-13 font-semibold text-blue-primary">
           <CalendarDays size={15} />
@@ -105,9 +109,6 @@ export const WebinarRegistrationForm = ({
         </span>
       </div>
 
-      {showSuccessMessage ? (
-        <SuccessMessage />
-      ) : (
         <form ref={formRef} action={formAction} className="flex flex-col gap-4 mt-6">
           <input type="hidden" name="webinarSessionId" value={sessionId} />
 
@@ -170,7 +171,8 @@ export const WebinarRegistrationForm = ({
             webinar.
           </p>
         </form>
-      )}
+      </>
+      }
     </div>
   );
 };

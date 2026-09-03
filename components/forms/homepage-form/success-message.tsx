@@ -5,7 +5,7 @@ const SuccessMessage = () => {
     <div className="flex flex-col items-center text-center py-8 gap-5">
 
       <div className="relative">
-        <div className="w-16 h-16 rounded-full bg-emerald-500/10 border border-emerald-500/25 flex items-center justify-center">
+        <div className="w-14 h-14 rounded-full bg-emerald-500/10 border border-emerald-500/25 flex items-center justify-center">
           <CheckCircle size={32} className="text-blue-primary" strokeWidth={1.5} />
         </div>
         <div className="absolute inset-0 rounded-full bg-emerald-500/10 animate-ping" />

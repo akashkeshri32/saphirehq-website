@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { WebinarHeroSection } from "@/components/sections/webinarHeroSection";
-import { HowEnrollmentWorksSection } from "@/components/sections/howEnrollmentWorksSection";
 import { EnrollmentFaqSection, ENROLLMENT_FAQS } from "@/components/sections/enrollmentFaqSection";
 import { CtaSection } from "@/components/sections/ctaSection";
 import { getWebinarSessionByShortCode } from "@/lib/db-utils/webinar";
@@ -9,6 +8,10 @@ import { getTomorrowInIST } from "@/lib/utils/date";
 import { JsonLd } from "@/lib/seo/json-ld";
 import { faqSchema } from "@/lib/seo/schema";
 import { buildMetadata } from "@/lib/seo/metadata";
+import { WebinarEnrollmentJourney } from "@/components/sections/webinar-enrollment-journey";
+import Image from "next/image";
+
+import SapphireLogo from "@/assets/brand-logos/logo-main.svg";
 
 type Params = {
   slug: string;
@@ -37,25 +40,28 @@ export default async function WebinarPage({
     <>
       <JsonLd data={faqSchema(ENROLLMENT_FAQS)} />
 
+      <nav className="flex justify-center items-center pt-7">
+        <Image src={SapphireLogo} alt="sapphire iq" width={300} height={80} className="w-60 h-auto object-contain"  />
+      </nav>
+
       <WebinarHeroSection
         sessionId={session.id}
         sessionTime={session.time}
         webinarDateLabel={label}
       />
 
-      <HowEnrollmentWorksSection />
+      <WebinarEnrollmentJourney />
 
       <EnrollmentFaqSection />
 
-      <CtaSection
+      {/*<CtaSection
         heading="Can't wait for the webinar?"
         description="Skip ahead — apply now and a mentor will reach out within 24 hours."
         className="max-w-155!"
         buttons={[
-          { label: "Enroll Now", href: "/enroll-now", variant: "white" },
-          { label: "Explore Domains", href: "/#domains", variant: "outline-white" },
+          { label: "Join Webinar Now", href: "#join-webinar", variant: "white" },
         ]}
-      />
+      />*/}
     </>
   );
 }

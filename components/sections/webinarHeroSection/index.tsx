@@ -20,7 +20,7 @@ export const WebinarHeroSection = ({
   webinarDateLabel,
 }: Props) => {
   return (
-    <section className="max-md:pb-19 py-22 bg-bg-light">
+    <section className="max-md:pb-19 pt-5 pb-22 bg-bg-light">
       <div className="h-px bg-border-stroke/80 w-full"></div>
       <Container className="mt-6">
         <Breadcrumb currentPage="Webinar Registration" />
