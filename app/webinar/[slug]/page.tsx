@@ -12,6 +12,7 @@ import { WebinarEnrollmentJourney } from "@/components/sections/webinar-enrollme
 import Image from "next/image";
 
 import SapphireLogo from "@/assets/brand-logos/logo-main.svg";
+import { WebinarFAQ } from "@/components/sections/webinar-faq";
 
 type Params = {
   slug: string;
@@ -52,7 +53,7 @@ export default async function WebinarPage({
 
       <WebinarEnrollmentJourney />
 
-      <EnrollmentFaqSection />
+      <WebinarFAQ />
 
       {/*<CtaSection
         heading="Can't wait for the webinar?"
