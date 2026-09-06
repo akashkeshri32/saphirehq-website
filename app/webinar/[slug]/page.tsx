@@ -4,7 +4,7 @@ import { WebinarHeroSection } from "@/components/sections/webinarHeroSection";
 import { EnrollmentFaqSection, ENROLLMENT_FAQS } from "@/components/sections/enrollmentFaqSection";
 import { CtaSection } from "@/components/sections/ctaSection";
 import { getWebinarSessionByShortCode } from "@/lib/db-utils/webinar";
-import { getTomorrowInIST } from "@/lib/utils/date";
+import { getNextWebinarDateInIST } from "@/lib/utils/date";
 import { JsonLd } from "@/lib/seo/json-ld";
 import { faqSchema } from "@/lib/seo/schema";
 import { buildMetadata } from "@/lib/seo/metadata";
@@ -35,7 +35,7 @@ export default async function WebinarPage({
   const session = await getWebinarSessionByShortCode(slug);
   if (!session) notFound();
 
-  const { label } = getTomorrowInIST();
+  const { label } = getNextWebinarDateInIST();
 
   return (
     <>

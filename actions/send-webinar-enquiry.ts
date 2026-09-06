@@ -2,7 +2,7 @@
 
 import { createWebinarEnquiry } from "@/lib/db-utils/webinar";
 import { webinarEnquiry } from "@/lib/drizzle/schema";
-import { getTomorrowInIST } from "@/lib/utils/date";
+import { getNextWebinarDateInIST } from "@/lib/utils/date";
 
 export async function sendWebinarEnquiry(prevState: any, formData: FormData) {
   try {
@@ -25,11 +25,11 @@ export async function sendWebinarEnquiry(prevState: any, formData: FormData) {
     if (isAnyEmpty) throw new Error("Please fill in all fields");
 
     // Never trust a date computed at page-load time (or supplied by the
-    // client at all) — a tab left open across midnight would otherwise
-    // submit a stale date. Recompute "tomorrow" fresh, in IST, at the
-    // exact moment of submission, so it always matches what "tomorrow"
-    // actually means right now.
-    const { isoDate: webinarDate } = getTomorrowInIST();
+    // client at all) — a tab left open across the 4 PM cutoff would
+    // otherwise submit a stale date. Recompute the applicable webinar
+    // date fresh, in IST, at the exact moment of submission: today
+    // before 4 PM, tomorrow from 4 PM onward (no morning webinars).
+    const { isoDate: webinarDate } = getNextWebinarDateInIST();
 
     const newWebinarEnquiry = {
       name,

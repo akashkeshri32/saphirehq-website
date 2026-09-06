@@ -7,7 +7,7 @@ import { Input, Select } from "@/components/ui";
 import { sendWebinarEnquiry } from "@/actions/send-webinar-enquiry";
 import SubmitButton from "@/components/forms/homepage-form/submit-btn";
 import SuccessMessage from "@/components/forms/homepage-form/success-message";
-import { getTomorrowInIST, msUntilNextISTMidnight } from "@/lib/utils/date";
+import { getNextWebinarDateInIST, msUntilNextWebinarCutoff } from "@/lib/utils/date";
 
 import { useSearchParams } from "next/navigation";
 import DOMAINS from "@/lib/data/domains";
@@ -45,8 +45,8 @@ export const WebinarRegistrationForm = ({
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
   // Seeded from the server-rendered value for a correct first paint, then
-  // self-corrects at IST midnight so a tab left open overnight never shows
-  // a stale "tomorrow" — the actual submission date is always recomputed
+  // self-corrects at the 4 PM IST cutoff so a tab left open past it never
+  // shows a stale date — the actual submission date is always recomputed
   // server-side anyway, but the display should never lie about it either.
   const [displayDate, setDisplayDate] = useState({ label: webinarDateLabel });
 
@@ -55,9 +55,9 @@ export const WebinarRegistrationForm = ({
 
     const scheduleNextFlip = () => {
       timeoutId = setTimeout(() => {
-        setDisplayDate(getTomorrowInIST());
+        setDisplayDate(getNextWebinarDateInIST());
         scheduleNextFlip();
-      }, msUntilNextISTMidnight() + 1000);
+      }, msUntilNextWebinarCutoff() + 1000);
     };
 
     scheduleNextFlip();
