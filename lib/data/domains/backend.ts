@@ -81,7 +81,7 @@ export const backend = {
   instructors: [
     {
       name: "Ritik Singh",
-      domain: "Full Stack Developer",
+      domain: "AI Full-Stack Developer / Forward Deployed Enginner",
       description: "5+ years work Exp.",
       image : RitikSinghImage,
       linkedin : "https://www.linkedin.com/in/ritikkumarsingh7739"
