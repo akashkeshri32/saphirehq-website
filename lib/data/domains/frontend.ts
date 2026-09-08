@@ -81,7 +81,7 @@ export const frontEnd = {
   instructors: [
     {
       name: "Ritik Singh",
-      domain: "AI Full-Stack Developer / Forward Deployed Enginnerr",
+      domain: "Senior AI Full-Stack Developer / Forward Deployed Enginnerr",
       description: "5+ years work Exp.",
       image : RitikSinghImage,
       linkedin : "https://www.linkedin.com/in/ritikkumarsingh7739"
