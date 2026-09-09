@@ -2,7 +2,7 @@
 
 import { useActionState, useEffect, useRef, useState } from "react";
 import toast from "react-hot-toast";
-import { CalendarDays, Clock } from "lucide-react";
+import { CalendarDays, Clock, Video } from "lucide-react";
 import { Input, Select } from "@/components/ui";
 import { sendWebinarEnquiry } from "@/actions/send-webinar-enquiry";
 import SubmitButton from "@/components/forms/homepage-form/submit-btn";
@@ -90,9 +90,9 @@ export const WebinarRegistrationForm = ({
   return (
     <div
       style={{ boxShadow: "0px 2px 8px rgba(7, 27, 45, 0.08)" }}
-      className="bg-white border border-border-stroke rounded-xl p-7.5 "
+      className="bg-white border border-border-stroke rounded-xl p-7.5 h-full"
     >
-      <h3 className="text-20 font-heading font-semibold">Webinar Registration</h3>
+      <h3 className="text-20 font-heading font-semibold">Registration Form</h3>
 
       {showSuccessMessage ? (
         <SuccessMessage />
@@ -106,6 +106,10 @@ export const WebinarRegistrationForm = ({
         <span className="inline-flex items-center gap-2 rounded-full bg-blue-light px-3.5 py-2 text-13 font-semibold text-blue-primary">
           <Clock size={15} />
           {sessionTime}
+            </span>
+        <span className="inline-flex items-center gap-2 rounded-full bg-blue-light px-3.5 py-2 text-13 font-semibold text-blue-primary">
+          <Video size={15} />
+          Google Meet
         </span>
       </div>
 
@@ -145,7 +149,7 @@ export const WebinarRegistrationForm = ({
             label="Choose a Domain"
           />
 
-          <h5 className="font-semibold text-13">Which best describes you?</h5>
+          {/*<h5 className="font-semibold text-13">Which best describes you?</h5>
           <div className="flex flex-wrap gap-2">
             {APPLICANT_TYPES.map((type) => (
               <label key={type} className="cursor-pointer">
@@ -162,13 +166,13 @@ export const WebinarRegistrationForm = ({
                 </span>
               </label>
             ))}
-          </div>
+          </div>*/}
 
-          <SubmitButton label="Register for Webinar" pendingLabel="Registering…" />
+          <SubmitButton label="Register for Orientation" pendingLabel="Registering…" />
 
           <p className="text-12 text-gray-two text-center">
-            By submitting, you agree to be contacted by Sapphire IQ about this
-            webinar.
+            After registration, you agree to receive the joining link and session details on your registered email
+            and WhatsApp (if provided).
           </p>
         </form>
       </>

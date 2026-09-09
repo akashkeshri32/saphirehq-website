@@ -2,10 +2,13 @@ import Image from "next/image";
 import BlueTick from "@/assets/icons/blue-tick.svg";
 
 const FEATURES = [
-  "Real-world projects reviewed by industry mentors",
-  "Weekly live mentorship sessions",
-  "Verified certificate on completion",
-  "Placement assistance with 500+ hiring partners",
+  "Internship structure & duration",
+  "Practical projects & mentor guidance",
+  "Evaluation process & stipend criteria",
+  "Stipend upto ₹15,000",
+  "Selection & onboarding process",
+  "Next steps & Q&A"
+
 ];
 
 export const FeatureBox = () => {

@@ -11,12 +11,12 @@ export const webinarEnquiry = pgTable("webinar_enquiries", {
   domainOfInterest : varchar("domainOfInterest").notNull(),
   phone : varchar("phone").notNull(),
   duration : varchar("duration"),
-  applicantType : applicantType().notNull().default("Student"),
+  // applicantType : applicantType().notNull().default("Student"),
   webinarDate : date("webinar_date").notNull(),
   webinarSessionId : text("webinar_session_id").notNull().references(() => webinarSessions.id),
 
 }, (t) => [
-  index("webinar_enquiries_applicant_type_idx").on(t.applicantType),
+  // index("webinar_enquiries_applicant_type_idx").on(t.applicantType),
   index('webinar_enquiries_created_at_idx').on(t.createdAt),
   index('webinar_enquiries_domain_idx').on(t.domainOfInterest),
   index('webinar_enquiries_webinar_date_idx').on(t.webinarDate),

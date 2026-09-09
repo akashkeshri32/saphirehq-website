@@ -8,17 +8,17 @@ import WebinarFooter from "./webinarFooter";
 
 export default function Layout({ children }: PropsWithChildren) {
   const pathname = usePathname();
-  const isWebinarPage = pathname?.startsWith("/webinar");
+  const isOrientationPage = pathname?.startsWith("/orientation");
 
   return (
     <>
-      {!isWebinarPage && <Navbar />}
+      {!isOrientationPage && <Navbar />}
 
       <div className="overflow-x-hidden">
         {children}
       </div>
 
-      {isWebinarPage ? <WebinarFooter /> : <Footer />}
+      {isOrientationPage ? <WebinarFooter /> : <Footer />}
     </>
   );
 }

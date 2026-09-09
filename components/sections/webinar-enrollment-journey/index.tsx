@@ -5,19 +5,24 @@ import { EnrollmentStepCard } from "../howEnrollmentWorksSection/enrollmentStepC
 
 const STEPS = [
   {
-    heading: "Submit Your Application",
+    heading: "Real-world projects",
     description:
-      "Fill out the form with your details and preferred domain — it takes less than two minutes.",
+      "Work on industry-relevant projects and build a strong portfolio.",
   },
   {
-    heading: "Join The Webinar",
+    heading: "Weekly mentor guidance",
     description:
-      "Our team reaches out within 24 hours to understand your goals and confirm the right fit.",
+      "Learn from industry professionals with practical experience.",
   },
   {
-    heading: "Start Your Journey",
+    heading: "Verified certificate",
     description:
-      "Get onboarded, meet your mentor, and begin working on real projects from week one.",
+      "Receive a certificate upon successful completion.",
+  },
+  {
+    heading: "Career support",
+    description:
+      "Get guidance for placements and future opportunities.",
   },
 ];
 
@@ -27,13 +32,13 @@ export const WebinarEnrollmentJourney = () => {
       <div className="h-px bg-border-stroke/80 w-full"></div>
       <Container className="py-19 md:py-22">
         <SectionHeader
-          eyebrow="How Enrollment Works"
-          heading="Three steps to get started."
-          description="Here's exactly what happens after you hit submit."
+          // eyebrow="How Enrollment Works"
+          heading="Why Sapphire IQ?"
+          // description="Here's exactly what happens after you hit submit."
           descriptionDelay={0.4}
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mt-12">
           {STEPS.map((step, index) => (
             <Reveal key={step.heading} direction="up" delay={index * 0.1} hover className="h-full [&>*]:h-full">
               <EnrollmentStepCard index={index + 1} {...step} />

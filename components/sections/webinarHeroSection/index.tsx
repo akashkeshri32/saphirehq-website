@@ -23,21 +23,21 @@ export const WebinarHeroSection = ({
     <section className="max-md:pb-19 pt-5 pb-22 bg-bg-light">
       <div className="h-px bg-border-stroke/80 w-full"></div>
       <Container className="mt-6">
-        <Breadcrumb currentPage="Webinar Registration" />
+        <Breadcrumb currentPage="Orientation Registration" />
 
         <SectionHeader
           as="h1"
-          eyebrow="Free Live Webinar"
-          heading="Reserve Your Spot."
-          description="Join our live session and get your questions answered directly by a mentor — seats are limited."
+          eyebrow="Sapphire IQ Internship Selection & Orientation"
+          heading="Register For Orientation."
+          description="You have been shortlisted for the next stage of the internship."
           className="mt-8"
           descriptionClassName="max-w-[440px]"
           descriptionDelay={0.4}
         />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mt-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.25fr_1fr] gap-10 mt-7 items-start">
           <Suspense fallback={<Loader size={18} />}>
-            <Reveal direction="up">
+            <Reveal className="h-full" direction="up">
               <WebinarRegistrationForm
                 sessionId={sessionId}
                 sessionTime={sessionTime}
@@ -54,7 +54,7 @@ export const WebinarHeroSection = ({
               <HighlightsBox />
             </Reveal>
 
-            <Reveal direction="down">
+            {/*<Reveal direction="down">
               <div className="mt-6 p-7.5 border border-border-stroke rounded-2xl">
                 <p className="text-14 italic font-inter">
                   &ldquo;The application took two minutes. The mentor call the next
@@ -64,7 +64,7 @@ export const WebinarHeroSection = ({
                   — Priya R., Data Analyst Program
                 </p>
               </div>
-            </Reveal>
+            </Reveal>*/}
           </div>
         </div>
       </Container>

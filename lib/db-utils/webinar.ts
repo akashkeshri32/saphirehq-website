@@ -26,7 +26,7 @@ export const createWebinarEnquiry = async (data: CreateWebinarEnquiry) => {
     email: data.email,
     phone: data.phone,
     domainOfInterest: data.domainOfInterest,
-    applicantType: data.applicantType,
+    // applicantType: data.applicantType,
     duration: data.duration,
     webinar_date: data.webinarDate,
     webinar_session_id: data.webinarSessionId,

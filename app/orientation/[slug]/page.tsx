@@ -21,7 +21,7 @@ type Params = {
 export const metadata: Metadata = buildMetadata({
   title: "Webinar Registration | Sapphire IQ",
   description: "Reserve your spot for a live Sapphire IQ webinar and get your questions answered directly by a mentor.",
-  path: "/webinar",
+  path: "/orientation",
   noIndex: true,
 });
 
@@ -41,8 +41,8 @@ export default async function WebinarPage({
     <>
       <JsonLd data={faqSchema(ENROLLMENT_FAQS)} />
 
-      <nav className="flex justify-center items-center pt-7">
-        <Image src={SapphireLogo} alt="sapphire iq" width={300} height={80} className="w-60 h-auto object-contain"  />
+      <nav className="flex justify-center items-center pt-7 bg-bg-light">
+        <Image src={SapphireLogo} alt="sapphire iq" width={300} height={80} className="max-md:-translate-x-1.5 w-60 h-auto object-contain"  />
       </nav>
 
       <WebinarHeroSection

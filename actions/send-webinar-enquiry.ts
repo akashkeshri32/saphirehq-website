@@ -10,7 +10,7 @@ export async function sendWebinarEnquiry(prevState: any, formData: FormData) {
     const email = formData.get("email") as string;
     const phone = formData.get("phone") as string;
     const domainOfInterest = formData.get("domain") as string;
-    const applicantType = formData.get("applicantType") as string;
+    // const applicantType = formData.get("applicantType") as string;
     const webinarSessionId = formData.get("webinarSessionId") as string;
 
     const isAnyEmpty = checkForEmptyFields([
@@ -18,7 +18,7 @@ export async function sendWebinarEnquiry(prevState: any, formData: FormData) {
       email,
       phone,
       domainOfInterest,
-      applicantType,
+      // applicantType,
       webinarSessionId,
     ]);
 
@@ -36,7 +36,7 @@ export async function sendWebinarEnquiry(prevState: any, formData: FormData) {
       email,
       phone,
       domainOfInterest,
-      applicantType: applicantType as typeof webinarEnquiry.$inferInsert.applicantType,
+      // applicantType: applicantType as typeof webinarEnquiry.$inferInsert.applicantType,
       webinarDate,
       webinarSessionId, // time ID
     };
