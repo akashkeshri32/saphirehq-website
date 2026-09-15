@@ -1,8 +1,9 @@
 "use server";
 
-import { createWebinarEnquiry } from "@/lib/db-utils/webinar";
+import { checkIfEnquiryAlreadyExists, createWebinarEnquiry } from "@/lib/db-utils/webinar";
 import { webinarEnquiry } from "@/lib/drizzle/schema";
 import { getNextWebinarDateInIST } from "@/lib/utils/date";
+import { sendEnquiryLeadToBrevo } from "@/lib/utils/brevo";
 
 export async function sendWebinarEnquiry(prevState: any, formData: FormData) {
   try {
@@ -12,6 +13,7 @@ export async function sendWebinarEnquiry(prevState: any, formData: FormData) {
     const domainOfInterest = formData.get("domain") as string;
     // const applicantType = formData.get("applicantType") as string;
     const webinarSessionId = formData.get("webinarSessionId") as string;
+    const sessionTime = formData.get("sessionTime") as string;
 
     const isAnyEmpty = checkForEmptyFields([
       name,
@@ -20,6 +22,7 @@ export async function sendWebinarEnquiry(prevState: any, formData: FormData) {
       domainOfInterest,
       // applicantType,
       webinarSessionId,
+      sessionTime,
     ]);
 
     if (isAnyEmpty) throw new Error("Please fill in all fields");
@@ -41,14 +44,33 @@ export async function sendWebinarEnquiry(prevState: any, formData: FormData) {
       webinarSessionId, // time ID
     };
 
+
+    // check if webinar enquiry already exists
+    // same person cannot register for the same webinar again
+    const enquiryAlreadyExists = await checkIfEnquiryAlreadyExists(email, webinarDate, webinarSessionId, domainOfInterest);
+
+    if (enquiryAlreadyExists) throw new Error("You are already Registered");
+
     const { error } = await createWebinarEnquiry(newWebinarEnquiry);
     if (error) throw new Error(error.message);
+
+    // The registration itself is already saved at this point. Adding the
+    // contact to Brevo is what triggers their dashboard-side automation to
+    // send the confirmation email — if that call fails, the visitor's
+    // registration is still valid, so this is best-effort: log it, but
+    // don't fail the action for it (they'd otherwise likely resubmit and
+    // create a duplicate row).
+    const { error: brevoError } = await sendEnquiryLeadToBrevo(newWebinarEnquiry);
+    if (brevoError) {
+      console.error("Failed to sync webinar lead to Brevo:", brevoError);
+    }
 
     return {
       success: true,
       message: "Registration submitted",
     };
   } catch (error: any) {
+    console.log({ error })
     return {
       success: false,
       message: error.message || "Something went wrong",

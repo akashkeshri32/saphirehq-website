@@ -33,11 +33,7 @@ export const WebinarRegistrationForm = ({
 }: Props) => {
   const searchParams = useSearchParams();
 
-  const roleParam = searchParams.get("role");
   const domainParam = searchParams.get("domain");
-
-  const defaultRole = roleParam ? (roles[roleParam] ?? "Student") : "Student";
-
   const initialState = { success: false, message: "" };
   const [state, formAction] = useActionState(sendWebinarEnquiry, initialState);
 
@@ -115,6 +111,7 @@ export const WebinarRegistrationForm = ({
 
         <form ref={formRef} action={formAction} className="flex flex-col gap-4 mt-6">
           <input type="hidden" name="webinarSessionId" value={sessionId} />
+          <input type="hidden" name="sessionTime" value={sessionTime} />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4.5">
             <Input

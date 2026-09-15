@@ -1,7 +1,7 @@
-import { eq } from "drizzle-orm";
+import { and, eq } from "drizzle-orm";
 
 import { createClient } from "../supabase/server";
-import { type CreateWebinarEnquiry, webinarSessions } from "../drizzle/schema";
+import { type CreateWebinarEnquiry, webinarEnquiry, webinarSessions } from "../drizzle/schema";
 import db from "../drizzle";
 
 export const getWebinarSessionByShortCode = async (shortCode: string) => {
@@ -13,6 +13,33 @@ export const getWebinarSessionByShortCode = async (shortCode: string) => {
 
   return session ?? null;
 };
+
+
+export const checkIfEnquiryAlreadyExists = async (email: string, webinarDate: string, webinarSessionId: string, domainOfInterest : string) => {
+  const enquiry = await db
+    .selectDistinct()
+    .from(webinarEnquiry)
+    .where(and(
+      eq(webinarEnquiry.email, email),
+      eq(webinarEnquiry.webinarDate, webinarDate),
+      eq(webinarEnquiry.webinarSessionId, webinarSessionId),
+      eq(webinarEnquiry.domainOfInterest, domainOfInterest)
+    ),
+  )
+
+  return Boolean(enquiry.length)
+}
+
+
+export const getWebinarSessionById = async (id: string) => {
+  const [session] = await db
+    .select()
+    .from(webinarSessions)
+    .where(eq(webinarSessions.id, id))
+    .limit(1);
+
+  return session ?? null;
+}
 
 export const createWebinarEnquiry = async (data: CreateWebinarEnquiry) => {
   const client = await createClient();

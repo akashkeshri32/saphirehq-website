@@ -32,6 +32,7 @@ export default async function WebinarPage({
 }) {
   const { slug } = await params;
 
+  console.log({ slug })
   const session = await getWebinarSessionByShortCode(slug);
   if (!session) notFound();
 
