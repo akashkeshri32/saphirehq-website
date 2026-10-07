@@ -1,12 +1,43 @@
 "use server";
 
+import { headers } from "next/headers";
 import { checkIfEnquiryAlreadyExists, createWebinarEnquiry } from "@/lib/db-utils/webinar";
 import { webinarEnquiry } from "@/lib/drizzle/schema";
 import { getNextWebinarDateInIST } from "@/lib/utils/date";
 import { sendEnquiryLeadToBrevo } from "@/lib/utils/brevo";
+import { verifyTurnstileToken } from "@/lib/utils/turnstile";
 
 export async function sendWebinarEnquiry(prevState: any, formData: FormData) {
   try {
+    // Honeypot: a field real visitors never see or fill, but naive bots
+    // scanning form inputs often do. Pretend to succeed so a scripted
+    // attacker gets no signal that it's being filtered.
+    const honeypot = formData.get("website") as string;
+    if (honeypot) {
+      return { success: true, message: "Registration submitted" };
+    }
+
+    // CAPTCHA: the real defense against a scripted attacker, since a
+    // honeypot alone only catches naive bots. Verified server-side against
+    // Cloudflare directly — the client-side widget can't be trusted on its
+    // own, since a script could just omit it or replay an old token.
+    //
+    // Skips cleanly (doesn't block registrations) until TURNSTILE_SECRET_KEY
+    // is actually configured, so shipping this code is safe before Turnstile
+    // is set up on the dashboard — it just has no effect until then.
+    if (process.env.TURNSTILE_SECRET_KEY) {
+      const turnstileToken = formData.get("cf-turnstile-response") as string | null;
+      const headersList = await headers();
+      const remoteIp =
+        headersList.get("cf-connecting-ip") ||
+        headersList.get("x-forwarded-for")?.split(",")[0]?.trim();
+
+      const { success: captchaOk } = await verifyTurnstileToken(turnstileToken, remoteIp);
+      if (!captchaOk) {
+        throw new Error("We couldn't verify you're human. Please try again.");
+      }
+    }
+
     const name = formData.get("fullName") as string;
     const email = formData.get("email") as string;
     const phone = formData.get("phone") as string;
@@ -63,6 +94,10 @@ export async function sendWebinarEnquiry(prevState: any, formData: FormData) {
     const { error: brevoError } = await sendEnquiryLeadToBrevo(newWebinarEnquiry);
     if (brevoError) {
       console.error("Failed to sync webinar lead to Brevo:", brevoError);
+      return {
+        success: false,
+        message : "Registration Failed"
+      }
     }
 
     return {

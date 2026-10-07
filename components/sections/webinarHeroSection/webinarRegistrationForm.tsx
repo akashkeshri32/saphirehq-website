@@ -1,6 +1,7 @@
 "use client";
 
 import { useActionState, useEffect, useRef, useState } from "react";
+import Script from "next/script";
 import toast from "react-hot-toast";
 import { CalendarDays, Clock, Video } from "lucide-react";
 import { Input, Select } from "@/components/ui";
@@ -8,6 +9,12 @@ import { sendWebinarEnquiry } from "@/actions/send-webinar-enquiry";
 import SubmitButton from "@/components/forms/homepage-form/submit-btn";
 import SuccessMessage from "@/components/forms/homepage-form/success-message";
 import { getNextWebinarDateInIST, msUntilNextWebinarCutoff } from "@/lib/utils/date";
+
+declare global {
+  interface Window {
+    turnstile?: { reset: (widgetId?: string) => void };
+  }
+}
 
 import { useSearchParams } from "next/navigation";
 import DOMAINS from "@/lib/data/domains";
@@ -77,6 +84,10 @@ export const WebinarRegistrationForm = ({
 
     const timeoutId = setTimeout(() => {
       formRef.current?.reset();
+      // Turnstile tokens are single-use and short-lived — without this, a
+      // second registration on the same page load would submit a stale,
+      // already-consumed token and fail verification.
+      window.turnstile?.reset();
       setShowSuccessMessage(false);
     }, 10000);
 
@@ -88,6 +99,10 @@ export const WebinarRegistrationForm = ({
       style={{ boxShadow: "0px 2px 8px rgba(7, 27, 45, 0.08)" }}
       className="bg-white border border-border-stroke rounded-xl p-7.5 h-full"
     >
+      {process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY && (
+        <Script src="https://challenges.cloudflare.com/turnstile/v0/api.js" strategy="afterInteractive" async defer />
+      )}
+
       <h3 className="text-20 font-heading font-semibold">Registration Form</h3>
 
       {showSuccessMessage ? (
@@ -112,6 +127,18 @@ export const WebinarRegistrationForm = ({
         <form ref={formRef} action={formAction} className="flex flex-col gap-4 mt-6">
           <input type="hidden" name="webinarSessionId" value={sessionId} />
           <input type="hidden" name="sessionTime" value={sessionTime} />
+
+          {/* Honeypot — real visitors never see this field. Any bot that
+              fills every input it finds trips it; the server silently
+              no-ops instead of writing a row. */}
+          <input
+            type="text"
+            name="website"
+            tabIndex={-1}
+            autoComplete="off"
+            aria-hidden="true"
+            className="absolute -left-[9999px] w-px h-px opacity-0"
+          />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4.5">
             <Input
@@ -164,6 +191,18 @@ export const WebinarRegistrationForm = ({
               </label>
             ))}
           </div>*/}
+
+          {/* Renders nothing until NEXT_PUBLIC_TURNSTILE_SITE_KEY is set —
+              safe to ship ahead of the Cloudflare dashboard setup. Implicit
+              rendering: Turnstile auto-injects a "cf-turnstile-response"
+              hidden field into this form once solved, no JS glue needed. */}
+          {process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY && (
+            <div
+              className="cf-turnstile"
+              data-sitekey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
+              data-appearance="interaction-only"
+            />
+          )}
 
           <SubmitButton label="Register for Orientation" pendingLabel="Registering…" />
 
