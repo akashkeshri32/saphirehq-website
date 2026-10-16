@@ -4,7 +4,7 @@ import { headers } from "next/headers";
 import { checkIfEnquiryAlreadyExists, createWebinarEnquiry } from "@/lib/db-utils/webinar";
 import { webinarEnquiry } from "@/lib/drizzle/schema";
 import { getNextWebinarDateInIST } from "@/lib/utils/date";
-import { sendEnquiryLeadToBrevo } from "@/lib/utils/brevo";
+import { sendEnquiryLeadToMailchimp } from "@/lib/utils/mailchimp";
 import { verifyTurnstileToken } from "@/lib/utils/turnstile";
 
 export async function sendWebinarEnquiry(prevState: any, formData: FormData) {
@@ -86,18 +86,17 @@ export async function sendWebinarEnquiry(prevState: any, formData: FormData) {
     if (error) throw new Error(error.message);
 
     // The registration itself is already saved at this point. Adding the
-    // contact to Brevo is what triggers their dashboard-side automation to
-    // send the confirmation email — if that call fails, the visitor's
+    // contact to Mailchimp is what triggers their dashboard-side automation
+    // to send the confirmation email — if that call fails, the visitor's
     // registration is still valid, so this is best-effort: log it, but
-    // don't fail the action for it (they'd otherwise likely resubmit and
-    // create a duplicate row).
-    const { error: brevoError } = await sendEnquiryLeadToBrevo(newWebinarEnquiry);
-    if (brevoError) {
-      console.error("Failed to sync webinar lead to Brevo:", brevoError);
-      return {
-        success: false,
-        message : "Registration Failed"
-      }
+    // don't fail the action for it. This is deliberately NOT a hard fail
+    // (unlike the old Brevo integration briefly was) — during the Brevo
+    // outage, failing the whole action here made every real registration
+    // show "Registration Failed" to the visitor even though it had already
+    // saved, which just caused people to resubmit and create duplicates.
+    const { error: mailchimpError } = await sendEnquiryLeadToMailchimp(newWebinarEnquiry);
+    if (mailchimpError) {
+      console.error("Failed to sync webinar lead to Mailchimp:", mailchimpError);
     }
 
     return {
