@@ -71,7 +71,7 @@ export const ContactHeroSection = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mt-12 items-start">
           <Reveal className="h-full" direction="left">
-            <div className="bg-black rounded-2xl p-7.5 flex flex-col gap-6 h-full">
+            <div className="bg-black rounded-2xl px-4 py-6 md:p-7.5 flex flex-col gap-6 h-full">
               <div className="flex flex-col gap-6">
                 {CONTACT_DETAILS.map((detail) => (
                   <ContactInfoRow key={detail.label} {...detail} />
@@ -102,14 +102,27 @@ export const ContactHeroSection = () => {
 
               {/*<div className="h-px bg-white/5" />*/}
 
-              <div className="flex-1 flex items-end">
+              <div className="flex h-full md:items-end justify-between gap-x-2 md:gap-x-5">
                 <div>
-                  <p className="text-15 font-heading font-semibold text-white">
-                    Sapphire IQ.
-                  </p>
-                  <p className="text-13 text-gray-two mt-1">
-                    Brilliant Minds. Intelligent Solutions.
-                  </p>
+                  <div>
+                    <p className="text-14 md:text-15 font-heading font-semibold text-white">
+                      Sapphire IQ.
+                    </p>
+                    <p className="text-12 md:text-13 text-gray-two mt-1">
+                      Brilliant Minds. Intelligent Solutions.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="max-md:shrink-0 text-right">
+                  <div>
+                    <p className="text-14 md:text-15 font-heading font-semibold text-white">
+                      Akash Chandra
+                    </p>
+                    <p className="text-12 md:text-13 text-gray-two mt-1">
+                      Founder &amp; CEO
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>

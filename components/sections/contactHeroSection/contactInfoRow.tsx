@@ -16,7 +16,7 @@ export const ContactInfoRow = ({ icon: Icon, label, value, href }: Props) => {
 
       <div>
         <p className="text-12 uppercase tracking-wide text-gray-two font-jetbrains">{label}</p>
-        <p className="text-15 text-white font-medium mt-0.5">{value}</p>
+        <p className="text-14 md:text-15 text-white font-medium mt-0.5">{value}</p>
       </div>
     </div>
   );
