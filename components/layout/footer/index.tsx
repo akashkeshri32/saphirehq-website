@@ -39,18 +39,22 @@ export default function Footer() {
     <footer className="bg-black pt-[64px] pb-32">
       <Container>
         <div className="grid grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr] gap-10">
-          <div className="col-span-2 lg:col-span-1">
-            <Link href="/">
-              <Image src={Logo} alt="Sapphire IQ" height={24} className="h-24 w-auto" />
-            </Link>
+          <div className="col-span-2 lg:col-span-1 flex flex-col justify-between gap-y-7">
+            <div>
+              <Link href="/">
+                <Image src={Logo} alt="Sapphire IQ" height={24} className="h-24 w-auto" />
+              </Link>
 
-            <p className="text-14 text-gray-two mt-4 leading-5.5 max-w-65">
-             The career accelerator that replaces theory with proof — real projects, real mentors, real placements.
-            </p>
+              <h5 className="text-12 md:text-14 text-white font-medium font-heading mt-2">Sapphire IQ Innovations Private Limited</h5>
 
+              <p className="text-14 text-gray-two mt-4 leading-5.5 max-w-65">
+               The career accelerator that replaces theory with proof — real projects, real mentors, real placements.
+              </p>
+
+            </div>
             <Link
               href="mailto:admin@sapphireiq.in"
-              className="text-14 text-white-two hover:text-white transition-colors mt-4 inline-block"
+              className="text-14 text-white-two hover:text-white transition-color inline-block"
             >
               admin@sapphireiq.in
             </Link>

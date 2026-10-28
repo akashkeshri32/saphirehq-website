@@ -108,8 +108,8 @@ export const ContactHeroSection = () => {
                     <p className="text-14 md:text-15 font-heading font-semibold text-white">
                       Sapphire IQ.
                     </p>
-                    <p className="text-12 md:text-13 text-gray-two mt-1">
-                      Brilliant Minds. Intelligent Solutions.
+                    <p className="text-14 md:text-15 text-white mt-1 font-heading font-medium">
+                      Sapphire IQ Innovations Private Limited
                     </p>
                   </div>
                 </div>
