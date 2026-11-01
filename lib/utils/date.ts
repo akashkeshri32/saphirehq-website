@@ -2,7 +2,7 @@ const IST_TIME_ZONE = "Asia/Kolkata";
 
 /** Webinars aren't run in the morning, so registrations taken before this
  * hour (IST, 24h) are for today's session; after it, they roll to tomorrow. */
-const WEBINAR_CUTOFF_HOUR = 16;
+const WEBINAR_CUTOFF_HOUR = 20;
 
 function nowInIST(): Date {
   return new Date(new Date().toLocaleString("en-US", { timeZone: IST_TIME_ZONE }));
