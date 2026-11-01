@@ -13,12 +13,9 @@ const NAV_ITEMS = [
   { title: "Domains", href: "/#domains" },
   { title: "Instructors", href: "/#instructors" },
   { title: "Success stories", href: "/placement-statistics" },
-  // { title: "FAQs", href: "/#faqs" },
+  { title: "FAQs", href: "/#faqs" },
   { title: "About Us", href: "/about-us" },
   { title: "Contact Us", href: "/contact-us" },
-  { title: "Career Accelerator Program", href: "https://app.sapphireiq.in/career-accelerator-platform" },
-
-
 ];
 
 const Navbar = () => {
