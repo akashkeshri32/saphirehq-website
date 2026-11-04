@@ -76,6 +76,14 @@ export const WebinarRegistrationForm = ({
 
     if (!state.success) {
       toast.error(state.message);
+      // Turnstile tokens are single-use — if the submission failed for any
+      // reason (missing field, duplicate registration, etc.), the token
+      // sent with THAT attempt has already been consumed by siteverify,
+      // even though verification itself succeeded. Without resetting here,
+      // a retry resubmits that same spent token and gets rejected as
+      // "duplicate", which falsely looks like a failed human-check to a
+      // real visitor who already passed it once.
+      window.turnstile?.reset();
       return;
     }
 
