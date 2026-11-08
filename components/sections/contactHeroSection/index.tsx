@@ -114,7 +114,7 @@ export const ContactHeroSection = () => {
                   </div>
                 </div>
 
-                <div className="max-md:shrink-0 text-right">
+                {/*<div className="max-md:shrink-0 text-right">
                   <div>
                     <p className="text-14 md:text-15 font-heading font-semibold text-white">
                       Akash Chandra
@@ -123,7 +123,7 @@ export const ContactHeroSection = () => {
                       Founder &amp; CEO
                     </p>
                   </div>
-                </div>
+                </div>*/}
               </div>
             </div>
           </Reveal>
